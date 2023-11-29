@@ -1,12 +1,17 @@
-import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { Drawer, Typography, IconButton, List, Divider, ListItemButton, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
+import { Icon } from "@mui/material";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { useAppThemeContext } from "../../contexts";
 
 export const DrawerComponent: React.FC = () => {
 
     const [openDrawer, setOpenDrawer] = useState(false)
 
-    const PAGES = [
+    const { toggleTheme } = useAppThemeContext();
+
+    const pages = [
         "Home",
         "Serviços",
         "Tecnologias",
@@ -14,28 +19,47 @@ export const DrawerComponent: React.FC = () => {
         "Estrutura de dados",
         "Contato"
     ]
+    const icons = [
+        "home",
+        "webIcon",
+        "codeIcon",
+        "phonelink",
+        "storageIcon",
+        "contacts"
+    ]
     return (
-        <div>
+        <>
             <Drawer open={openDrawer}
                 onClose={() => setOpenDrawer(false)}
             >
-                <List>
-                    {PAGES.map((page, index) => (
+                <List >
+                    {pages.map((page, index) => (
                         <ListItemButton key={index} onClick={() => setOpenDrawer(false)}>
-                            <ListItemIcon>
-                                <ListItemText>
-                                    {page}
-                                </ListItemText>
+                            <ListItemIcon >
+                                <Icon>{icons[index]}</Icon>
                             </ListItemIcon>
+                            <ListItemText >
+                                {page}
+                            </ListItemText>
                         </ListItemButton>
                     ))}
-
+                </List>
+                <Divider />
+                <List>
+                    <ListItemButton onClick={toggleTheme}>
+                        <IconButton >
+                            <DarkModeIcon />
+                        </IconButton>
+                        <ListItemText>
+                            Alterar tema
+                        </ListItemText>
+                    </ListItemButton>
                 </List>
             </Drawer>
             <IconButton sx={{ color: "white", display: "flex", justifyContent: "end", width: "100%" }} onClick={() => setOpenDrawer(!openDrawer)}>
                 <MenuIcon />
             </IconButton>
-        </div>
+        </>
 
     )
 }

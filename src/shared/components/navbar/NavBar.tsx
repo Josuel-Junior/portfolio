@@ -3,19 +3,14 @@ import { useState, useRef } from "react"
 import TerminalIcon from '@mui/icons-material/Terminal';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-import Paper from '@mui/material/Paper';
-import Popper from '@mui/material/Popper';
-import Grow from '@mui/material/Grow';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
+import { Paper, Popper, Grow, MenuItem, MenuList, ClickAwayListener } from '@mui/material';
 
-import { ProviderPropsChildren } from "../../interfaces";
 import { DrawerComponent } from "../drawerComponent/DrawerComponent";
 import { useAppThemeContext } from "../../contexts";
 import Button from '@mui/material/Button';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
+import { ProviderPropsChildren } from "../../interfaces";
 const hoverTextNavBar = {
     transition: "all .3s",
     "&:hover": {
@@ -25,11 +20,12 @@ const hoverTextNavBar = {
 
 const options = ['Estrutura de Pilha', 'Estrutura de Fila'];
 
-export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
+export const NavBar: React.FC<ProviderPropsChildren> = ({children}) => {
 
-    const [menuPosition, setMenuPosition] = useState(0)
+    const [menuPosition, setMenuPosition] = useState<Number>(0)
     const theme = useTheme();
     const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+
     const { toggleTheme } = useAppThemeContext();
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setMenuPosition(newValue);
@@ -56,7 +52,10 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
 
 
     return (
-        <>
+        <header>
+
+
+
             <AppBar>
                 {
                     isMatch ? (
@@ -143,6 +142,6 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                         </Toolbar>
                 }
             </AppBar>
-        </>
+        </header>
     )
 }

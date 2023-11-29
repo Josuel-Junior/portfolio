@@ -1,5 +1,6 @@
-import { render, screen } from "@testing-library/react"
+import { render, screen  } from "@testing-library/react"
 import { NavBar } from "../navbar/NavBar"
+import { DrawerComponent } from "../drawerComponent/DrawerComponent"
 import "@testing-library/jest-dom"
 
 describe("NavBar", () => {
@@ -32,6 +33,13 @@ describe("NavBar", () => {
         render(<NavBar children={undefined}/>)
         console.log(NavBar)
          expect(screen.getByText("Contato")).toBeInTheDocument();
+    })
+})
+describe("DrawerComponent", () => {
+    it("should click toggle thema correctly",  () => {
+        render(<DrawerComponent/>)
+        console.log(DrawerComponent)
+      
     })
 })
 
