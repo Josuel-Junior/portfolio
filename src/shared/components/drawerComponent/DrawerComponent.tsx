@@ -1,13 +1,27 @@
-import { Drawer, Typography, IconButton, List, Divider, ListItemButton, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
-import MenuIcon from '@mui/icons-material/Menu';
-import { useState } from "react";
+import { Drawer, IconButton, List, Divider, ListItemButton, ListItemIcon, ListItemText, Toolbar, Collapse } from "@mui/material";
 import { Icon } from "@mui/material";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import MenuIcon from '@mui/icons-material/Menu';
+import StorageIcon from '@mui/icons-material/Storage';
+import DataObjectIcon from '@mui/icons-material/DataObject';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+
+import { useState } from "react";
 import { useAppThemeContext } from "../../contexts";
+
+
+
 
 export const DrawerComponent: React.FC = () => {
 
     const [openDrawer, setOpenDrawer] = useState(false)
+
+    const [OpenSubButtonMenu, setOpenSubButtonMenu] = useState(false);
+
+    const handleClick = () => {
+        setOpenSubButtonMenu(!OpenSubButtonMenu);
+    };
 
     const { toggleTheme } = useAppThemeContext();
 
@@ -16,7 +30,6 @@ export const DrawerComponent: React.FC = () => {
         "Serviços",
         "Tecnologias",
         "Projetos",
-        "Estrutura de dados",
         "Contato"
     ]
     const icons = [
@@ -24,7 +37,6 @@ export const DrawerComponent: React.FC = () => {
         "webIcon",
         "codeIcon",
         "phonelink",
-        "storageIcon",
         "contacts"
     ]
     return (
@@ -44,6 +56,37 @@ export const DrawerComponent: React.FC = () => {
                         </ListItemButton>
                     ))}
                 </List>
+
+
+
+                <List>
+                    <ListItemButton onClick={handleClick}>
+                        <ListItemIcon>
+                            <StorageIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            Estrutura de dados
+                        </ListItemText>
+                        {OpenSubButtonMenu ? <ExpandLess /> : <ExpandMore />}
+                    </ListItemButton>
+
+                    <Collapse in={OpenSubButtonMenu} timeout="auto" unmountOnExit>
+                        <List component="div" disablePadding>
+                            <ListItemButton sx={{ pl: 4 }}>
+                                <ListItemIcon>
+                                    <DataObjectIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Estrutura de Pilha" />
+                            </ListItemButton>
+                            <ListItemButton sx={{ pl: 4 }}>
+                                <ListItemIcon>
+                                    <DataObjectIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Estrutura de Fila" />
+                            </ListItemButton>
+                        </List>
+                    </Collapse>
+                </List>
                 <Divider />
                 <List>
                     <ListItemButton onClick={toggleTheme}>
@@ -55,6 +98,7 @@ export const DrawerComponent: React.FC = () => {
                         </ListItemText>
                     </ListItemButton>
                 </List>
+
             </Drawer>
             <IconButton sx={{ color: "white", display: "flex", justifyContent: "end", width: "100%" }} onClick={() => setOpenDrawer(!openDrawer)}>
                 <MenuIcon />

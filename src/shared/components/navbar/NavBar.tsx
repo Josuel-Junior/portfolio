@@ -1,9 +1,8 @@
-import { AppBar, Toolbar, Tabs, Tab, IconButton, useMediaQuery, useTheme, ButtonGroup } from "@mui/material"
-import { useState, useRef } from "react"
+import { AppBar, Toolbar, Tabs, Tab, IconButton, useMediaQuery, useTheme, ButtonGroup, Paper, Popper, Grow, MenuItem, MenuList, ClickAwayListener } from "@mui/material"
 import TerminalIcon from '@mui/icons-material/Terminal';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-import { Paper, Popper, Grow, MenuItem, MenuList, ClickAwayListener } from '@mui/material';
+import { useState, useRef } from "react"
 
 import { DrawerComponent } from "../drawerComponent/DrawerComponent";
 import { useAppThemeContext } from "../../contexts";
@@ -20,7 +19,7 @@ const hoverTextNavBar = {
 
 const options = ['Estrutura de Pilha', 'Estrutura de Fila'];
 
-export const NavBar: React.FC<ProviderPropsChildren> = ({children}) => {
+export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
 
     const [menuPosition, setMenuPosition] = useState<Number>(0)
     const theme = useTheme();
@@ -53,9 +52,6 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({children}) => {
 
     return (
         <header>
-
-
-
             <AppBar>
                 {
                     isMatch ? (
@@ -63,6 +59,8 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({children}) => {
                             <DrawerComponent />
                         </>
                     ) :
+
+
                         <Toolbar >
                             <TerminalIcon />
                             <Tabs
@@ -78,6 +76,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({children}) => {
                                 }}
                             >
                                 <Tab label="Home" sx={hoverTextNavBar} />
+
                                 <Tab label="Serviços" sx={hoverTextNavBar} />
                                 <Tab label="Tecnologias" sx={hoverTextNavBar} />
                                 <Tab label="Projetos" sx={hoverTextNavBar} />
@@ -87,18 +86,20 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({children}) => {
                                 variant="contained"
                                 aria-label="Disabled elevation buttons"
                             >
-                                <Button variant="text" color="inherit" >
-                                    {"Estrutura de dados"}
-                                </Button>
+
                                 <Button
                                     size="small"
                                     aria-controls={open ? 'split-button-menu' : undefined}
                                     aria-expanded={open ? 'true' : undefined}
-                                    aria-label="select merge strategy"
+                                    aria-label="button group"
                                     aria-haspopup="menu"
+                                    role="group"
                                     variant="text" color="inherit"
                                     onClick={handleToggle}
                                 >
+                                    <Button variant="text" color="inherit" >
+                                        {"Estrutura de dados"}
+                                    </Button>
                                     <ArrowDropDownIcon />
                                 </Button>
                             </ButtonGroup>

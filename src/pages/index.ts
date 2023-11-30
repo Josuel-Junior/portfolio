@@ -1,1 +1,6 @@
-export {};
+export * from './Contact'
+export * from './Home'
+export * from './Projects'
+export * from './Services'
+export * from './Technology'
+export * from './Structure'
