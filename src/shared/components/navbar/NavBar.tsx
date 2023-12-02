@@ -5,11 +5,12 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useState, useRef } from "react"
 
 import { DrawerComponent } from "../drawerComponent/DrawerComponent";
-import { useAppThemeContext } from "../../contexts";
+import { UseIndicatorNavBar, useAppThemeContext } from "../../contexts";
 import Button from '@mui/material/Button';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import { ProviderPropsChildren } from "../../interfaces";
+import { useNavigate } from "react-router-dom";
 const hoverTextNavBar = {
     transition: "all .3s",
     "&:hover": {
@@ -21,13 +22,15 @@ const options = ['Estrutura de Pilha', 'Estrutura de Fila'];
 
 export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
 
-    const [menuPosition, setMenuPosition] = useState<Number>(0)
+    const navigate = useNavigate()
+
+    const { indicatorCurrent, setIndicatorCurrent } = UseIndicatorNavBar()
     const theme = useTheme();
     const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
     const { toggleTheme } = useAppThemeContext();
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setMenuPosition(newValue);
+        setIndicatorCurrent(newValue);
     };
 
     const [open, setOpen] = useState(false);
@@ -36,7 +39,6 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
     };
-
     const handleClose = (event: Event) => {
 
         if (
@@ -65,9 +67,10 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                             <TerminalIcon />
                             <Tabs
                                 sx={{ marginLeft: "auto", }}
-                                value={menuPosition}
+                                value={indicatorCurrent}
                                 indicatorColor="secondary"
                                 onChange={handleChange}
+
                                 textColor="inherit"
                                 TabIndicatorProps={{
                                     style: {
@@ -75,12 +78,14 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                                     }
                                 }}
                             >
-                                <Tab label="Home" sx={hoverTextNavBar} />
+                                <Tab label="Home" sx={hoverTextNavBar} onClick={() => navigate("/")} />
 
-                                <Tab label="Serviços" sx={hoverTextNavBar} />
-                                <Tab label="Tecnologias" sx={hoverTextNavBar} />
-                                <Tab label="Projetos" sx={hoverTextNavBar} />
-                                <Tab label="Contato" sx={hoverTextNavBar} />
+
+
+                                <Tab label="Serviços" sx={hoverTextNavBar} onClick={() => navigate("/services")} />
+                                <Tab label="Tecnologias" sx={hoverTextNavBar} onClick={() => navigate("/technology")} />
+                                <Tab label="Projetos" sx={hoverTextNavBar} onClick={() => navigate("/projects")} />
+                                <Tab label="Contato" sx={hoverTextNavBar} onClick={() => navigate("/contact")} />
                             </Tabs>
                             <ButtonGroup ref={anchorRef} disableElevation
                                 variant="contained"
@@ -97,9 +102,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                                     variant="text" color="inherit"
                                     onClick={handleToggle}
                                 >
-                                    <Button variant="text" color="inherit" >
-                                        {"Estrutura de dados"}
-                                    </Button>
+                                    {"Estrutura de dados"}
                                     <ArrowDropDownIcon />
                                 </Button>
                             </ButtonGroup>
