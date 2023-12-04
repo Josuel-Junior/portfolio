@@ -18,6 +18,8 @@ const hoverTextNavBar = {
     }
 }
 
+
+
 const options = ['Estrutura de Pilha', 'Estrutura de Fila'];
 
 export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {

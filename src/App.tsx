@@ -6,13 +6,14 @@ import { IndicatorNavBarContext } from "./shared/contexts/IndicatorNavBarContext
 
 
 function App() {
-  return (
 
+
+  return (
     <AppThemeProvider>
       <IndicatorNavBarContext>
         <NavBar>
         </NavBar>
-        <Outlet/>
+        <Outlet />
       </IndicatorNavBarContext>
     </AppThemeProvider>
 

@@ -21,5 +21,8 @@ export const LightTheme = createTheme({
         },
 
     },
+    typography: {
+
+    }
 
 });

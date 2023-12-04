@@ -15,7 +15,6 @@ export const UseIndicatorNavBar = () => {
 
 export const IndicatorNavBarContext: React.FC<ProviderPropsChildren> = ({ children }) => {
     const [indicatorCurrent, setIndicatorCurrent] = useState<number>(0)
-
     return (
         <IndicatorContext.Provider value={{ indicatorCurrent, setIndicatorCurrent }}>
             {children}
