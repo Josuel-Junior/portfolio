@@ -68,7 +68,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                         <Toolbar >
                             <TerminalIcon />
                             <Tabs
-                                sx={{ marginLeft: "auto", }}
+                                sx={{ marginLeft: "auto" }}
                                 value={indicatorCurrent}
                                 indicatorColor="secondary"
                                 onChange={handleChange}
