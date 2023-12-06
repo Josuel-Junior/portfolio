@@ -1,4 +1,4 @@
-import { Drawer, IconButton, List, Divider, ListItemButton, ListItemIcon, ListItemText, Toolbar, Collapse } from "@mui/material";
+import { Drawer, IconButton, List, Divider, ListItemButton, ListItemIcon, ListItemText, Toolbar, Collapse, Box } from "@mui/material";
 import { Icon } from "@mui/material";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -43,6 +43,7 @@ export const DrawerComponent: React.FC = () => {
         <>
             <Drawer open={openDrawer}
                 onClose={() => setOpenDrawer(false)}
+
             >
                 <List >
                     {pages.map((page, index) => (
@@ -56,9 +57,6 @@ export const DrawerComponent: React.FC = () => {
                         </ListItemButton>
                     ))}
                 </List>
-
-
-
                 <List>
                     <ListItemButton onClick={handleClick}>
                         <ListItemIcon>
@@ -69,7 +67,6 @@ export const DrawerComponent: React.FC = () => {
                         </ListItemText>
                         {OpenSubButtonMenu ? <ExpandLess /> : <ExpandMore />}
                     </ListItemButton>
-
                     <Collapse in={OpenSubButtonMenu} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                             <ListItemButton sx={{ pl: 4 }}>
@@ -98,11 +95,12 @@ export const DrawerComponent: React.FC = () => {
                         </ListItemText>
                     </ListItemButton>
                 </List>
-
             </Drawer>
-            <IconButton sx={{ color: "white", display: "flex", justifyContent: "end", width: "100%" }} onClick={() => setOpenDrawer(!openDrawer)}>
-                <MenuIcon />
+
+            <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
+                <MenuIcon sx={{ color: "#fff" }} />
             </IconButton>
+
         </>
 
     )

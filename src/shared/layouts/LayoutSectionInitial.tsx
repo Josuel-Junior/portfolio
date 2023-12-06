@@ -23,22 +23,19 @@ export const LayoutSectionInitial: React.FC<LayoutBase> = ({ title, subTitle, ic
     const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
     return (
-
         <Box sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
+            width: '100vw',
+            minHeight: '100vh',
             backgroundImage: theme.palette.mode === "light" ? `url(${background})` : "",
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-        }} component="section">
-
-            <Container maxWidth="xl" component={"div"} sx={{ background: "" }}>
+            backgroundRepeat: 'no-repeat',
+        }} component="div">
+            <Container maxWidth="xl" component={"div"}>
                 <CssBaseline />
                 <Grid container>
                     {isMatch ? (
-                        <Grid xs={12} sx={{ background: "", textAlign: "center" }}>
+                        <Grid xs={12} sx={{ textAlign: "center" }}>
                             <Box sx={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column" }}>
                                 <Typography component="h1" color="primary" variant="h1" sx={{
                                     fontSize: {
@@ -93,9 +90,7 @@ export const LayoutSectionInitial: React.FC<LayoutBase> = ({ title, subTitle, ic
                     }
                 </Grid>
             </Container>
-
         </Box>
-
     )
 
 }

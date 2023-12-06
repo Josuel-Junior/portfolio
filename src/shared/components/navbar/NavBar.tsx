@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Tabs, Tab, IconButton, useMediaQuery, useTheme, ButtonGroup, Paper, Popper, Grow, MenuItem, MenuList, ClickAwayListener } from "@mui/material"
+import { AppBar, Toolbar, Tabs, Tab, IconButton, useMediaQuery, useTheme, ButtonGroup, Paper, Popper, Grow, MenuItem, MenuList, ClickAwayListener, Box } from "@mui/material"
 import TerminalIcon from '@mui/icons-material/Terminal';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
@@ -59,9 +59,10 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
             <AppBar>
                 {
                     isMatch ? (
-                        <>
+                        <Box sx={{ display: "flex", justifyContent: "end" }}>
                             <DrawerComponent />
-                        </>
+                        </Box>
+
                     ) :
 
 
