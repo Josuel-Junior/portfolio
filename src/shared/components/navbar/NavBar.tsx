@@ -64,8 +64,6 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                         </Box>
 
                     ) :
-
-
                         <Toolbar >
                             <TerminalIcon />
                             <Tabs

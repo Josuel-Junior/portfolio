@@ -33,7 +33,7 @@ export const Home: React.FC = () => {
 
     <>
       <LayoutSectionInitial
-        title=" Bem-vindo à JFC Tecnologia"
+        title="Bem-vindo à JFC Tecnologia"
         subTitle="Aqui, a inovação e a excelência técnica se encontram para criar soluções por meio da programação."
         icon={animationPageHome}
         iconArrow={animationArrowHome}
@@ -41,9 +41,16 @@ export const Home: React.FC = () => {
         button={<Button variant="contained" size="large">Projetos</Button>}
       />
       <Box sx={{ width: "100vw", position: "relative" }} component={"section"}>
-        <Container maxWidth="xl" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+        <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
           <Box sx={{ textAlign: "center", width: "90%", background: "" }}>
-            <Typography sx={{ fontWeight: 'bold', marginTop: "15px" }} variant='h3' component="h2">
+            <Typography color="primary" sx={{
+              fontWeight: 'bold', marginTop: "15px", fontSize: {
+                xl: 31,
+                md: 30,
+                sm: 30,
+                xs: 25
+              },
+            }} variant='h3' component="h2">
               Conheça Nossos Serviços
             </Typography>
             <Typography sx={{ marginTop: "15px" }} variant='h5' component="h3">

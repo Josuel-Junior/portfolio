@@ -31,7 +31,7 @@ export const LayoutSectionInitial: React.FC<LayoutBase> = ({ title, subTitle, ic
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
         }} component="div">
-            <Container maxWidth="xl" component={"div"}>
+            <Container maxWidth="lg" component={"div"}>
                 <CssBaseline />
                 <Grid container>
                     {isMatch ? (
@@ -39,12 +39,11 @@ export const LayoutSectionInitial: React.FC<LayoutBase> = ({ title, subTitle, ic
                             <Box sx={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column" }}>
                                 <Typography component="h1" color="primary" variant="h1" sx={{
                                     fontSize: {
-                                        lg: 45,
-                                        md: 37,
+                                        xl: 31,
+                                        md: 30,
                                         sm: 30,
                                         xs: 25
-                                    }
-                                    ,
+                                    },
                                     fontWeight: 'bold'
                                 }}>
                                     {title}
@@ -62,8 +61,8 @@ export const LayoutSectionInitial: React.FC<LayoutBase> = ({ title, subTitle, ic
                                 <Box sx={{ height: "100vh", display: "flex", alignItems: "start", justifyContent: "center", flexDirection: "column" }}>
                                     <Typography component="h1" color="primary" variant="h1" sx={{
                                         fontSize: {
-                                            lg: 45,
-                                            md: 37,
+                                            lg: 38,
+                                            md: 32,
                                             sm: 30,
                                             xs: 25
                                         }
