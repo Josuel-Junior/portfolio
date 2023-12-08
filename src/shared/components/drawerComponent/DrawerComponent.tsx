@@ -43,7 +43,6 @@ export const DrawerComponent: React.FC = () => {
         <>
             <Drawer open={openDrawer}
                 onClose={() => setOpenDrawer(false)}
-
             >
                 <List >
                     {pages.map((page, index) => (

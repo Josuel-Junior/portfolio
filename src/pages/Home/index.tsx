@@ -3,10 +3,31 @@ import { Box, Button, Container, CssBaseline, Typography, Card, CardActionArea, 
 import animationPageHome from '../../shared/assets/animation/animationPageHome.json'
 import animationArrowHome from '../../shared/assets/animation/animationArrowHome.json'
 import { LayoutSectionInitial } from "../../shared/layouts/LayoutSectionInitial"
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
+
+import code from "../../shared/assets/animation/code.json"
+import { useTheme } from "@mui/material"
+import { LayoutCard } from '../../shared/layouts/LayoutCard';
 
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 export const Home: React.FC = () => {
+
+
+  const serviceInformation = [
+    { title: "texto", subTitle: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa nam in reiciendis modi beatae inventore tempore animi exercitationem voluptatem autem vitae.", icon: code },
+    { title: "texto", subTitle: "Descrição", icon: code },
+    { title: "texto", subTitle: "Descrição", icon: code },
+    // { title: "texto", subTitle: "Descrição", icon: code },
+    // { title: "texto", subTitle: "Descrição", icon: code },
+    // { title: "texto", subTitle: "Descrição", icon: code },
+    // { title: "texto", subTitle: "Descrição", icon: code },
+    // { title: "texto", subTitle: "Descrição", icon: code }
+  ]
+
+
+
+
+
+  const theme = useTheme()
 
   return (
 
@@ -19,46 +40,19 @@ export const Home: React.FC = () => {
         background={backgroundHome}
         button={<Button variant="contained" size="large">Projetos</Button>}
       />
-      <Box sx={{ width: "100vw", minHeight: "100vh", background: "#FDFFFF", display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Container maxWidth="xl" component={"div"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", background: "red" }}>
-          <Box>
-            <Typography sx={{ fontWeight: 'bold' }}>
-              Title
+      <Box sx={{ width: "100vw", position: "relative" }} component={"section"}>
+        <Container maxWidth="xl" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+          <Box sx={{ textAlign: "center", width: "90%", background: "" }}>
+            <Typography sx={{ fontWeight: 'bold', marginTop: "15px" }} variant='h3' component="h2">
+              Conheça Nossos Serviços
+            </Typography>
+            <Typography sx={{ marginTop: "15px" }} variant='h5' component="h3">
+              Na era digital em constante evolução, oferecemos soluções sob medida para atender às suas necessidades. Descubra como nossos serviços podem impulsionar sua empresa ou seu negócio online.
             </Typography>
           </Box>
-
-          <Grid container columns={{ xs: 4, sm: 8, md: 12 }} >
-
-            <Grid xs={4} sx={{ background: "blue" }} >
-              <Card>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image=""
-                    alt="green iguana"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      Texto
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa nam in reiciendis modi beatae inventore tempore animi exercitationem voluptatem autem vitae.
-                    </Typography>
-
-                  </CardContent>
-
-                </CardActionArea>
-              </Card>
-
-            </Grid>
-            <Grid xs={4}>
-              test
-            </Grid>
-            <Grid xs={4}>
-              test
-            </Grid>
-          </Grid>
+          <Box>
+            <LayoutCard textLayoutCard={serviceInformation} numberOfCard={4} />
+          </Box>
         </Container>
       </Box>
     </>
