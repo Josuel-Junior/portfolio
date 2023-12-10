@@ -59,7 +59,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
             <AppBar>
                 {
                     isMatch ? (
-                        <Box sx={{ display: "flex", justifyContent: "end" }}>
+                        <Box sx={{ display: "flex", justifyContent: "end"}}>
                             <DrawerComponent />
                         </Box>
 
@@ -71,7 +71,6 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                                 value={indicatorCurrent}
                                 indicatorColor="secondary"
                                 onChange={handleChange}
-
                                 textColor="inherit"
                                 TabIndicatorProps={{
                                     style: {

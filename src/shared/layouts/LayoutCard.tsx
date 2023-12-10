@@ -1,4 +1,5 @@
-import { Typography, Card, CardActionArea, CardMedia, CardContent } from '@mui/material'
+import { useTheme } from "@mui/material"
+import { Typography, Card, CardActionArea, CardMedia, CardContent, useMediaQuery } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 
 import Lottie from "lottie-react"
@@ -17,14 +18,17 @@ interface ILayoutCard {
 
 export const LayoutCard: React.FC<ILayoutCard> = ({ textLayoutCard, numberOfCard }) => {
 
+    const theme = useTheme()
+
+
     return (
 
-        <Grid container spacing={5} columns={{ xs: 4, sm: 8, md: 12 }} sx={{  marginTop: "40px" }} >
+        <Grid container spacing={5} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginTop: "40px" }} >
             {textLayoutCard.map((element, id) => {
                 return (
                     <Grid xs={numberOfCard} key={id} >
                         <Card>
-                            <CardActionArea sx={{padding:"20px", background:"#41409a"}}>
+                            <CardActionArea sx={{ padding: "20px", background: theme.palette.mode === 'light' ? "#41409a" : "#303134" }}>
                                 <CardMedia sx={{ margin: "auto", width: "100px" }} >
                                     <Lottie animationData={element?.icon} loop={true} alt='icon' />
                                 </CardMedia >

@@ -43,8 +43,9 @@ export const DrawerComponent: React.FC = () => {
         <>
             <Drawer open={openDrawer}
                 onClose={() => setOpenDrawer(false)}
+
             >
-                <List >
+                <List>
                     {pages.map((page, index) => (
                         <ListItemButton key={index} onClick={() => setOpenDrawer(false)}>
                             <ListItemIcon >

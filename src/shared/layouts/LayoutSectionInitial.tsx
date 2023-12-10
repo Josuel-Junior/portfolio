@@ -6,7 +6,7 @@ import Lottie from "lottie-react"
 import { useTheme } from "@mui/material"
 import { ReactElement } from "react"
 
-interface LayoutBase {
+interface ILayoutBase {
     title: string
     subTitle: string
     button?: ReactElement
@@ -17,7 +17,7 @@ interface LayoutBase {
 
 
 
-export const LayoutSectionInitial: React.FC<LayoutBase> = ({ title, subTitle, icon, iconArrow, background, button }) => {
+export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, icon, iconArrow, background, button }) => {
 
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down("md"));
