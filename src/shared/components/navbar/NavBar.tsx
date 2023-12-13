@@ -18,17 +18,15 @@ const hoverTextNavBar = {
     }
 }
 
-
-
 const options = ['Estrutura de Pilha', 'Estrutura de Fila'];
 
 export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
-
     const navigate = useNavigate()
 
     const { indicatorCurrent, setIndicatorCurrent } = UseIndicatorNavBar()
     const theme = useTheme();
     const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+    console.log(theme)
 
     const { toggleTheme } = useAppThemeContext();
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -49,17 +47,15 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
         ) {
             return;
         }
-
         setOpen(false);
     };
 
-
     return (
-        <header>
-            <AppBar>
+        <Box component="header">
+            <AppBar elevation={0} >
                 {
                     isMatch ? (
-                        <Box sx={{ display: "flex", justifyContent: "end"}}>
+                        <Box sx={{ display: "flex", justifyContent: "end" }}>
                             <DrawerComponent />
                         </Box>
 
@@ -79,9 +75,6 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                                 }}
                             >
                                 <Tab label="Home" sx={hoverTextNavBar} onClick={() => navigate("/")} />
-
-
-
                                 <Tab label="Serviços" sx={hoverTextNavBar} onClick={() => navigate("/services")} />
                                 <Tab label="Tecnologias" sx={hoverTextNavBar} onClick={() => navigate("/technology")} />
                                 <Tab label="Projetos" sx={hoverTextNavBar} onClick={() => navigate("/projects")} />
@@ -146,6 +139,6 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                         </Toolbar>
                 }
             </AppBar>
-        </header>
+        </Box>
     )
 }

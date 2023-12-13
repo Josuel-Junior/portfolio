@@ -10,7 +10,7 @@ export const DarkTheme = createTheme({
             contrastText: "#ffffff",
         },
         secondary: {
-            main: "#2f60b2",
+            main: "#fff",
             dark: "#448aff",
             light: "#69a1ff",
             contrastText: "#ffffff",
@@ -19,11 +19,11 @@ export const DarkTheme = createTheme({
             default: "#202134",
             paper: "#303134",
         },
-        
+
     },
     typography: {
-        allVariants:{
-            color:"#fff"
+        allVariants: {
+            color: "#fff"
         }
     }
 });
