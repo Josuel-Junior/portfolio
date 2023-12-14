@@ -1,9 +1,8 @@
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Box, CardActionArea, Container, Paper } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
 
@@ -21,50 +20,41 @@ const serviceTechnologies = [
     { title: "Design", icon: icon },
     { title: "Design", icon: icon },
     { title: "Design", icon: icon },
-
-
 ]
-
-const backgroundSectionTechnologies = require("../../../shared/assets/images/backgroundSectionTechnologies.jpg") as string;
 
 
 
 export const SectionTechnologies: React.FC = () => {
-
-
     const theme = useTheme()
 
     return (
         <Box sx={{
-            width: '100vw',
-            minHeight: '100vh',
-            backgroundImage: theme.palette.mode === "light" ? `url(${backgroundSectionTechnologies})` : "",
-            background: theme.palette.mode === "dark" ? "#161724" : "",
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
+
+            background: theme.palette.mode === "dark" ? "#161724" : "#296fcd"
+
+
         }} component="section">
 
-            <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+            <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", width: "100vw", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
 
-                <Box sx={{ textAlign: "center", width: "90%" }}>
-                    <Typography color="secondary" sx={{
+                <Box sx={{ textAlign: "center" }}>
+                    <Typography sx={{
                         fontWeight: 'bold', marginTop: "15px", fontSize: {
                             xl: 31,
                             md: 30,
                             sm: 30,
                             xs: 25
                         },
-                    }} variant='h3' component="h2">
-                        Veja algumas tecnolgias que trabalhamos
+                    }} color={"secondary"} component="h2"   >
+                        Conheça as tecnologias que usamos para criar experiências digitais inovadoras
                     </Typography>
-                    <Typography sx={{ marginTop: "15px" }} variant='h5' component="h3">
-                        Na era digital em constante evolução, oferecemos soluções sob medida para atender às suas necessidades. Descubra como nossos serviços podem impulsionar sua empresa ou seu negócio online.
+                    <Typography paragraph sx={{ marginTop: "15px" }} color={"secondary"}>
+                        Das bases sólidas de HTML, CSS e JavaScript aos frameworks dinâmicos como React, nosso arsenal tecnológico foca na construção de interfaces envolventes. O TypeScript assegura a robustez do código, enquanto o SASS/SCSS organiza a estilização com elegância.
                     </Typography>
-                    
+
                 </Box>
                 <Box >
-                    <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginTop: "25px", display: "flex", justifyContent: "center"}} >
+                    <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
                         {serviceTechnologies.map((element, id) => {
                             return (
                                 <Grid xs={4} key={id}>

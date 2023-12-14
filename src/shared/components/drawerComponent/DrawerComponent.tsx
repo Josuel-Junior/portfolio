@@ -43,7 +43,6 @@ export const DrawerComponent: React.FC = () => {
         <>
             <Drawer open={openDrawer}
                 onClose={() => setOpenDrawer(false)}
-
             >
                 <List>
                     {pages.map((page, index) => (
@@ -51,7 +50,7 @@ export const DrawerComponent: React.FC = () => {
                             <ListItemIcon >
                                 <Icon>{icons[index]}</Icon>
                             </ListItemIcon>
-                            <ListItemText >
+                            <ListItemText>
                                 {page}
                             </ListItemText>
                         </ListItemButton>
@@ -98,7 +97,7 @@ export const DrawerComponent: React.FC = () => {
             </Drawer>
 
             <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-                <MenuIcon sx={{ color: "#fff" }} />
+                <MenuIcon sx={{ color: "secondary" }} />
             </IconButton>
 
         </>
