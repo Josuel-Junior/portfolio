@@ -4,28 +4,38 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box, Container } from '@mui/material';
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useQuery } from "graphql-hooks";
 
 import { useTheme } from "@mui/material"
 
-import icon from '../../../shared/assets/icons/js-icon.svg'
-
-const serviceTechnologies = [
-    { title: "Javascript", icon: icon },
-    { title: "Typescript", icon: icon },
-    { title: "React", icon: icon },
-    { title: "Design", icon: icon },
-    { title: "Design", icon: icon },
-    { title: "Design", icon: icon },
-    { title: "Design", icon: icon },
-    { title: "Design", icon: icon },
-    { title: "Design", icon: icon },
-]
-
-
+import { sectionTechnologies } from '../../../shared/services/lib/dato-cms';
 
 export const SectionTechnologies: React.FC = () => {
+
     const theme = useTheme()
+
+    const { loading, error, data } = useQuery(sectionTechnologies, {
+        variables: {
+            limit: 10
+        }
+    });
+
+    if (loading) {
+        console.log("carregando")
+    } else {
+        const { allServiceIcons } = data
+
+        const filter = allServiceIcons.filter((ele: { logo: any, name: "string" }) => {
+            return ele.name.includes("M")
+        })
+
+        console.log(filter)
+        console.log(allServiceIcons.filte)
+        console.log(data?.allServiceIcons[0].logo.url)
+    }
+
+
 
     return (
         <Box sx={{
@@ -53,37 +63,51 @@ export const SectionTechnologies: React.FC = () => {
                     </Typography>
 
                 </Box>
-                <Box >
-                    <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
-                        {serviceTechnologies.map((element, id) => {
-                            return (
-                                <Grid xs={4} key={id}>
 
-                                    <Card sx={{ display: "flex" }}>
-                                        <Box sx={{ margin: "auto" }}>
-                                            <CardContent >
-                                                <Typography component="div" variant="h5">
-                                                    Javascript
-                                                </Typography>
-                                            </CardContent>
-                                        </Box>
-                                        <Box >
-                                            <CardMedia
-                                                component="img"
-                                                image={`${element.icon}`}
-                                                alt={element?.title}
-                                                sx={{ width: "100%", height: "100px" }}
-                                            />
-                                        </Box>
-                                    </Card>
-                                </Grid>
-                            )
-                        }
-                        )}
-                    </Grid>
+                <Box >
+                    {
+                        loading == true ? "carregando" : (
+                            <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
+
+                                {data.allServiceIcons?.map((element: {
+                                    logo: {
+                                        url: string;
+                                    }; name: string
+                                }, id: React.Key) => {
+                                    return (
+                                        <Grid xs={4} key={id}>
+
+                                            <Card sx={{ display: "flex" }}>
+                                                <Box sx={{ margin: "auto" }}>
+                                                    <CardContent >
+                                                        <Typography component="div" variant="h5">
+                                                            {element.name}
+                                                        </Typography>
+
+                                                    </CardContent>
+                                                </Box>
+                                                <Box sx={{ width: "100px", padding:"10px" }}>
+                                                    <CardMedia
+                                                        component="img"
+                                                        image={`${element.logo.url}`}
+                                                        src={`${element.logo.url}`}
+                                                        alt={element.name}
+                                                        sx={{}}
+                                                    />
+                                                </Box>
+                                            </Card>
+                                        </Grid>
+                                    )
+                                }
+                                )}
+                            </Grid>
+                        )
+                    }
+
                 </Box>
             </Container>
         </Box>
     )
 
 }
+

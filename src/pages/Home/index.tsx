@@ -7,7 +7,7 @@ import { SectionTechnologies } from './sectionTechnologies'
 
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 
-export const Home: React.FC = () => {
+export const Home: React.FC = (technologies) => {
 
   return (
     <>
@@ -23,9 +23,12 @@ export const Home: React.FC = () => {
 
       <SectionServices />
 
-      <SectionTechnologies />
+      <SectionTechnologies/>
 
     </>
 
   )
 }
+
+
+
