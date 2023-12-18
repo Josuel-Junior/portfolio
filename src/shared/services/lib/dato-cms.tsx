@@ -2,17 +2,17 @@
 import { GraphQLClient } from 'graphql-hooks'
 
 const API_URL = "https://graphql.datocms.com/"
-const API_TOKEN = "f7e3d2b110f5f753589c0267ef42e2"
+const API_TOKEN_TEST = "f7e3d2b110f5f753589c0267ef42e2"
 
 export const client = new GraphQLClient({
     url: API_URL,
     headers: {
-        "Authorization": `Bearer ${API_TOKEN}`,
+        "Authorization": `Bearer ${API_TOKEN_TEST}`,
     }
 });
 
 
-export const sectionTechnologies = `
+export const queryTechnologies = `
 {
   allServiceIcons {
     name

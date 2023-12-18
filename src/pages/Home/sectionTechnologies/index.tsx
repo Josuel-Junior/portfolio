@@ -1,51 +1,52 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Box, Container } from '@mui/material';
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useQuery } from "graphql-hooks";
-
 import { useTheme } from "@mui/material"
-
-import { sectionTechnologies } from '../../../shared/services/lib/dato-cms';
+import { queryTechnologies } from '../../../shared/services/lib/dato-cms';
+import { Card, CardContent, CardMedia, Typography, Box, Container, Skeleton } from '@mui/material';
+import { arraySkeleton } from "../../../shared/utils/fromArray";
 
 export const SectionTechnologies: React.FC = () => {
 
     const theme = useTheme()
+    const { loading, error, data } = useQuery(queryTechnologies);
 
-    const { loading, error, data } = useQuery(sectionTechnologies, {
-        variables: {
-            limit: 10
-        }
-    });
 
     if (loading) {
-        console.log("carregando")
-    } else {
-        const { allServiceIcons } = data
-
-        const filter = allServiceIcons.filter((ele: { logo: any, name: "string" }) => {
-            return ele.name.includes("M")
-        })
-
-        console.log(filter)
-        console.log(allServiceIcons.filte)
-        console.log(data?.allServiceIcons[0].logo.url)
+        const skeletonNumbers = arraySkeleton(9)
+        return (
+            <Box sx={{
+                background: theme.palette.mode === "dark" ? "#161724" : "#296fcd"
+            }} component="section">
+                <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                    <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
+                        {skeletonNumbers.map((item: number, index: number) => {
+                            return (
+                                <Grid xs={4} key={index}>
+                                    <Skeleton variant="rectangular" width={360} height={110} />
+                                </Grid>
+                            )
+                        })}
+                    </Grid>
+                </Container>
+            </Box>
+        )
     }
-
-
-
+    if (error) {
+        return (
+            <Box sx={{ display: "flex", justifyContent: "center", height: "100vh", alignItems: "center", justifyItems: "center", background: theme.palette.mode === "dark" ? "#161724" : "#296fcd" }}>
+                <Typography paragraph color="secondary">
+                    Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.
+                </Typography>
+            </Box>
+        )
+    }
     return (
         <Box sx={{
-
             background: theme.palette.mode === "dark" ? "#161724" : "#296fcd"
-
-
         }} component="section">
 
-            <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", width: "100vw", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+            <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
 
                 <Box sx={{ textAlign: "center" }}>
                     <Typography sx={{
@@ -63,47 +64,40 @@ export const SectionTechnologies: React.FC = () => {
                     </Typography>
 
                 </Box>
+                <Box>
+                    <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
 
-                <Box >
-                    {
-                        loading == true ? "carregando" : (
-                            <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
+                        {data.allServiceIcons?.map((serviceIcon: {
+                            logo: {
+                                url: string;
+                            }; name: string
+                        }, id: React.Key) => {
+                            return (
+                                <Grid xs={4} key={id}>
 
-                                {data.allServiceIcons?.map((element: {
-                                    logo: {
-                                        url: string;
-                                    }; name: string
-                                }, id: React.Key) => {
-                                    return (
-                                        <Grid xs={4} key={id}>
+                                    <Card sx={{ display: "flex" }}>
+                                        <Box sx={{ margin: "auto" }}>
+                                            <CardContent >
+                                                <Typography component="div" variant="h5">
+                                                    {serviceIcon.name}
+                                                </Typography>
 
-                                            <Card sx={{ display: "flex" }}>
-                                                <Box sx={{ margin: "auto" }}>
-                                                    <CardContent >
-                                                        <Typography component="div" variant="h5">
-                                                            {element.name}
-                                                        </Typography>
-
-                                                    </CardContent>
-                                                </Box>
-                                                <Box sx={{ width: "100px", padding:"10px" }}>
-                                                    <CardMedia
-                                                        component="img"
-                                                        image={`${element.logo.url}`}
-                                                        src={`${element.logo.url}`}
-                                                        alt={element.name}
-                                                        sx={{}}
-                                                    />
-                                                </Box>
-                                            </Card>
-                                        </Grid>
-                                    )
-                                }
-                                )}
-                            </Grid>
-                        )
-                    }
-
+                                            </CardContent>
+                                        </Box>
+                                        <Box sx={{ width: "100px", padding: "10px" }}>
+                                            <CardMedia
+                                                component="img"
+                                                image={`${serviceIcon.logo.url}`}
+                                                src={`${serviceIcon.logo.url}`}
+                                                alt={`Logo da tecnologia ${serviceIcon.name}`}
+                                            />
+                                        </Box>
+                                    </Card>
+                                </Grid>
+                            )
+                        }
+                        )}
+                    </Grid>
                 </Box>
             </Container>
         </Box>
