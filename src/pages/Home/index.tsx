@@ -4,8 +4,16 @@ import animationPageHome from '../../shared/assets/animation/animationPageHome.j
 import { LayoutSectionInitial } from "../../shared/layouts/LayoutSectionInitial"
 import { SectionServices } from './sectionServices'
 import { SectionTechnologies } from './sectionTechnologies'
+import { SectionProjects } from './sectionProjects'
+import { serviceInformation } from '../../shared/constants/serviceInformation'
+
 
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
+
+
+
+
+
 
 export const Home: React.FC = (technologies) => {
 
@@ -21,9 +29,11 @@ export const Home: React.FC = (technologies) => {
         />
       </Box>
 
-      <SectionServices />
+      <SectionServices serviceInformation={serviceInformation}/>
 
       <SectionTechnologies/>
+
+      <SectionProjects/>
 
     </>
 

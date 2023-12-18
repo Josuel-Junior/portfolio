@@ -1,29 +1,18 @@
 import { Box, Container, Typography, Card, CardMedia, CardContent } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 
-
-import iconDesign from '../../../shared/assets/animation/animationIconServices/iconDesign.json'
-import iconSeo from "../../../shared/assets/animation/animationIconServices/iconSeo.json"
-import iconWeb from "../../../shared/assets/animation/animationIconServices/iconWeb.json"
+import { ServiceInfo } from "../../../shared/interfaces/serviceInfo"
 
 import Lottie from "lottie-react"
 
-import { useTheme } from "@mui/material"
 
+interface SectionServicesProps {
+    serviceInformation: ServiceInfo[];
+}
 
-const serviceInformation = [
-    { title: "Design", subTitle: "Transmita a essência da sua marca através de designs visuais envolventes e memoráveis.", icon: iconDesign },
-    { title: "Desenvolvimento Web", subTitle: "Do conceito à implementação, criamos experiências online impactantes e funcionais.", icon: iconWeb },
-    { title: "Otimização de SEO", subTitle: "Aumente sua presença online e atraia tráfego qualificado através de técnicas avançadas de SEO.", icon: iconSeo },
-
-]
-
-
-export const SectionServices: React.FC = () => {
-
-    const theme = useTheme()
+export const SectionServices: React.FC<SectionServicesProps> = ({ serviceInformation }) => {
     return (
-        <Box sx={{ width: "100vw", background: theme.palette.mode === "dark" ? theme.palette.background.default : "#f7f6f3", }} component={"section"} >
+        <Box sx={{ width: "100vw" }} component={"section"} >
             <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                 <Box sx={{ textAlign: "center" }}>
                     <Typography sx={{
@@ -34,7 +23,7 @@ export const SectionServices: React.FC = () => {
                             xs: 25
                         },
                     }} variant='h3' component="h2">
-                        Conheça Nossos Serviços
+                        Nossos Serviços
                     </Typography>
                     <Typography sx={{ marginTop: "15px" }} paragraph>
                         Com a era digital em constante evolução, oferecemos soluções sob medida para atender às suas necessidades. Descubra como nossos serviços podem impulsionar sua empresa ou seu negócio online.
