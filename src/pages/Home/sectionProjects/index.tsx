@@ -1,6 +1,7 @@
 import { Box, Card, CardContent, CardMedia, Container, Typography } from "@mui/material"
 
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import { DisplayProjects } from "../../../shared/components/displayProjects/DisplayPorjects";
 
 
 export const SectionProjects: React.FC = () => {
@@ -26,13 +27,17 @@ export const SectionProjects: React.FC = () => {
                         Explore nosso portfólio de projetos e conheça algumas de nossas soluções.
                     </Typography>
                 </Box>
-                <Box>
+
+                <DisplayProjects/>
+
+               
+                {/* <Box>
                     <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
                         <Grid xs={4}>
                             
                         </Grid>
                     </Grid>
-                </Box>
+                </Box> */}
             </Container>
 
         </Box>

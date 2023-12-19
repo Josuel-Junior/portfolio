@@ -9,7 +9,7 @@ import { arraySkeleton } from "../../../shared/utils/fromArray";
 export const SectionTechnologies: React.FC = () => {
 
     const theme = useTheme()
-    const { loading, error, data } = useQuery(queryTechnologies);
+    const { loading, error, data } = useQuery(queryTechnologies)
 
 
     if (loading) {

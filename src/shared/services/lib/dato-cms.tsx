@@ -22,3 +22,13 @@ export const queryTechnologies = `
   }
 }
 `
+export const queryProjects = `
+{
+  project {
+    title
+    subtitle
+    showproject
+    github
+  }
+}
+`
