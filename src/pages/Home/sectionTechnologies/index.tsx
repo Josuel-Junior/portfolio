@@ -11,7 +11,6 @@ export const SectionTechnologies: React.FC = () => {
     const theme = useTheme()
     const { loading, error, data } = useQuery(queryTechnologies)
 
-
     if (loading) {
         const skeletonNumbers = arraySkeleton(9)
         return (
@@ -32,6 +31,8 @@ export const SectionTechnologies: React.FC = () => {
             </Box>
         )
     }
+
+    console.log(data)
     if (error) {
         return (
             <Box sx={{ display: "flex", justifyContent: "center", height: "100vh", alignItems: "center", justifyItems: "center", background: theme.palette.mode === "dark" ? "#161724" : "#296fcd" }}>

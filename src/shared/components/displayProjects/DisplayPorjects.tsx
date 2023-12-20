@@ -23,24 +23,40 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "@mui/material"
 
 
 const arrayButton = ["Todos", "Clientes", "Projetos pessoais"]
 
+interface IDataprojects {
+    github: string;
+    project: {
+        url: string;
+    };
+    showproject: string
+    subtitle: string;
+    title: string;
+}
+
 
 export const DisplayProjects: React.FC = () => {
+
     const { loading, error, data } = useQuery(queryProjects)
 
     const theme = useTheme()
+
     const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
+
     const [buttonActive, setButtonActive] = useState<number>(0)
+
     function handleButtonActive(buttonActive: number) {
         setButtonActive(buttonActive)
     }
+
+
     if (loading) {
-        (
+        return (
             <Box>
 
                 <Typography>
@@ -49,14 +65,13 @@ export const DisplayProjects: React.FC = () => {
                 </Typography>
             </Box >
         )
-
     }
-
+    console.log(data.allProjects[0].github)
     return (
         <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "center" }}>
 
 
-            <Box aria-label="primary button group" sx={{ display:"flex",justifyContent:"center", flexDirection: isMatch ? "column" : "flex", alignItems:"center", gap:"10px" }}>
+            <Box aria-label="primary button group" sx={{ display: "flex", justifyContent: "center", flexDirection: isMatch ? "column" : "flex", alignItems: "center", gap: "10px" }}>
                 {
                     arrayButton.map((button: string, index) => {
                         return (
@@ -70,202 +85,45 @@ export const DisplayProjects: React.FC = () => {
                 }
             </Box>
 
-            <Grid container spacing={4} columns={{ xs: 4, md: 8, lg: 10, xl: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center"}} >
-                <Grid xs={ 4}>
-                    <Card sx={{ width: "100%", margin: "auto", padding: "10px" }} elevation={12}>
-                        <Paper sx={{ width: "100%" }}>
-                            <CardMedia
-                                component="img"
-                                image="https://github.com/Josuel-Junior/projects-images/blob/master/image%20Ponto-Hardware/Layout-web.PNG?raw=true"
-                                title="green iguana"
+            <Grid container spacing={4} columns={{ xs: 4, md: 8, lg: 10, xl: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
 
-                            />
-                        </Paper>
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Site Institucional
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary" sx={{
-                                fontSize: {
-                                    xs: 11
-                                }
-                            }}>
-                                Tecnologias: HTML,CSS,BOOTSTREP,JAVASCRIPT
-                            </Typography>
-                        </CardContent>
-                        <ListItemIcon sx={{ display: "flex", justifyContent: "end" }}>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <OutboundIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <GitHubIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                        </ListItemIcon>
-                    </Card>
-                </Grid>
-                <Grid xs={ 4}>
-                    <Card sx={{ width: "100%", margin: "auto", padding: "10px" }} elevation={12}>
-                        <Paper sx={{ width: "100%" }}>
-                            <CardMedia
-                                component="img"
-                                image="https://github.com/Josuel-Junior/projects-images/blob/master/image%20Ponto-Hardware/Layout-web.PNG?raw=true"
-                                title="green iguana"
+                {data.allProjects?.map((project: IDataprojects, id: number) => {
+                    return (
 
-                            />
-                        </Paper>
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Site Institucional
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary" sx={{
-                                fontSize: {
-                                    xs: 11
-                                }
-                            }}>
-                                Tecnologias: HTML,CSS,BOOTSTREP,JAVASCRIPT
-                            </Typography>
-                        </CardContent>
-                        <ListItemIcon sx={{ display: "flex", justifyContent: "end" }}>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <OutboundIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <GitHubIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                        </ListItemIcon>
-                    </Card>
-                </Grid>
-                <Grid xs={ 4}>
-                    <Card sx={{ width: "100%", margin: "auto", padding: "10px" }} elevation={12}>
-                        <Paper sx={{ width: "100%" }}>
-                            <CardMedia
-                                component="img"
-                                image="https://github.com/Josuel-Junior/projects-images/blob/master/image%20Ponto-Hardware/Layout-web.PNG?raw=true"
-                                title="green iguana"
+                        <Grid xs={4} key={id}>
+                            <Card sx={{ width: "100%", margin: "auto", padding: "10px" }} elevation={12}>
+                                <Paper sx={{ width: "100%" }}>
+                                    <CardMedia
+                                        component="img"
+                                        image={project.project.url}
+                                        title="green iguana"
 
-                            />
-                        </Paper>
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Site Institucional
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary" sx={{
-                                fontSize: {
-                                    xs: 11
-                                }
-                            }}>
-                                Tecnologias: HTML,CSS,BOOTSTREP,JAVASCRIPT
-                            </Typography>
-                        </CardContent>
-                        <ListItemIcon sx={{ display: "flex", justifyContent: "end" }}>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <OutboundIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <GitHubIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                        </ListItemIcon>
-                    </Card>
-                </Grid>
-                <Grid xs={ 4}>
-                    <Card sx={{ width: "100%", margin: "auto", padding: "10px" }} elevation={12}>
-                        <Paper sx={{ width: "100%" }}>
-                            <CardMedia
-                                component="img"
-                                image="https://github.com/Josuel-Junior/projects-images/blob/master/image%20Ponto-Hardware/Layout-web.PNG?raw=true"
-                                title="green iguana"
-
-                            />
-                        </Paper>
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Site Institucional
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary" sx={{
-                                fontSize: {
-                                    xs: 11
-                                }
-                            }}>
-                                Tecnologias: HTML,CSS,BOOTSTREP,JAVASCRIPT
-                            </Typography>
-                        </CardContent>
-                        <ListItemIcon sx={{ display: "flex", justifyContent: "end" }}>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <OutboundIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <GitHubIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                        </ListItemIcon>
-                    </Card>
-                </Grid>
-                <Grid xs={ 4}>
-                    <Card sx={{ width: "100%", margin: "auto", padding: "10px" }} elevation={12}>
-                        <Paper sx={{ width: "100%" }}>
-                            <CardMedia
-                                component="img"
-                                image="https://github.com/Josuel-Junior/projects-images/blob/master/image%20Ponto-Hardware/Layout-web.PNG?raw=true"
-                                title="green iguana"
-
-                            />
-                        </Paper>
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Site Institucional
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary" sx={{
-                                fontSize: {
-                                    xs: 11
-                                }
-                            }}>
-                                Tecnologias: HTML,CSS,BOOTSTREP,JAVASCRIPT
-                            </Typography>
-                        </CardContent>
-                        <ListItemIcon sx={{ display: "flex", justifyContent: "end" }}>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <OutboundIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <GitHubIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                        </ListItemIcon>
-                    </Card>
-                </Grid>
-                <Grid xs={ 4}>
-                    <Card sx={{ width: "100%", margin: "auto", padding: "10px" }} elevation={12}>
-                        <Paper sx={{ width: "100%" }}>
-                            <CardMedia
-                                component="img"
-                                image="https://github.com/Josuel-Junior/projects-images/blob/master/image%20Ponto-Hardware/Layout-web.PNG?raw=true"
-                                title="green iguana"
-
-                            />
-                        </Paper>
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Site Institucional
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary" sx={{
-                                fontSize: {
-                                    xs: 11
-                                }
-                            }}>
-                                Tecnologias: HTML,CSS,BOOTSTREP,JAVASCRIPT
-                            </Typography>
-                        </CardContent>
-                        <ListItemIcon sx={{ display: "flex", justifyContent: "end" }}>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <OutboundIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                            <IconButton aria-label="share" href="https://josuel-junior.github.io/site-ponto-hardware/">
-                                <GitHubIcon color={theme.palette.mode === "dark" ? "secondary" : "primary" } fontSize="large" />
-                            </IconButton>
-                        </ListItemIcon>
-                    </Card>
-                </Grid>
-            
-               
-                
+                                    />
+                                </Paper>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {project.title}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" sx={{
+                                        fontSize: {
+                                            xs: 11
+                                        }
+                                    }}>
+                                        {project.subtitle}
+                                    </Typography>
+                                </CardContent>
+                                <ListItemIcon sx={{ display: "flex", justifyContent: "end" }}>
+                                    <IconButton aria-label="share" href={project.showproject} target="_blank">
+                                        <OutboundIcon color={theme.palette.mode === "dark" ? "secondary" : "primary"} fontSize="large" />
+                                    </IconButton>
+                                    <IconButton aria-label="share" href={`${project.github}`} target="_blank">
+                                        <GitHubIcon color={theme.palette.mode === "dark" ? "secondary" : "primary"} fontSize="large" />
+                                    </IconButton>
+                                </ListItemIcon>
+                            </Card>
+                        </Grid>
+                    )
+                })}
             </Grid>
         </Box>
     )
