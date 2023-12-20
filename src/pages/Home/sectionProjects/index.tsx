@@ -6,10 +6,10 @@ import { DisplayProjects } from "../../../shared/components/displayProjects/Disp
 
 export const SectionProjects: React.FC = () => {
     return (
-        <Box sx={{
+        <Box sx={{width:"100vw"
         }} component="section">
 
-            <Container maxWidth="lg" component="div" sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+            <Container maxWidth="lg" component="div" sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                 <Box >
                     <Typography component="h2" variant="h3" sx={{
                         fontWeight: 'bold', marginTop: "15px", fontSize: {
@@ -23,21 +23,14 @@ export const SectionProjects: React.FC = () => {
                     </Typography>
                 </Box>
                 <Box>
-                    <Typography sx={{ marginTop: "15px" }} paragraph>
+                    <Typography sx={{ marginTop: "15px", textAlign:"center" }} paragraph>
                         Explore nosso portfólio de projetos e conheça algumas de nossas soluções.
                     </Typography>
                 </Box>
 
                 <DisplayProjects/>
 
-               
-                {/* <Box>
-                    <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
-                        <Grid xs={4}>
-                            
-                        </Grid>
-                    </Grid>
-                </Box> */}
+        
             </Container>
 
         </Box>
