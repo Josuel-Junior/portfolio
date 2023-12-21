@@ -28,7 +28,7 @@ export const SectionProjects: React.FC = () => {
                     </Typography>
                 </Box>
 
-                <DisplayProjects/>
+                <DisplayProjects display={6}/>
 
         
             </Container>

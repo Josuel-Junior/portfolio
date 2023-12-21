@@ -1,12 +1,9 @@
 import { useQuery } from "graphql-hooks";
 import { queryProjects } from "../../services/lib/dato-cms";
 
-import { Box, IconButton, ListItemIcon, Paper, Typography, useMediaQuery } from "@mui/material"
+import { Box, IconButton, ListItemIcon, Paper, Typography } from "@mui/material"
 
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 
-import { borders } from '@mui/system';
 
 
 import OutboundIcon from '@mui/icons-material/Outbound';
@@ -14,17 +11,17 @@ import OutboundIcon from '@mui/icons-material/Outbound';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
+
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
 
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTheme } from "@mui/material"
+
+import { SkeletonCoponent } from "../skeleton/Skeleton";
+import { FilterButton } from "../filterButton/FilterButton";
 
 
 const arrayButton = ["Todos", "Clientes", "Projetos pessoais"]
@@ -33,11 +30,12 @@ interface IDataprojects {
     github: string;
     project: {
         url: string;
-        responsiveImage:{
-            alt:any
-            base64:string
-            bgColor:any
-            title:any
+        responsiveImage: {
+            alt: any
+            base64: string
+            bgColor: any
+            title: any
+            webpSrcSet: string
         }
     };
     projecttype: string
@@ -46,73 +44,37 @@ interface IDataprojects {
     title: string;
 }
 
+interface numberOfDisplay {
+    display: number;
+}
 
-export const DisplayProjects: React.FC = () => {
+
+export const DisplayProjects: React.FC<numberOfDisplay> = ({ display }) => {
 
     const { loading, error, data } = useQuery(queryProjects)
 
     const theme = useTheme()
 
-    const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
-
-    const [buttonActive, setButtonActive] = useState<number>(0)
-
     const [filterType, setFilter] = useState('');
-
-    function handleButtonActive(buttonActive: number, button: string) {
-
-        if (button.toLocaleLowerCase() === "todos") {
-            setFilter('')
-
-        } else {
-            setFilter(button)
-        }
-
-        setButtonActive(buttonActive)
-    }
 
 
     if (loading) {
         return (
-            <Box>
-
-                <Typography>
-                    Carregando
-
-                </Typography>
-            </Box >
+            <SkeletonCoponent numberOfSkeleton={6} widthSkeleton={300} heightSkeleton={300} />
         )
     }
 
 
-
     const filteredData = data.allProjects?.filter((item: IDataprojects) => item.projecttype.toLocaleLowerCase().includes(filterType.toLocaleLowerCase()));
 
-    console.log(data)
-
-    // const filter = data.allProjects.filter((ele:IDataprojects) => ele.title.includes("Site Institucional "))
-
     return (
-        <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "center" }}>
 
+        <Box maxWidth="lg" component="div" sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+            <FilterButton setFilter={setFilter} />
 
-            <Box aria-label="primary button group" sx={{ display: "flex", justifyContent: "center", flexDirection: isMatch ? "column" : "flex", alignItems: "center", gap: "10px" }}>
-                {
-                    arrayButton.map((button: string, index) => {
-                        return (
-                            <Typography>
-                                {buttonActive === index ?
-                                    <Button variant="contained" onClick={() => handleButtonActive(index, button)}>{button}</Button>
-                                    : <Button variant="outlined" onClick={() => handleButtonActive(index, button)}>{button}</Button>}
-                            </Typography>
-                        )
-                    })
-                }
-            </Box>
+            <Grid container spacing={4} columns={{ xs: 4, md: 8, lg: 10, xl: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center", minHeight: "100vh" }} >
 
-            <Grid container spacing={4} columns={{ xs: 4, md: 8, lg: 10, xl: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
-
-                {filteredData?.map((project: IDataprojects, id: number) => {
+                {filteredData?.slice(0, display).map((project: IDataprojects, id: number) => {
                     return (
 
                         <Grid xs={4} key={id}>
@@ -120,7 +82,7 @@ export const DisplayProjects: React.FC = () => {
                                 <Paper sx={{ width: "100%" }}>
                                     <CardMedia
                                         component="img"
-                                        image={project.project.responsiveImage.base64}
+                                        image={project.project.url}
                                         title={project.title}
 
                                     />

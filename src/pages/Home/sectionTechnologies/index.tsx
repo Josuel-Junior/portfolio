@@ -3,8 +3,11 @@ import React from "react";
 import { useQuery } from "graphql-hooks";
 import { useTheme } from "@mui/material"
 import { queryTechnologies } from '../../../shared/services/lib/dato-cms';
-import { Card, CardContent, CardMedia, Typography, Box, Container, Skeleton } from '@mui/material';
-import { arraySkeleton } from "../../../shared/utils/fromArray";
+import { Card, CardContent, CardMedia, Typography, Box, Container } from '@mui/material';
+import { SkeletonCoponent } from "../../../shared/components/skeleton/Skeleton";
+
+import {IDataTechnologies} from "../../../shared/interfaces/IDataTecnologies"
+
 
 export const SectionTechnologies: React.FC = () => {
 
@@ -12,27 +15,16 @@ export const SectionTechnologies: React.FC = () => {
     const { loading, error, data } = useQuery(queryTechnologies)
 
     if (loading) {
-        const skeletonNumbers = arraySkeleton(9)
         return (
             <Box sx={{
                 background: theme.palette.mode === "dark" ? "#161724" : "#296fcd"
             }} component="section">
-                <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-                    <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
-                        {skeletonNumbers.map((item: number, index: number) => {
-                            return (
-                                <Grid xs={4} key={index}>
-                                    <Skeleton variant="rectangular" width={360} height={110} />
-                                </Grid>
-                            )
-                        })}
-                    </Grid>
-                </Container>
+                <SkeletonCoponent numberOfSkeleton={9} widthSkeleton={360} heightSkeleton={110} />
             </Box>
         )
     }
 
-    console.log(data)
+    console.log(loading)
     if (error) {
         return (
             <Box sx={{ display: "flex", justifyContent: "center", height: "100vh", alignItems: "center", justifyItems: "center", background: theme.palette.mode === "dark" ? "#161724" : "#296fcd" }}>
@@ -68,11 +60,7 @@ export const SectionTechnologies: React.FC = () => {
                 <Box>
                     <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
 
-                        {data.allServiceIcons?.map((serviceIcon: {
-                            logo: {
-                                url: string;
-                            }; name: string
-                        }, id: React.Key) => {
+                        {data.allServiceIcons?.map((serviceIcon:IDataTechnologies, id: React.Key) => {
                             return (
                                 <Grid xs={4} key={id}>
 

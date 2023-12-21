@@ -1,7 +1,7 @@
 import { Box, Container, Typography, Card, CardMedia, CardContent } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 
-import { ServiceInfo } from "../../../shared/interfaces/serviceInfo"
+import { ServiceInfo } from "../../../shared/interfaces/index"
 
 import Lottie from "lottie-react"
 
