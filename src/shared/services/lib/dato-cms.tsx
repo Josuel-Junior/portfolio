@@ -27,11 +27,18 @@ export const queryProjects = `
   allProjects {
     project {
       url
+      responsiveImage(sizes: "960, 688") {
+        alt
+        base64
+        bgColor
+        title
+      }
     }
     title
     subtitle
     showproject
     github
+    projecttype
   }
 }
 `

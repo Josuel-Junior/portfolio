@@ -33,7 +33,14 @@ interface IDataprojects {
     github: string;
     project: {
         url: string;
+        responsiveImage:{
+            alt:any
+            base64:string
+            bgColor:any
+            title:any
+        }
     };
+    projecttype: string
     showproject: string
     subtitle: string;
     title: string;
@@ -50,7 +57,17 @@ export const DisplayProjects: React.FC = () => {
 
     const [buttonActive, setButtonActive] = useState<number>(0)
 
-    function handleButtonActive(buttonActive: number) {
+    const [filterType, setFilter] = useState('');
+
+    function handleButtonActive(buttonActive: number, button: string) {
+
+        if (button.toLocaleLowerCase() === "todos") {
+            setFilter('')
+
+        } else {
+            setFilter(button)
+        }
+
         setButtonActive(buttonActive)
     }
 
@@ -66,7 +83,15 @@ export const DisplayProjects: React.FC = () => {
             </Box >
         )
     }
-    console.log(data.allProjects[0].github)
+
+
+
+    const filteredData = data.allProjects?.filter((item: IDataprojects) => item.projecttype.toLocaleLowerCase().includes(filterType.toLocaleLowerCase()));
+
+    console.log(data)
+
+    // const filter = data.allProjects.filter((ele:IDataprojects) => ele.title.includes("Site Institucional "))
+
     return (
         <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "center" }}>
 
@@ -77,8 +102,8 @@ export const DisplayProjects: React.FC = () => {
                         return (
                             <Typography>
                                 {buttonActive === index ?
-                                    <Button variant="contained" onClick={() => handleButtonActive(index)}>{button}</Button>
-                                    : <Button variant="outlined" onClick={() => handleButtonActive(index)}>{button}</Button>}
+                                    <Button variant="contained" onClick={() => handleButtonActive(index, button)}>{button}</Button>
+                                    : <Button variant="outlined" onClick={() => handleButtonActive(index, button)}>{button}</Button>}
                             </Typography>
                         )
                     })
@@ -87,16 +112,16 @@ export const DisplayProjects: React.FC = () => {
 
             <Grid container spacing={4} columns={{ xs: 4, md: 8, lg: 10, xl: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
 
-                {data.allProjects?.map((project: IDataprojects, id: number) => {
+                {filteredData?.map((project: IDataprojects, id: number) => {
                     return (
 
                         <Grid xs={4} key={id}>
-                            <Card sx={{ width: "100%", margin: "auto", padding: "10px" }} elevation={12}>
+                            <Card sx={{ margin: "auto", padding: "10px" }} elevation={12}>
                                 <Paper sx={{ width: "100%" }}>
                                     <CardMedia
                                         component="img"
-                                        image={project.project.url}
-                                        title="green iguana"
+                                        image={project.project.responsiveImage.base64}
+                                        title={project.title}
 
                                     />
                                 </Paper>
