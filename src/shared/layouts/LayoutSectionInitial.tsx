@@ -1,6 +1,7 @@
 import { Box, Typography, useMediaQuery } from "@mui/material"
 import Grid from '@mui/material/Unstable_Grid2'
 
+import { Reveal } from "react-awesome-reveal";
 
 import Typewriter from 'typewriter-effect';
 
@@ -46,7 +47,10 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, i
                             },
                             fontWeight: 'bold'
                         }}>
-                            {title}
+                            <Reveal>
+
+                                {title}
+                            </Reveal>
 
                         </Typography>
                         <Typography component="h2" variant="h2" sx={{
@@ -58,6 +62,7 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, i
                             },
                             fontWeight: 'bold',
                             marginY: "20px"
+
                         }}>
                             Somos especialistas em: <Typewriter options={{ autoStart: true, loop: true, strings: ['Desenvolvimento Web', 'Otimização de SEO', 'UX / UI'] }} onInit={(typewriter) => {
                                 typewriter
@@ -82,7 +87,10 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, i
                                 ,
                                 fontWeight: 'bold'
                             }}>
-                                {title}
+                                <Reveal>
+
+                                    {title}
+                                </Reveal>
                             </Typography>
                             <Typography component="h2" variant="h2" sx={{
                                 fontSize: {

@@ -7,9 +7,14 @@ import { Card, CardContent, CardMedia, Typography, Box, Container } from '@mui/m
 import { SkeletonCoponent } from "../../../shared/components/skeleton/Skeleton";
 
 import { IDataTechnologies } from "../../../shared/interfaces/IDataTecnologies"
+import { useNavigate } from "react-router-dom";
+
+import { Fade, Bounce, Reveal } from "react-awesome-reveal";
 
 
 export const SectionTechnologies: React.FC = () => {
+
+    const navigate = useNavigate()
 
     const theme = useTheme()
     const { loading, error, data } = useQuery(queryTechnologies)
@@ -53,7 +58,7 @@ export const SectionTechnologies: React.FC = () => {
                         Conheça as tecnologias que usamos para criar experiências digitais inovadoras
                     </Typography>
                     <Typography paragraph sx={{ marginTop: "15px" }} color={"secondary"}>
-                        Das bases sólidas de HTML, CSS e JavaScript aos frameworks dinâmicos como React, nosso arsenal tecnológico foca na construção de interfaces envolventes. O TypeScript assegura a robustez do código, enquanto o SASS/SCSS organiza a estilização com elegância. <Button color="secondary" size="large">Ver todas</Button>
+                        Das bases sólidas de HTML, CSS e JavaScript aos frameworks dinâmicos como React, nosso arsenal tecnológico foca na construção de interfaces envolventes. O TypeScript assegura a robustez do código, enquanto o SASS/SCSS organiza a estilização com elegância. <Button color="secondary" size="large" onClick={() => navigate("/technology")}>Ver todas</Button>
                     </Typography>
 
                 </Box>
@@ -61,28 +66,34 @@ export const SectionTechnologies: React.FC = () => {
                     <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
 
                         {data.allServiceIcons?.map((serviceIcon: IDataTechnologies, id: React.Key) => {
+
+                            const idNumber = Number(id)
+
                             return (
                                 <Grid xs={4} key={id}>
+                                    <Fade direction={idNumber % 2 === 0 ? "left" : "right"} triggerOnce={true}>
+                                        <Card sx={{ display: "flex" }}>
+                                            <Box sx={{ margin: "auto" }}>
+                                                <CardContent >
+                                                    <Typography component="div" variant="h5">
+                                                        {serviceIcon.name}
+                                                    </Typography>
 
-                                    <Card sx={{ display: "flex" }}>
-                                        <Box sx={{ margin: "auto" }}>
-                                            <CardContent >
-                                                <Typography component="div" variant="h5">
-                                                    {serviceIcon.name}
-                                                </Typography>
-
-                                            </CardContent>
-                                        </Box>
-                                        <Box sx={{ width: "100px", padding: "10px" }}>
-                                            <CardMedia
-                                                component="img"
-                                                image={`${serviceIcon.logo.url}`}
-                                                src={`${serviceIcon.logo.url}`}
-                                                alt={`Logo da tecnologia ${serviceIcon.name}`}
-                                            />
-                                        </Box>
-                                    </Card>
+                                                </CardContent>
+                                            </Box>
+                                            <Box sx={{ width: "100px", padding: "10px" }}>
+                                                <CardMedia
+                                                    component="img"
+                                                    image={`${serviceIcon.logo.url}`}
+                                                    src={`${serviceIcon.logo.url}`}
+                                                    alt={`Logo da tecnologia ${serviceIcon.name}`}
+                                                />
+                                            </Box>
+                                        </Card>
+                                    </Fade>
                                 </Grid>
+
+
                             )
                         }
                         )}
