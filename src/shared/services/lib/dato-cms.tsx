@@ -27,20 +27,13 @@ export const queryProjects = `
   allProjects {
     project {
       url
-      responsiveImage(sizes: "960px, 688px") {
-        alt
-        base64
-        bgColor
-        title
-        sizes
-        webpSrcSet
-      }
     }
     title
-    subtitle
     showproject
     github
     projecttype
+    technologies
+    description
   }
 }
 `

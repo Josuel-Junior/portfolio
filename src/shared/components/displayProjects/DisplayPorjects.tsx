@@ -30,18 +30,12 @@ interface IDataprojects {
     github: string;
     project: {
         url: string;
-        responsiveImage: {
-            alt: any
-            base64: string
-            bgColor: any
-            title: any
-            webpSrcSet: string
-        }
     };
     projecttype: string
     showproject: string
-    subtitle: string;
+    technologies: string;
     title: string;
+    description: string
 }
 
 interface numberOfDisplay {
@@ -93,10 +87,19 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ display }) => {
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary" sx={{
                                         fontSize: {
-                                            xs: 11
+                                            xs: 12
                                         }
                                     }}>
-                                        {project.subtitle}
+                                        {project.description}
+
+                                    </Typography>
+                                    <Typography variant="body1" color="text.secondary" sx={{
+                                        fontSize: {
+                                            xs: 12
+                                        },
+                                        marginY: "5px"
+                                    }}>
+                                        Tecnologias usadas: {project.technologies}
                                     </Typography>
                                 </CardContent>
                                 <ListItemIcon sx={{ display: "flex", justifyContent: "end" }}>

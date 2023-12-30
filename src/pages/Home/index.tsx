@@ -6,6 +6,8 @@ import { SectionServices } from './sectionServices'
 import { SectionTechnologies } from './sectionTechnologies'
 import { SectionProjects } from './sectionProjects'
 import { serviceInformation } from '../../shared/constants/serviceInformation'
+import { useEffect } from 'react'
+import { UseIndicatorNavBar } from '../../shared/contexts'
 
 
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
@@ -17,8 +19,16 @@ const backgroundHome = require("../../shared/assets/images/backgroundPageHome.we
 
 export const Home: React.FC = (technologies) => {
 
+  const { setIndicatorCurrent, indicatorCurrent } = UseIndicatorNavBar()
+
+  useEffect(() => {
+    setIndicatorCurrent(0)
+  }, [])
+
   return (
     <>
+
+
       <Box component="main">
         <LayoutSectionInitial
           title="Bem-vindo à JFC Tecnologia"
@@ -29,11 +39,11 @@ export const Home: React.FC = (technologies) => {
         />
       </Box>
 
-      <SectionServices serviceInformation={serviceInformation}/>
+      <SectionServices serviceInformation={serviceInformation} />
 
-      <SectionTechnologies/>
+      <SectionTechnologies />
 
-      <SectionProjects/>
+      <SectionProjects />
 
     </>
 

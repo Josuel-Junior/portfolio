@@ -12,7 +12,7 @@ interface IFilterButton{
 
 export const FilterButton: React.FC<IFilterButton> = ({setFilter}) => {
 
-    const arrayButton = ["Todos", "Clientes", "Projetos pessoais"]
+    const arrayButton = ["Recentes", "Projetos pessoais", "Clientes"]
 
 
     const theme = useTheme()
@@ -26,7 +26,7 @@ export const FilterButton: React.FC<IFilterButton> = ({setFilter}) => {
 
     function handleButtonActive(buttonActive: number, button: string) {
 
-        if (button.toLocaleLowerCase() === "todos") {
+        if (button.toLocaleLowerCase() === "recentes") {
             setFilter('')
 
         } else {
@@ -43,8 +43,8 @@ export const FilterButton: React.FC<IFilterButton> = ({setFilter}) => {
                     return (
                         <Typography key={button}>
                             {buttonActive === index ?
-                                <Button variant="contained" onClick={() => handleButtonActive(index, button)}>{button}</Button>
-                                : <Button variant="outlined" onClick={() => handleButtonActive(index, button)}>{button}</Button>}
+                                <Button style={{width:"190px"}} variant="contained" onClick={() => handleButtonActive(index, button)}>{button}</Button>
+                                : <Button style={{width:"190px"}} variant="outlined" onClick={() => handleButtonActive(index, button)}>{button}</Button>}
                         </Typography>
                     )
                 })

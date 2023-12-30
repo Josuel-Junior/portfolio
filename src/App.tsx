@@ -5,6 +5,7 @@ import { IndicatorNavBarContext } from "./shared/contexts/IndicatorNavBarContext
 import { ScopedCssBaseline } from "@mui/material";
 import { client } from "./shared/services/lib/dato-cms";
 import { ClientContext } from 'graphql-hooks'
+import { Footer } from "./shared/components/footer/Footer";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <NavBar>
             </NavBar>
             <Outlet />
+            <Footer/>
           </IndicatorNavBarContext>
         </AppThemeProvider>
       </ScopedCssBaseline>

@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Container, Typography } from "@mui/material"
+import { Box, Button, Card, CardContent, CardMedia, Container, Typography } from "@mui/material"
 
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import { DisplayProjects } from "../../../shared/components/displayProjects/DisplayPorjects";
@@ -24,7 +24,7 @@ export const SectionProjects: React.FC = () => {
                 </Box>
                 <Box>
                     <Typography sx={{ marginTop: "15px", textAlign:"center" }} paragraph>
-                        Explore nosso portfólio de projetos e conheça algumas de nossas soluções.
+                        Explore nosso portfólio de projetos e conheça algumas de nossas soluções. <Button variant="text">Ver todos</Button>
                     </Typography>
                 </Box>
 
