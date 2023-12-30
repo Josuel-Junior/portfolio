@@ -1,7 +1,7 @@
 import { useQuery } from "graphql-hooks";
 import { queryProjects } from "../../services/lib/dato-cms";
 
-import { Box, IconButton, ListItemIcon, Paper, Typography, useTheme } from "@mui/material"
+import { Box, IconButton, ListItemIcon, Pagination, Paper, Stack, Typography, useTheme } from "@mui/material"
 
 
 import OutboundIcon from '@mui/icons-material/Outbound';
@@ -45,14 +45,38 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ display }) => {
     const [filterType, setFilter] = useState('');
 
 
+    const itemsPerPage = 6;
+    const [currentPage, setCurrentPage] = useState(1);
+
+    
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    console.log(startIndex)
+    console.log(endIndex)
+
+ 
+      const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+        console.log(value)
+        setCurrentPage(value);
+      };
+
     if (loading) {
         return (
             <SkeletonCoponent numberOfSkeleton={6} widthSkeleton={300} heightSkeleton={300} />
         )
     }
 
-
+    
     const filteredData = data.allProjects?.filter((item: IDataprojects) => item.projecttype.toLocaleLowerCase().includes(filterType.toLocaleLowerCase()));
+    
+    const currentData = filteredData.slice(startIndex, endIndex);
+    console.log(currentData)
+
+
+
+
+
 
     return (
 
@@ -61,7 +85,7 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ display }) => {
 
             <Grid container spacing={4} columns={{ xs: 4, md: 8, lg: 10, xl: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center", minHeight: "100vh" }} >
 
-                {filteredData?.slice(0, display).map((project: IDataprojects, id: number) => {
+                {currentData?.map((project: IDataprojects, id: number) => {
                     return (
 
                         <Grid xs={4} key={id}>
@@ -110,6 +134,13 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ display }) => {
                     )
                 })}
             </Grid>
+            <Stack spacing={2}>
+                <Pagination count={Math.ceil(filteredData.length / itemsPerPage)}
+                page={currentPage} onChange={handleChange}
+                />
+            </Stack>
         </Box>
     )
+
+
 }

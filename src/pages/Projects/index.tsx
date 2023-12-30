@@ -1,4 +1,4 @@
-import { Box, Button } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { UseIndicatorNavBar } from '../../shared/contexts'
 import { useEffect } from 'react'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
@@ -21,7 +21,12 @@ export const Projects: React.FC = () => {
         subTitle='Nesta seção, você pode conhecer algumas das nossas soluções.'
         button={<Button variant="contained" size="large">Projetos</Button>
         } />
-      <Box sx={{ width: "100vw", display:"flex", justifyContent:"center", alignItems:"center", marginTop:"20px"}}>
+      <Box>
+        <Typography>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dignissimos itaque eum, ea ex delectus minus voluptate omnis et sint, dolores velit. Consectetur reprehenderit doloremque veritatis natus sed voluptate officiis!
+        </Typography>
+      </Box>
+      <Box sx={{ width: "100vw", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
 
         <DisplayProjects />
       </Box>
