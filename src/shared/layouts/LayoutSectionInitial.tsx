@@ -5,8 +5,6 @@ import { Reveal } from "react-awesome-reveal";
 
 import Typewriter from 'typewriter-effect';
 
-import Lottie from "lottie-react"
-
 import { useTheme } from "@mui/material"
 import { ReactElement } from "react"
 
@@ -16,9 +14,11 @@ interface ILayoutBase {
     button: ReactElement
     background: string
     icon?: any
+    presentationText?: string
+    textWriteDisplay?: string[]
 }
 
-export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, icon, background, button }) => {
+export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, icon, background, button, textWriteDisplay, presentationText }) => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -45,7 +45,7 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, i
                                 sm: 30,
                                 xs: 25
                             },
-                            fontWeight: 'bold'
+                            fontWeight: 'bold', marginY: "10px"
                         }}>
                             <Reveal>
 
@@ -53,23 +53,29 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, i
                             </Reveal>
 
                         </Typography>
-                        <Typography component="h2" variant="h2" sx={{
-                            fontSize: {
-                                xl: 31,
-                                md: 30,
-                                sm: 30,
-                                xs: 25
-                            },
-                            fontWeight: 'bold',
-                            marginY: "20px"
 
-                        }}>
-                            Somos especialistas em: <Typewriter options={{ autoStart: true, loop: true, strings: ['Desenvolvimento Web', 'Otimização de SEO', 'UX / UI'] }} onInit={(typewriter) => {
-                                typewriter
-                                    .pauseFor(2000).deleteAll().pauseFor(2000).deleteAll().start()
 
-                            }} />
-                        </Typography>
+                        {presentationText && (
+                            <Typography component="h2" variant="h2" sx={{
+                                fontSize: {
+                                    xl: 31,
+                                    md: 30,
+                                    sm: 30,
+                                    xs: 25
+                                },
+                                fontWeight: 'bold',
+                                marginY: "20px"
+
+                            }}>
+
+
+                                {presentationText} <Typewriter options={{ autoStart: true, loop: true, strings: textWriteDisplay }} onInit={(typewriter) => {
+                                    typewriter
+                                        .pauseFor(2000).deleteAll().pauseFor(2000).deleteAll().start()
+
+                                }} />
+                            </Typography>
+                        )}
                         {button}
                     </Grid>
                 </Grid>
@@ -92,22 +98,27 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, i
                                     {title}
                                 </Reveal>
                             </Typography>
-                            <Typography component="h2" variant="h2" sx={{
-                                fontSize: {
-                                    lg: 38,
-                                    md: 32,
-                                    sm: 30,
-                                    xs: 25
-                                }
-                                ,
-                                fontWeight: 'bold'
-                            }}>
-                                Somos especialistas em: <Typewriter options={{ autoStart: true, loop: true, strings: ['Desenvolvimento Web', 'Otimização de SEO', 'UX / UI'] }} onInit={(typewriter) => {
-                                    typewriter
-                                        .pauseFor(2000).deleteAll().pauseFor(2000).deleteAll().start()
 
-                                }} />
-                            </Typography>
+                            {presentationText && (
+                                <Typography component="h2" variant="h2" sx={{
+                                    fontSize: {
+                                        lg: 38,
+                                        md: 32,
+                                        sm: 30,
+                                        xs: 25
+                                    }
+                                    ,
+                                    fontWeight: 'bold'
+                                }}>
+                                    {presentationText} <Typewriter options={{ autoStart: true, loop: true, strings: textWriteDisplay }} onInit={(typewriter) => {
+                                        typewriter
+                                            .pauseFor(2000).deleteAll().pauseFor(2000).deleteAll().start()
+
+                                    }} />
+                                </Typography>
+                            )
+
+                            }
                             <Typography component="h2" variant="h5" sx={{ py: 4 }}>
                                 {subTitle}
                             </Typography>
@@ -118,9 +129,9 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, i
 
                     </Grid>
                     <Grid xs={4} sx={{ display: "flex", background: "" }}>
-                        <Box sx={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "row" }}>
-                            {/* <Lottie animationData={icon} loop={false} /> */}
-                        </Box>
+                        {/* <Box sx={{ height: "100vh",width:"100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
+                            <Box component="img" src={icon}/>
+                        </Box> */}
                     </Grid>
                 </Grid>
             }

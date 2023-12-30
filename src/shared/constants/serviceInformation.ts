@@ -8,3 +8,5 @@ export const serviceInformation = [
   { title: "Otimização de SEO", subTitle: "Aumente sua presença online e atraia tráfego qualificado através de técnicas avançadas de SEO.", icon: iconSeo },
 
 ]
+
+export const textWritePageHome = ['Desenvolvimento Web', 'Otimização de SEO', 'UX / UI']

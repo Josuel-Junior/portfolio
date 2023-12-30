@@ -32,7 +32,7 @@ interface IDataprojects {
 }
 
 interface numberOfDisplay {
-    display: number;
+    display?: number;
 }
 
 
