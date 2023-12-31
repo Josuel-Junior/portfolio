@@ -1,10 +1,8 @@
 import { Box, Container, Typography, Card, CardMedia, CardContent } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
-
 import { ServiceInfo } from "../../../shared/interfaces/index"
-
-import Lottie from "lottie-react"
 import Reveal from 'react-awesome-reveal';
+
 
 
 interface SectionServicesProps {
@@ -37,9 +35,12 @@ export const SectionServices: React.FC<SectionServicesProps> = ({ serviceInforma
                                 <Grid xs={4} key={id} >
                                     <Reveal triggerOnce={true}>
                                         <Card elevation={8}>
-                                            <Box sx={{ padding: "30px", height: "350px" }}>
-                                                <CardMedia sx={{ marginX: "auto", width: "120px", height: "90px" }} >
-                                                    <Lottie animationData={element?.icon} loop={true} alt={`Icon ${element.title}`} />
+                                            <Box sx={{ padding: "30px", height: "330px" }}>
+                                                <CardMedia sx={{ marginX: "auto", width: "120px", height: "80px" }} >
+                                                    <Box component="img"
+                                                        src={`${element?.icon}`}
+                                                        alt={`Icone de ${element?.title}`}
+                                                    />
                                                 </CardMedia >
                                                 <CardContent sx={{ textAlign: "center" }}>
                                                     <Typography gutterBottom component="h3" variant="subtitle1" sx={{ fontWeight: 'bold' }}>

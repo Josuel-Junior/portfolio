@@ -4,6 +4,8 @@ import { useEffect } from 'react'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
 import { DisplayProjects } from '../../shared/components/displayProjects/DisplayPorjects';
 
+import { Link } from 'react-scroll';
+
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 
 export const Projects: React.FC = () => {
@@ -12,14 +14,19 @@ export const Projects: React.FC = () => {
 
   useEffect(() => {
     setIndicatorCurrent(3)
-  })
+  }, [])
+
+
   return (
     <Box sx={{ width: "100vw" }}>
       <LayoutSectionInitial
         background={backgroundHome}
         title='Conheça nossos projetos'
         subTitle='Nesta seção, você pode conhecer algumas das nossas soluções.'
-        button={<Button variant="contained" size="large">Projetos</Button>
+        button={
+          <Link to="projectsPage" smooth={true} duration={500}>
+            <Button variant="contained" size="large">Projetos</Button>
+          </Link>
         } />
       <Container sx={{ textAlign: "center" }}>
         <Typography sx={{
@@ -37,11 +44,10 @@ export const Projects: React.FC = () => {
         </Typography>
 
       </Container>
-      <Box sx={{ width: "100vw", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
 
+      <Container id="projectsPage" sx={{ alignItems: "center", marginTop: "20px" }} >
         <DisplayProjects showPagination={true} />
-      </Box>
-
+      </Container>
     </Box>
   )
 }

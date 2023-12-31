@@ -11,7 +11,7 @@ import { ReactElement } from "react"
 interface ILayoutBase {
     title: string;
     subTitle: string;
-    button: ReactElement;
+    button?: ReactElement;
     background: string;
     presentationText?: string;
     textWriteDisplay?: string[];
@@ -20,9 +20,6 @@ interface ILayoutBase {
 export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, background, button, textWriteDisplay, presentationText }) => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down("md"));
-
-
-
 
     return (
         <Box sx={{
@@ -128,7 +125,7 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, b
 
                     </Grid>
                     <Grid xs={4} sx={{ display: "flex", background: "" }}>
-                        
+
                     </Grid>
                 </Grid>
             }

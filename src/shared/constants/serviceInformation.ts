@@ -1,6 +1,6 @@
-import iconDesign from '../../shared/assets/animation/animationIconServices/iconDesign.json'
-import iconSeo from "../../shared/assets/animation/animationIconServices/iconSeo.json"
-import iconWeb from "../../shared/assets/animation/animationIconServices/iconWeb.json"
+import iconDesign from '../../shared/assets/icons/iconDesign.svg'
+import iconSeo from "../../shared/assets/icons/iconSeo.svg"
+import iconWeb from "../../shared/assets/icons/iconWeb.svg"
 
 export const serviceInformation = [
   { title: "Design", subTitle: "Transmita a essência da sua marca através de designs visuais envolventes e memoráveis.", icon: iconDesign },

@@ -6,6 +6,7 @@ import { ScopedCssBaseline } from "@mui/material";
 import { client } from "./shared/services/lib/dato-cms";
 import { ClientContext } from 'graphql-hooks'
 import { Footer } from "./shared/components/footer/Footer";
+import { ReturnToTop } from "./shared/components/returnToTop/ReturnToTop";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <IndicatorNavBarContext>
             <NavBar>
             </NavBar>
+            <ReturnToTop/>
             <Outlet />
             <Footer/>
           </IndicatorNavBarContext>

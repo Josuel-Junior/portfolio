@@ -5,6 +5,8 @@ import Logo from '../../assets/icons/jfc-logo.svg'
 import LogoDark from '../../assets/icons/jfc-logo-dark.svg'
 import { useState, useRef } from "react"
 
+import { Link } from 'react-router-dom';
+
 import { DrawerComponent } from "../drawerComponent/DrawerComponent";
 import { UseIndicatorNavBar, useAppThemeContext } from "../../contexts";
 import Button from '@mui/material/Button';
@@ -58,7 +60,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
     return (
 
         <AppBar sx={{ background: `${theme.palette.background.paper}`, display: "flex", justifyContent: "center" }}>
-            <Box component="img" src={ theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`} sx={{ width: "50px", position: "absolute", marginLeft: "20px" }} />
+            <Box component="img" src={ theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`} sx={{ width: "50px", position: "absolute", marginLeft: "20px" }} alt="Logo principal do site"/>
             {
                 isMatch ? (
                     <Box sx={{ display: "flex", justifyContent: "end" }}>
@@ -79,10 +81,10 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                                 }
                             }}
                         >
-                            <Tab label="Home" sx={hoverTextNavBar} onClick={() => navigate("/")} />
+                            <Tab label="Home" sx={hoverTextNavBar} component={Link} to="/" />
                             <Tab label="Serviços" sx={hoverTextNavBar} onClick={() => navigate("/services")} />
                             <Tab label="Tecnologias" sx={hoverTextNavBar} onClick={() => navigate("/technology")} />
-                            <Tab label="Projetos" sx={hoverTextNavBar} onClick={() => navigate("/projects")} />
+                            <Tab label="Projetos" sx={hoverTextNavBar} component={Link} to="/projects" />
                             <Tab label="Contato" sx={hoverTextNavBar} onClick={() => navigate("/contact")} />
                         </Tabs>
                         <ButtonGroup ref={anchorRef} disableElevation

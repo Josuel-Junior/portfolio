@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
         <Box sx={{ width: '100vw', background: theme.palette.mode === "dark" ? "#161724" : "#296fcd" }}>
 
             <Container sx={{ textAlign: isMatch ? "center" : "left" }}>
-                <Box component="img" src={`${LogoFooter}`} sx={{ width: "70px" }} />
+                <Box component="img" src={`${LogoFooter}`} sx={{ width: "70px" }} alt="Icone do rodapé do site"/>
             </Container>
 
             <Divider sx={{ borderBottomWidth: '2px', background: "#fff" }} />
