@@ -9,16 +9,15 @@ import { useTheme } from "@mui/material"
 import { ReactElement } from "react"
 
 interface ILayoutBase {
-    title: string
-    subTitle: string
-    button: ReactElement
-    background: string
-    icon?: any
-    presentationText?: string
-    textWriteDisplay?: string[]
+    title: string;
+    subTitle: string;
+    button: ReactElement;
+    background: string;
+    presentationText?: string;
+    textWriteDisplay?: string[];
 }
 
-export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, icon, background, button, textWriteDisplay, presentationText }) => {
+export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, background, button, textWriteDisplay, presentationText }) => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -129,9 +128,7 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, i
 
                     </Grid>
                     <Grid xs={4} sx={{ display: "flex", background: "" }}>
-                        {/* <Box sx={{ height: "100vh",width:"100%", display: "flex", alignItems: "center", justifyContent: "center"}}>
-                            <Box component="img" src={icon}/>
-                        </Box> */}
+                        
                     </Grid>
                 </Grid>
             }

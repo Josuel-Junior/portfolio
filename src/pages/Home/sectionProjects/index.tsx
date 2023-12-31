@@ -31,7 +31,7 @@ export const SectionProjects: React.FC = () => {
                     </Typography>
                 </Box>
 
-                <DisplayProjects display={6}/>
+                <DisplayProjects showPagination={false}/>
 
         
             </Container>

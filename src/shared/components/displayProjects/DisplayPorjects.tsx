@@ -32,11 +32,11 @@ interface IDataprojects {
 }
 
 interface numberOfDisplay {
-    display?: number;
+    showPagination: boolean;
 }
 
 
-export const DisplayProjects: React.FC<numberOfDisplay> = ({ display }) => {
+export const DisplayProjects: React.FC<numberOfDisplay> = ({ showPagination }) => {
 
     const { loading, error, data } = useQuery(queryProjects)
 
@@ -48,18 +48,13 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ display }) => {
     const itemsPerPage = 6;
     const [currentPage, setCurrentPage] = useState(1);
 
-    
+
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
-    console.log(startIndex)
-    console.log(endIndex)
-
- 
-      const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
-        console.log(value)
+    const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
         setCurrentPage(value);
-      };
+    };
 
     if (loading) {
         return (
@@ -67,19 +62,21 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ display }) => {
         )
     }
 
-    
+    if (error) {
+        return (
+            <Box sx={{ display: "flex", justifyContent: "center", height: "100vh", width: "100vw", alignItems: "center", justifyItems: "center" }}>
+                <Typography paragraph>
+                    Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.
+                </Typography>
+            </Box>
+        )
+    }
+
     const filteredData = data.allProjects?.filter((item: IDataprojects) => item.projecttype.toLocaleLowerCase().includes(filterType.toLocaleLowerCase()));
-    
+
     const currentData = filteredData.slice(startIndex, endIndex);
-    console.log(currentData)
-
-
-
-
-
 
     return (
-
         <Box maxWidth="lg" component="div" sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
             <FilterButton setFilter={setFilter} />
 
@@ -134,11 +131,14 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ display }) => {
                     )
                 })}
             </Grid>
-            <Stack spacing={2}>
-                <Pagination count={Math.ceil(filteredData.length / itemsPerPage)}
-                page={currentPage} onChange={handleChange}
-                />
-            </Stack>
+            {showPagination && (
+                <Stack spacing={2} sx={{ marginY: "20px" }}>
+                    <Pagination count={Math.ceil(filteredData.length / itemsPerPage)}
+                        color="primary"
+                        page={currentPage} onChange={handleChange}
+                    />
+                </Stack>
+            )}
         </Box>
     )
 

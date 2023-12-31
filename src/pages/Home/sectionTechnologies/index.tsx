@@ -9,7 +9,7 @@ import { SkeletonCoponent } from "../../../shared/components/skeleton/Skeleton";
 import { IDataTechnologies } from "../../../shared/interfaces/IDataTecnologies"
 import { useNavigate } from "react-router-dom";
 
-import { Fade, Bounce, Reveal } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 
 export const SectionTechnologies: React.FC = () => {
@@ -29,7 +29,6 @@ export const SectionTechnologies: React.FC = () => {
         )
     }
 
-    console.log(loading)
     if (error) {
         return (
             <Box sx={{ display: "flex", justifyContent: "center", height: "100vh", alignItems: "center", justifyItems: "center", background: theme.palette.mode === "dark" ? "#161724" : "#296fcd" }}>

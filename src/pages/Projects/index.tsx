@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Typography, Container } from '@mui/material'
 import { UseIndicatorNavBar } from '../../shared/contexts'
 import { useEffect } from 'react'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
@@ -21,14 +21,25 @@ export const Projects: React.FC = () => {
         subTitle='Nesta seção, você pode conhecer algumas das nossas soluções.'
         button={<Button variant="contained" size="large">Projetos</Button>
         } />
-      <Box>
-        <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dignissimos itaque eum, ea ex delectus minus voluptate omnis et sint, dolores velit. Consectetur reprehenderit doloremque veritatis natus sed voluptate officiis!
+      <Container sx={{ textAlign: "center" }}>
+        <Typography sx={{
+          fontWeight: 'bold', marginTop: "15px", fontSize: {
+            xl: 31,
+            md: 30,
+            sm: 30,
+            xs: 25
+          },
+        }} color={"primary"} component="h2"   >
+          Explore nosso Portfólio.
         </Typography>
-      </Box>
+        <Typography paragraph sx={{ marginTop: "15px" }}>
+          Bem-vindo a JFC Tecnologia! Sou Josuel, um desenvolvedor front-end apaixonado por transformar ideias em experiências visuais envolventes e funcionais.
+        </Typography>
+
+      </Container>
       <Box sx={{ width: "100vw", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
 
-        <DisplayProjects />
+        <DisplayProjects showPagination={true} />
       </Box>
 
     </Box>
