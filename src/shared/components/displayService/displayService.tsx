@@ -1,0 +1,50 @@
+
+import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
+
+import Reveal from 'react-awesome-reveal'
+
+import { ServiceInfo } from '../../interfaces';
+
+interface ISectionServicesProps {
+    serviceInformation: ServiceInfo[];
+}
+
+export const DisplayService: React.FC<ISectionServicesProps> = ({ serviceInformation }) => {
+
+
+    return (
+        <Box>
+            <Grid container spacing={5} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "3px" }} >
+                {serviceInformation.map((element, id) => {
+                    return (
+                        <Grid xs={4} key={id} >
+                            <Reveal triggerOnce={true}>
+                                <Card elevation={8}>
+                                    <Box sx={{ padding: "30px", height: "330px" }}>
+                                        <CardMedia sx={{ mx: "auto", width: "115px", height: "80px" }} >
+                                            <Box component="img"
+                                                src={`${element?.icon}`}
+                                                alt={`Icone de ${element?.title}`}
+                                                sx={{ width: "100%", height: "90px" }}
+                                            />
+                                        </CardMedia >
+                                        <CardContent sx={{ textAlign: "center" }}>
+                                            <Typography gutterBottom component="h3" variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                                                {element?.title}
+                                            </Typography>
+                                            <Typography paragraph>
+                                                {element?.subTitle}
+                                            </Typography>
+                                        </CardContent>
+                                    </Box>
+                                </Card>
+                            </Reveal>
+                        </Grid>
+                    )
+                }
+                )}
+            </Grid>
+        </Box>
+    )
+}

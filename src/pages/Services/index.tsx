@@ -1,17 +1,57 @@
 import { useEffect } from 'react'
 import { UseIndicatorNavBar } from '../../shared/contexts'
+import { Box, Button, Card, CardContent, CardMedia, Container, Typography } from '@mui/material'
+import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
+import { Link } from 'react-scroll'
+
+
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import Reveal from 'react-awesome-reveal'
+import { serviceInformationPageService } from '../../shared/constants/serviceInformation'
+import { DisplayService } from '../../shared/components/displayService/displayService'
+
+const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
+
+
 
 export const Services: React.FC = () => {
 
   const { setIndicatorCurrent, indicatorCurrent } = UseIndicatorNavBar()
 
-  useEffect(()=>{
+  useEffect(() => {
     setIndicatorCurrent(1)
-  },[])
+  }, [])
   return (
-    <div>
-      <h2>Services page</h2>
-      <h2>{indicatorCurrent}</h2>
-    </div>
+    <Box sx={{ width: "100vw" }}>
+      <LayoutSectionInitial
+        background={backgroundHome}
+        title='Transformamos ideias em realidade'
+        subTitle='Explore nossos serviços e solicite um orçamento. Estamos prontos para atendê-lo.'
+        button={
+          <Link to="projectsPage" smooth={true} duration={500}>
+            <Button variant="contained" size="large">Serviços</Button>
+          </Link>
+        } />
+
+      <Container id="projectsPage" sx={{ alignItems: "center", marginTop: "20px" }} >
+        <Box sx={{ textAlign: "center" }}>
+          <Typography sx={{
+            fontWeight: 'bold', marginTop: "15px", fontSize: {
+              xl: 31,
+              md: 30,
+              sm: 30,
+              xs: 25
+            },
+          }} variant='h3' component="h2">
+            Nossos Serviços
+          </Typography>
+          <Typography sx={{ marginTop: "15px" }} paragraph>
+            Com a era digital em constante evolução, oferecemos soluções sob medida para atender às suas necessidades. Descubra como nossos serviços podem impulsionar sua empresa ou seu negócio online.
+          </Typography>
+        </Box>
+
+        <DisplayService serviceInformation={serviceInformationPageService} />
+      </Container>
+    </Box>
   )
 }

@@ -1,15 +1,14 @@
-import { Box, Container, Typography, Card, CardMedia, CardContent } from '@mui/material'
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import { Box, Container, Typography } from '@mui/material'
 import { ServiceInfo } from "../../../shared/interfaces/index"
-import Reveal from 'react-awesome-reveal';
+import { DisplayService } from '../../../shared/components/displayService/displayService';
 
 
 
-interface SectionServicesProps {
-    serviceInformation: ServiceInfo[];
+interface ISectionServicesProps {
+    textServices: ServiceInfo[];
 }
 
-export const SectionServices: React.FC<SectionServicesProps> = ({ serviceInformation }) => {
+export const SectionServices: React.FC<ISectionServicesProps> = ({ textServices }) => {
     return (
         <Box sx={{ width: "100vw" }} component={"section"} >
             <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
@@ -24,41 +23,13 @@ export const SectionServices: React.FC<SectionServicesProps> = ({ serviceInforma
                     }} variant='h3' component="h2">
                         Nossos Serviços
                     </Typography>
-                    <Typography sx={{ marginTop: "15px" }} paragraph>
+                    <Typography sx={{ mt: "15px" }} paragraph>
                         Com a era digital em constante evolução, oferecemos soluções sob medida para atender às suas necessidades. Descubra como nossos serviços podem impulsionar sua empresa ou seu negócio online.
                     </Typography>
                 </Box>
-                <Box>
-                    <Grid container spacing={5} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "3px" }} >
-                        {serviceInformation.map((element, id) => {
-                            return (
-                                <Grid xs={4} key={id} >
-                                    <Reveal triggerOnce={true}>
-                                        <Card elevation={8}>
-                                            <Box sx={{ padding: "30px", height: "330px" }}>
-                                                <CardMedia sx={{ marginX: "auto", width: "115px", height: "80px" }} >
-                                                    <Box component="img"
-                                                        src={`${element?.icon}`}
-                                                        alt={`Icone de ${element?.title}`}
-                                                    />
-                                                </CardMedia >
-                                                <CardContent sx={{ textAlign: "center" }}>
-                                                    <Typography gutterBottom component="h3" variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                                                        {element?.title}
-                                                    </Typography>
-                                                    <Typography paragraph>
-                                                        {element?.subTitle}
-                                                    </Typography>
-                                                </CardContent>
-                                            </Box>
-                                        </Card>
-                                    </Reveal>
-                                </Grid>
-                            )
-                        }
-                        )}
-                    </Grid>
-                </Box>
+
+                <DisplayService serviceInformation={textServices} />
+
             </Container>
         </Box>
     )

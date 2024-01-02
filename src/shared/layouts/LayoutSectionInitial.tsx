@@ -1,4 +1,4 @@
-import { Box, Typography, useMediaQuery } from "@mui/material"
+import { Box, Container, Typography, useMediaQuery } from "@mui/material"
 import Grid from '@mui/material/Unstable_Grid2'
 
 import { Reveal } from "react-awesome-reveal";
@@ -34,49 +34,53 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, b
             {isMatch ? (
                 <Grid container sx={{ display: "flex", alignItems: "center", height: "80vh", justifyContent: "center", background: "" }} >
                     <Grid xs={12} sx={{ textAlign: "center", width: "100vw", background: "" }}>
-                        <Typography component="h1" variant="h1" sx={{
-                            fontSize: {
-                                xl: 31,
-                                md: 30,
-                                sm: 30,
-                                xs: 25
-                            },
-                            fontWeight: 'bold', marginY: "10px"
-                        }}>
-                            <Reveal>
-
-                                {title}
-                            </Reveal>
-
-                        </Typography>
+                        <Container>
 
 
-                        {presentationText && (
-                            <Typography component="h2" variant="h2" sx={{
+                            <Typography component="h1" variant="h1" sx={{
                                 fontSize: {
                                     xl: 31,
                                     md: 30,
                                     sm: 30,
                                     xs: 25
                                 },
-                                fontWeight: 'bold',
-                                marginY: "20px"
-
+                                fontWeight: 'bold', my: "10px"
                             }}>
+                                <Reveal>
 
+                                    {title}
+                                </Reveal>
 
-                                {presentationText} <Typewriter options={{ autoStart: true, loop: true, strings: textWriteDisplay }} onInit={(typewriter) => {
-                                    typewriter
-                                        .pauseFor(2000).deleteAll().pauseFor(2000).deleteAll().start()
-
-                                }} />
                             </Typography>
-                        )}
+
+
+                            {presentationText && (
+                                <Typography component="h2" variant="h2" sx={{
+                                    fontSize: {
+                                        xl: 31,
+                                        md: 30,
+                                        sm: 30,
+                                        xs: 25
+                                    },
+                                    fontWeight: 'bold',
+                                    marginY: "20px"
+
+                                }}>
+
+
+                                    {presentationText} <Typewriter options={{ autoStart: true, loop: true, strings: textWriteDisplay }} onInit={(typewriter) => {
+                                        typewriter
+                                            .pauseFor(2000).deleteAll().pauseFor(2000).deleteAll().start()
+
+                                    }} />
+                                </Typography>
+                            )}
+                        </Container>
                         {button}
                     </Grid>
                 </Grid>
             ) :
-                <Grid container sx={{ background: "", display: "flex", justifyContent: "center" }} >
+                <Grid container sx={{ display: "flex", justifyContent: "center" }} >
                     <Grid xs={4}>
                         <Box sx={{ height: "100vh", display: "flex", alignItems: "start", justifyContent: "center", flexDirection: "column" }}>
                             <Typography component="h1" variant="h1" sx={{

@@ -38,7 +38,7 @@ export const Technology: React.FC = () => {
             sm: 30,
             xs: 25
           },
-        }} color={"secondary"} component="h2"   >
+        }} component="h2" variant='h3'  >
           Tecnologias que utilizamos.
         </Typography>
         <Typography paragraph sx={{ marginTop: "15px" }}>
