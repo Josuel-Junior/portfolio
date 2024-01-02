@@ -10,6 +10,7 @@ import { IDataTechnologies } from "../../../shared/interfaces/IDataTecnologies"
 import { useNavigate } from "react-router-dom";
 
 import { Fade } from "react-awesome-reveal";
+import { DisplayTechnologies } from "../../../shared/components/displayTechnologies/DisplayTechnologies";
 
 
 export const SectionTechnologies: React.FC = () => {
@@ -61,7 +62,9 @@ export const SectionTechnologies: React.FC = () => {
                     </Typography>
 
                 </Box>
-                <Box>
+
+                <DisplayTechnologies showPagination={false}/>
+                {/* <Box>
                     <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
 
                         {data.allServiceIcons?.map((serviceIcon: IDataTechnologies, id: React.Key) => {
@@ -91,13 +94,11 @@ export const SectionTechnologies: React.FC = () => {
                                         </Card>
                                     </Fade>
                                 </Grid>
-
-
                             )
                         }
                         )}
                     </Grid>
-                </Box>
+                </Box> */}
             </Container>
         </Box>
     )

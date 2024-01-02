@@ -34,7 +34,7 @@ export const Home: React.FC = (technologies) => {
           button={
             <Link to="projectsPageHome" smooth={true} duration={500} href=''>
               <Button variant="contained" size="large" >
-                
+
                 Projetos1</Button>
             </Link>
           }
@@ -43,7 +43,7 @@ export const Home: React.FC = (technologies) => {
         />
       </Box>
       <SectionServices serviceInformation={serviceInformation} />
-      
+
       <SectionTechnologies />
 
       <Box id="projectsPageHome">
