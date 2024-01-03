@@ -15,7 +15,7 @@ export const DisplayService: React.FC<ISectionServicesProps> = ({ serviceInforma
 
     return (
         <Box>
-            <Grid container spacing={5} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "3px" }} >
+            <Grid container spacing={5} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ my: "3px" }} >
                 {serviceInformation.map((element, id) => {
                     return (
                         <Grid xs={4} key={id} >

@@ -59,8 +59,8 @@ export const DisplayTechnologies: React.FC<pagination> = ({ showPagination }) =>
     const currentData = data.allServiceIcons.slice(startIndex, endIndex);
 
     return (
-        <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", marginY: "20px", minHeight: "80vh" }}>
-            <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
+        <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center", marginY: "20px"}}>
+            <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ my: "25px", display: "flex", justifyContent: "center" }} >
 
                 {currentData?.map((serviceIcon: IDataTechnologies, id: React.Key) => {
 

@@ -36,7 +36,7 @@ export const Projects: React.FC = () => {
             sm: 30,
             xs: 25
           },
-        }} color={"secondary"} component="h2"   >
+        }} color={"primary"} component="h2"   >
           Explore nosso Portfólio.
         </Typography>
         <Typography paragraph sx={{ marginTop: "15px" }}>

@@ -1,15 +1,19 @@
-import { useEffect } from 'react'
+import React, { Key, useEffect } from 'react'
 import { UseIndicatorNavBar } from '../../shared/contexts'
-import { Box, Button, Card, CardContent, CardMedia, Container, Typography } from '@mui/material'
+import { Box, Button, Card, CardContent, CardMedia, Container, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
 import { Link } from 'react-scroll'
 
 
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
-import Reveal from 'react-awesome-reveal'
+
 import { serviceInformationPageService } from '../../shared/constants/serviceInformation'
 import { DisplayService } from '../../shared/components/displayService/displayService'
+import Grid2 from '@mui/material/Unstable_Grid2/Grid2'
 
+
+import { moreInformationAboutPage } from '../../shared/constants/serviceInformation'
+import { DisplayDetailsCard } from '../../shared/components/displayDetailsCard/DisplayDetailsCard'
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 
 
@@ -17,6 +21,9 @@ const backgroundHome = require("../../shared/assets/images/backgroundPageHome.we
 export const Services: React.FC = () => {
 
   const { setIndicatorCurrent, indicatorCurrent } = UseIndicatorNavBar()
+
+  const theme = useTheme();
+
 
   useEffect(() => {
     setIndicatorCurrent(1)
@@ -46,12 +53,16 @@ export const Services: React.FC = () => {
             Nossos Serviços
           </Typography>
           <Typography sx={{ marginTop: "15px" }} paragraph>
-            Com a era digital em constante evolução, oferecemos soluções sob medida para atender às suas necessidades. Descubra como nossos serviços podem impulsionar sua empresa ou seu negócio online.
+            Nossa equipe especializada oferece soluções sob medida para impulsionar sua presença online.
           </Typography>
         </Box>
 
         <DisplayService serviceInformation={serviceInformationPageService} />
+
       </Container>
+      <Box sx={{ background: theme.palette.mode === "dark" ? "#161724" : "#EAEFF6" }}>
+        <DisplayDetailsCard details={moreInformationAboutPage} />
+      </Box>
     </Box>
   )
 }

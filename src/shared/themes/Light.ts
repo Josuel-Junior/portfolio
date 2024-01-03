@@ -28,6 +28,7 @@ export const LightTheme = createTheme({
         },
         body1: {
             fontSize: 19,
+            color: "#4f4f4f"
         },
         h1: {
             color: "#296fcd"
@@ -38,6 +39,7 @@ export const LightTheme = createTheme({
         h3: {
             color: "#296fcd"
         },
+
     }
 
 });
