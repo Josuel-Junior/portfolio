@@ -19,11 +19,11 @@ export const DisplayDetailsCard: React.FC<IDetailsCard> = ({ details }) => {
 
     return (
 
-        <Container>
+        <Container >
             {details.map((element: IAdvertisingcomponent, id: React.Key) => {
                 const idNumber = Number(id)
                 return (
-                    <Grid container sx={{ minHeight: "50vh" }} >
+                    <Grid container sx={{ minHeight: "50vh" }} key={id}>
                         {idNumber % 2 === 0 && (
                             <Grid lg={6} xs={12} sx={{ display: "flex", justifyContent: "start", alignItems: "center", background: "", padding: "30px" }}>
                                 <Fade direction={idNumber % 2 === 0 ? "left" : "right"} triggerOnce={true}>

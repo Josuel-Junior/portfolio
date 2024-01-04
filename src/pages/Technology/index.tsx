@@ -4,6 +4,8 @@ import { Box, Button, Container, Typography, useTheme } from '@mui/material'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
 import { Link } from 'react-scroll';
 import { DisplayTechnologies } from '../../shared/components/displayTechnologies/DisplayTechnologies';
+import { DisplayDetailsCard } from '../../shared/components/displayDetailsCard/DisplayDetailsCard';
+import { moreInformationAboutPage } from '../../shared/constants/serviceInformation';
 
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 
@@ -46,10 +48,14 @@ export const Technology: React.FC = () => {
         </Typography>
 
       </Container>
+      <Container>
+        <DisplayDetailsCard details={moreInformationAboutPage} />
 
-      <Box>
-        <Container id="technologiesPage" sx={{ alignItems: "center", marginTop: "20px", background: theme.palette.mode === "dark" ? "#161724" : "#296fcd" }} >
+      </Container>
+      <Box sx={{ width: "100vw", background: theme.palette.mode === "dark" ? "#161724" : "" }}>
+        <Container id="technologiesPage" sx={{ alignItems: "center", marginTop: "20px" }} >
           <DisplayTechnologies showPagination={true} />
+
         </Container>
       </Box>
 

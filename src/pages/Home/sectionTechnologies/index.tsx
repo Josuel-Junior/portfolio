@@ -1,15 +1,13 @@
-import Grid from "@mui/material/Unstable_Grid2/Grid2";
+
 import React from "react";
 import { useQuery } from "graphql-hooks";
 import { Button, useTheme } from "@mui/material"
 import { queryTechnologies } from '../../../shared/services/lib/dato-cms';
-import { Card, CardContent, CardMedia, Typography, Box, Container } from '@mui/material';
+import { Typography, Box, Container } from '@mui/material';
 import { SkeletonCoponent } from "../../../shared/components/skeleton/Skeleton";
 
-import { IDataTechnologies } from "../../../shared/interfaces/IDataTecnologies"
 import { useNavigate } from "react-router-dom";
 
-import { Fade } from "react-awesome-reveal";
 import { DisplayTechnologies } from "../../../shared/components/displayTechnologies/DisplayTechnologies";
 
 
@@ -43,10 +41,9 @@ export const SectionTechnologies: React.FC = () => {
         <Box sx={{
             background: theme.palette.mode === "dark" ? "#161724" : "#296fcd"
         }} component="section">
-
             <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
 
-                <Box sx={{ textAlign: "center" }}>
+                <Box sx={{ textAlign: "center", my: "20px" }}>
                     <Typography sx={{
                         fontWeight: 'bold', mt: "15px", fontSize: {
                             xl: 31,
@@ -57,48 +54,14 @@ export const SectionTechnologies: React.FC = () => {
                     }} color={"secondary"} component="h2"   >
                         Conheça as tecnologias que usamos para criar experiências digitais inovadoras
                     </Typography>
-                    <Typography paragraph sx={{ mt: "15px" }} color={"secondary"}>
+                    <Typography paragraph sx={{ mt: "15px", textAlign: "left" }} color={"secondary"}>
                         Das bases sólidas de HTML, CSS e JavaScript aos frameworks dinâmicos como React, nosso arsenal tecnológico foca na construção de interfaces envolventes. O TypeScript assegura a robustez do código, enquanto o SASS/SCSS organiza a estilização com elegância. <Button color="secondary" size="large" onClick={() => navigate("/technology")}>Ver todas</Button>
                     </Typography>
 
                 </Box>
 
-                <DisplayTechnologies showPagination={false}/>
-                {/* <Box>
-                    <Grid container spacing={4} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ marginY: "25px", display: "flex", justifyContent: "center" }} >
+                <DisplayTechnologies showPagination={false} />
 
-                        {data.allServiceIcons?.map((serviceIcon: IDataTechnologies, id: React.Key) => {
-
-                            const idNumber = Number(id)
-
-                            return (
-                                <Grid xs={4} key={id}>
-                                    <Fade direction={idNumber % 2 === 0 ? "left" : "right"} triggerOnce={true}>
-                                        <Card sx={{ display: "flex" }}>
-                                            <Box sx={{ margin: "auto" }}>
-                                                <CardContent >
-                                                    <Typography component="div" variant="h5">
-                                                        {serviceIcon.name}
-                                                    </Typography>
-
-                                                </CardContent>
-                                            </Box>
-                                            <Box sx={{ width: "100px", padding: "10px" }}>
-                                                <CardMedia
-                                                    component="img"
-                                                    image={`${serviceIcon.logo.url}`}
-                                                    src={`${serviceIcon.logo.url}`}
-                                                    alt={`Logo da tecnologia ${serviceIcon.name}`}
-                                                />
-                                            </Box>
-                                        </Card>
-                                    </Fade>
-                                </Grid>
-                            )
-                        }
-                        )}
-                    </Grid>
-                </Box> */}
             </Container>
         </Box>
     )

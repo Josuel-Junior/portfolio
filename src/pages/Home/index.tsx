@@ -34,7 +34,6 @@ export const Home: React.FC = () => {
           button={
             <Link to="projectsPageHome" smooth={true} duration={500} href=''>
               <Button variant="contained" size="large" >
-
                 Projetos</Button>
             </Link>
           }

@@ -15,6 +15,7 @@ import Grid2 from '@mui/material/Unstable_Grid2/Grid2'
 import { moreInformationAboutPage } from '../../shared/constants/serviceInformation'
 import { DisplayDetailsCard } from '../../shared/components/displayDetailsCard/DisplayDetailsCard'
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
+const backgroundHome2 = require("../../shared/assets/images/imageSectionService.png") as string;
 
 
 
@@ -56,11 +57,21 @@ export const Services: React.FC = () => {
             Nossa equipe especializada oferece soluções sob medida para impulsionar sua presença online.
           </Typography>
         </Box>
-
-        <DisplayService serviceInformation={serviceInformationPageService} />
-
       </Container>
-      <Box sx={{ background: theme.palette.mode === "dark" ? "#161724" : "#EAEFF6" }}>
+      <Box sx={{
+        width: '100vw',
+        minHeight: '100vh',
+        backgroundImage: theme.palette.mode === "light" ? `url(${backgroundHome2})` : "",
+        background: theme.palette.mode === "dark" ? "#161724" : "",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+      }} component="div">
+        <Container>
+          <DisplayService serviceInformation={serviceInformationPageService} />
+        </Container>
+      </Box>
+      <Box sx={{ background: theme.palette.mode === "dark" ? "#161724" : "", py: "20px" }}>
         <DisplayDetailsCard details={moreInformationAboutPage} />
       </Box>
     </Box>
