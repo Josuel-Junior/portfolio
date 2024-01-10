@@ -16,11 +16,6 @@ export const SectionServices: React.FC<ISectionServicesProps> = ({ textServices 
     return (
 
         <Box>
-
-
-
-
-
             <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                 <Box sx={{ textAlign: "center" }}>
                     <Typography sx={{
@@ -38,12 +33,12 @@ export const SectionServices: React.FC<ISectionServicesProps> = ({ textServices 
                     </Typography>
 
                 </Box>
-                <DisplayService serviceInformation={textServices} />
+                <DisplayService serviceInformation={textServices} showButton={true} />
 
             </Container>
             <Box sx={{
-                width: '100vw',
-                minHeight: '20vh',
+                width: "100%",
+                height: "15vh",
                 backgroundImage: theme.palette.mode === "light" ? `url(${backgroundHome2})` : "",
                 backgroundPosition: 'bottom',
                 backgroundSize: 'cover',

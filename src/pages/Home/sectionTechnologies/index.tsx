@@ -60,7 +60,7 @@ export const SectionTechnologies: React.FC = () => {
 
                 </Box>
 
-                <DisplayTechnologies showPagination={false} />
+                <DisplayTechnologies showPagination={false} backgroundColorSkeleton="#296fcd"/>
 
             </Container>
         </Box>

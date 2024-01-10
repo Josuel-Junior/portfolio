@@ -15,10 +15,11 @@ import { useState } from "react";
 
 
 interface pagination {
-    showPagination: boolean
+    showPagination: boolean;
+    backgroundColorSkeleton: string;
 }
 
-export const DisplayTechnologies: React.FC<pagination> = ({ showPagination }) => {
+export const DisplayTechnologies: React.FC<pagination> = ({ showPagination,backgroundColorSkeleton }) => {
 
     const { loading, error, data } = useQuery(queryTechnologies)
 
@@ -39,7 +40,7 @@ export const DisplayTechnologies: React.FC<pagination> = ({ showPagination }) =>
     if (loading) {
         return (
             <Box sx={{
-                background: theme.palette.mode === "dark" ? "#161724" : "#296fcd"
+                background: theme.palette.mode === "dark" ? "#161724" : `${backgroundColorSkeleton}`
             }} component="section">
                 <SkeletonCoponent numberOfSkeleton={9} widthSkeleton={360} heightSkeleton={110} />
             </Box>
@@ -69,7 +70,7 @@ export const DisplayTechnologies: React.FC<pagination> = ({ showPagination }) =>
                     return (
                         <Grid xs={4} key={id}>
                             <Fade direction={idNumber % 2 === 0 ? "left" : "right"} triggerOnce={true}>
-                                <Card sx={{ display: "flex" }}>
+                                <Card sx={{ display: "flex" }} elevation={8}>
                                     <Box sx={{ margin: "auto" }}>
                                         <CardContent >
                                             <Typography component="div" variant="h5">
@@ -94,7 +95,6 @@ export const DisplayTechnologies: React.FC<pagination> = ({ showPagination }) =>
                 )}
             </Grid>
             <Box>
-
                 {showPagination && (
                     <Stack spacing={2} sx={{ marginY: "20px" }}>
                         <Pagination count={Math.ceil(data.allServiceIcons.length / itemsPerPage)}

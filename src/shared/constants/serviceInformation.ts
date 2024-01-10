@@ -6,8 +6,10 @@ import iconApi from "../../shared/assets/icons/iconApi.svg"
 import iconTestCode from "../../shared/assets/icons/iconTestCode.svg"
 
 
-const servicesImage2 = require("../../shared/assets/images/servicesImage.png") as string;
-const servicesImage = require("../../shared/assets/images//servicesImage2.jpg") as string;
+const serviceImageMobile = require("../../shared/assets/images/serviceImageMobile.webp") as string;
+const serviceImageSecurity = require("../../shared/assets/images/serviceImageSecurity.webp") as string;
+const technologiesImage = require("../../shared/assets/images/technologiesImage.webp") as string;
+const technologiesImagedesign = require("../../shared/assets/images/technologiesImagedesign.webp") as string;
 
 export const serviceInformationPageHome = [
   { title: "Design", subTitle: "Transmita a essência da sua marca através de designs visuais envolventes e memoráveis.", icon: iconDesign },
@@ -28,26 +30,50 @@ export const serviceInformationPageService = [
 export const moreInformationAboutPage = [
   {
     card1: {
-      publicityImage: servicesImage,
       title: "Manutenção e Atualizações Contínuas",
       description: "Nossos serviços de manutenção mantêm seu site seguro e atualizado, seguindo as últimas tendências da indústria."
     },
     card2: {
-      publicityImage: servicesImage,
+      publicityImage: serviceImageSecurity,
       title: "Consultoria Especializada",
       description: "Nossa equipe de desenvolvedores front-end está pronta para transformar suas ideias em experiências digitais incríveis."
     }
   },
   {
     card1: {
-      publicityImage: servicesImage2,
-      title: "Auditoria de Código",
-      description: "Assegure-se de um código robusto e de alta qualidade. Nossa auditoria de código verifica e otimiza, garantindo que seu site esteja em conformidade e alcance padrões elevados."
+      title: "Desenvolvimento de Aplicativos com React Native e TypeScript",
+      description: "Unimos eficiência e inovação em cada linha de código para criar soluções excepcionais. Seja qual for a sua visão, estamos prontos para transformá-la em realidade digital."
     },
     card2: {
-      publicityImage: servicesImage2,
+      publicityImage: serviceImageMobile,
       title: "Desenvolvimento Front-End Personalizado",
       description: "Crie experiências digitais incríveis com nossa equipe especializada em desenvolvimento front-end. Do design à implementação, personalizamos soluções para atender às suas necessidades únicas."
+    }
+  }
+];
+
+
+export const moreInformationAboutPageTecnologies = [
+  {
+    card1: {
+      title: "TypeScript",
+      description: "Abra caminho para o futuro do desenvolvimento front-end com TypeScript. Além da flexibilidade do JavaScript, oferece a robustez da tipagem estática, proporcionando um código mais seguro e legível."
+    },
+    card2: {
+      publicityImage: technologiesImage,
+      title: "Conectando Experiências Digitais de Forma Eficiente",
+      description: "Desvende o poder das API REST na criação de experiências digitais dinâmicas e eficientes. Com a capacidade de integrar dados de forma coesa, construímos pontes digitais que conectam aplicativos, websites e serviços."
+    }
+  },
+  {
+    card1: {
+      title: "Material-UI",
+      description: "Material-UI não é apenas uma biblioteca; é uma ferramenta que coloca estilo e consistência na ponta dos dedos dos desenvolvedores front-end. Cada botão, cada barra de progresso, é uma experiência de design coesa. Explore conosco como Material-UI simplifica o processo, permitindo que cada elemento da sua aplicação brilhe com uma estética moderna"
+    },
+    card2: {
+      publicityImage: technologiesImagedesign,
+      title: "Sass",
+      description: "Explore o poder do Sass, onde estilos são simplificados e códigos são aprimorados. Com variáveis, aninhamentos e mixins, cada linha de código se torna uma afirmação de eficiência e elegância."
     }
   }
 ];

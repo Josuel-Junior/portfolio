@@ -88,7 +88,7 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ showPagination }) =
                         <Grid xs={4} key={id}>
                             <Reveal triggerOnce={true}>
                                 <Card sx={{ margin: "auto", padding: "10px" }} elevation={12}>
-                                    <Paper sx={{ width: "100%" }}>
+                                    <Paper sx={{ width: "100%" }} elevation={2}>
                                         <CardMedia
                                             component="img"
                                             image={project.project.url}

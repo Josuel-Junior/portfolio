@@ -30,13 +30,13 @@ export const Projects: React.FC = () => {
         } />
       <Container sx={{ textAlign: "center" }}>
         <Typography sx={{
-          fontWeight: 'bold', marginTop: "15px", fontSize: {
+          fontWeight: 'bold', fontSize: {
             xl: 31,
             md: 30,
             sm: 30,
             xs: 25
-          },
-        }} color={"primary"} component="h2"   >
+          },mt:"20px"
+        }} color={"primary"} component="h2">
           Explore nosso Portfólio.
         </Typography>
         <Typography paragraph sx={{ marginTop: "15px" }}>

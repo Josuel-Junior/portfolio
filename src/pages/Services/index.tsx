@@ -49,7 +49,7 @@ export const Services: React.FC = () => {
               md: 30,
               sm: 30,
               xs: 25
-            },
+            }, mt: "20px"
           }} variant='h3' component="h2">
             Nossos Serviços
           </Typography>
@@ -62,13 +62,12 @@ export const Services: React.FC = () => {
         width: '100vw',
         minHeight: '100vh',
         backgroundImage: theme.palette.mode === "light" ? `url(${backgroundHome2})` : "",
-        background: theme.palette.mode === "dark" ? "#161724" : "",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'
       }} component="div">
         <Container>
-          <DisplayService serviceInformation={serviceInformationPageService} />
+          <DisplayService serviceInformation={serviceInformationPageService} showButton={false} />
         </Container>
       </Box>
       <Box sx={{ background: theme.palette.mode === "dark" ? "#161724" : "", py: "20px" }}>

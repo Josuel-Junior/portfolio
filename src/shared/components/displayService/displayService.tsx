@@ -1,5 +1,5 @@
 
-import { Box, Card, CardContent, CardMedia, Typography,Button } from '@mui/material'
+import { Box, Card, CardContent, CardMedia, Typography, Button } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 
 import Reveal from 'react-awesome-reveal'
@@ -8,9 +8,10 @@ import { ServiceInfo } from '../../interfaces';
 
 interface ISectionServicesProps {
     serviceInformation: ServiceInfo[];
+    showButton?: boolean;
 }
 
-export const DisplayService: React.FC<ISectionServicesProps> = ({ serviceInformation }) => {
+export const DisplayService: React.FC<ISectionServicesProps> = ({ serviceInformation, showButton }) => {
 
 
     return (
@@ -21,7 +22,7 @@ export const DisplayService: React.FC<ISectionServicesProps> = ({ serviceInforma
                         <Grid xs={4} key={id} >
                             <Reveal triggerOnce={true}>
                                 <Card elevation={8}>
-                                    <Box sx={{ padding: "30px", height: "330px", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center" }}>
+                                    <Box sx={{ padding: "30px", height: "330px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                                         <CardMedia sx={{ mx: "auto", width: "115px", height: "80px" }} >
                                             <Box component="img"
                                                 src={`${element?.icon}`}
@@ -36,10 +37,12 @@ export const DisplayService: React.FC<ISectionServicesProps> = ({ serviceInforma
                                             <Typography paragraph>
                                                 {element?.subTitle}
                                             </Typography>
-                                       
-                                        <Button variant='contained'>
-                                            Leia mais
-                                        </Button>
+                                            {showButton && (
+                                                <Button variant='contained'>
+                                                    Leia mais
+                                                </Button>
+                                            )
+                                       }
                                         </CardContent>
                                     </Box>
                                 </Card>

@@ -1,6 +1,5 @@
 export interface IAdvertisingcomponent {
     card1: {
-        publicityImage: string
         title: string
         description: string
     }

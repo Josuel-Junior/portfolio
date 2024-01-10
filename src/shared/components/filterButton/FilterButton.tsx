@@ -5,14 +5,14 @@ import React, { useState } from "react";
 import { useTheme } from "@mui/material"
 
 
-interface IFilterButton{
+interface IFilterButton {
     setFilter: React.Dispatch<React.SetStateAction<string>>
 }
 
 
-export const FilterButton: React.FC<IFilterButton> = ({setFilter}) => {
+export const FilterButton: React.FC<IFilterButton> = ({ setFilter }) => {
 
-    const arrayButton = ["Recentes", "Projetos pessoais", "Clientes"]
+    const arrayButton = ["Recentes", "Projetos pessoais", "Clientes", "Aplicativos"]
 
 
     const theme = useTheme()
@@ -43,8 +43,8 @@ export const FilterButton: React.FC<IFilterButton> = ({setFilter}) => {
                     return (
                         <Typography key={button}>
                             {buttonActive === index ?
-                                <Button style={{width:"190px"}} variant="contained" onClick={() => handleButtonActive(index, button)}>{button}</Button>
-                                : <Button style={{width:"190px"}} variant="outlined" onClick={() => handleButtonActive(index, button)}>{button}</Button>}
+                                <Button style={{ width: "190px" }} variant="contained" onClick={() => handleButtonActive(index, button)}>{button}</Button>
+                                : <Button style={{ width: "190px" }} variant="outlined" onClick={() => handleButtonActive(index, button)}>{button}</Button>}
                         </Typography>
                     )
                 })
