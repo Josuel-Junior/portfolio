@@ -57,7 +57,7 @@ export const DisplayContact: React.FC = () => {
                                 <Typography sx={{ fontWeight: 'bold', my: "10px" }} color="secondary">
                                     Linkedin
                                 </Typography>
-                                <Button variant="contained" href={"https://www.linkedin.com/in/josuel-junior-433467266/"} target="_blank">
+                                <Button variant="contained" href={"https://www.linkedin.com/in/josuel-junior-433467266/"} target="_blank" sx={{textTransform: "capitalize"}}>
                                     <LinkedInIcon fontSize="medium" color="secondary" sx={{ mx: "5px" }} />
                                     Josuel Junior
                                 </Button>

@@ -2,7 +2,7 @@
 import { GraphQLClient } from 'graphql-hooks'
 
 const API_URL = "https://graphql.datocms.com/"
-const API_TOKEN_TEST = "f7e3d2b110f5f753589c0267ef42e2"
+const API_TOKEN_TEST = process.env.REACT_APP_DATO_API_TOKEN_TEST
 
 export const client = new GraphQLClient({
   url: API_URL,

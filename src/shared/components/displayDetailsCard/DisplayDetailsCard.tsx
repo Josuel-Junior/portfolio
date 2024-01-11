@@ -28,7 +28,7 @@ export const DisplayDetailsCard: React.FC<IDetailsCard> = ({ details }) => {
                             <Grid lg={6} xs={12} sx={{ display: "flex", justifyContent: "start", alignItems: "center", background: "", padding: "30px" }}>
                                 <Fade direction={idNumber % 2 === 0 ? "left" : "right"} triggerOnce={true}>
 
-                                    <Box component="img" width="100%" src={element.card2.publicityImage} />
+                                    <Box component="img" width="100%" src={element.card2.publicityImage} loading='lazy'/>
                                 </Fade>
                             </Grid>
 

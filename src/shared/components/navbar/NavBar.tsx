@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Tabs, Tab, IconButton, useMediaQuery, useTheme, ButtonGroup, Paper, Popper, Grow, MenuItem, MenuList, ClickAwayListener, Box, makeStyles } from "@mui/material"
+import { AppBar, Toolbar, Tabs, Tab, IconButton, useMediaQuery, useTheme, ButtonGroup, Paper, Popper, Grow, MenuItem, MenuList, ClickAwayListener, Box, Typography, Divider } from "@mui/material"
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 import Logo from '../../assets/icons/jfc-logo.svg'
@@ -14,6 +14,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import { ProviderPropsChildren } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
+import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
 
 const hoverTextNavBar = {
@@ -60,7 +61,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
     return (
 
         <AppBar sx={{ background: `${theme.palette.background.paper}`, display: "flex", justifyContent: "center" }}>
-            <Box component="img" src={ theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`} sx={{ width: "50px", position: "absolute", marginLeft: "20px" }} alt="Logo principal do site" loading="lazy"/>
+            <Box component="img" src={theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`} sx={{ width: "50px", position: "absolute", marginLeft: "20px" }} alt="Logo principal do site" loading="lazy" />
             {
                 isMatch ? (
                     <Box sx={{ display: "flex", justifyContent: "end" }}>
@@ -102,7 +103,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                                 variant="contained" color="primary"
                                 onClick={handleToggle}
                             >
-                                {"Estrutura de dados"}
+                                {"Aprenda programação"}
                                 <ArrowDropDownIcon />
                             </Button>
                         </ButtonGroup>
@@ -125,17 +126,28 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                                     }}
                                 >
                                     <Paper >
-                                        <ClickAwayListener onClickAway={handleClose}>
-                                            <MenuList id="split-button-menu" autoFocusItem >
-                                                {options.map((option, index) => (
-                                                    <MenuItem
-                                                        key={option}
-                                                    >
-                                                        {option}
-                                                    </MenuItem>
-                                                ))}
-                                            </MenuList>
-                                        </ClickAwayListener>
+                                        <Box sx={{ p: "10px" }}>
+                                            <Typography variant="body1" color="primary" sx={{ ml: "10px" }} >
+                                                Estrutura de Dados
+                                            </Typography>
+                                            <Divider />
+                                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
+                                                <Button variant="text" size="large" sx={{
+                                                    color: theme.palette.mode == "light" ? "#4f4f4f" : "#fff", textTransform: "capitalize", "&:hover": {
+                                                        color: "#2684dd"
+                                                    }
+                                                }}>
+                                                    Pilha (LIFO)
+                                                </Button>
+                                                <Button variant="text" size="large" sx={{
+                                                    color: theme.palette.mode == "light" ? "#4f4f4f" : "#fff", textTransform: "capitalize", "&:hover": {
+                                                        color: "#2684dd"
+                                                    }
+                                                }}>
+                                                    Fila (FIFO)
+                                                </Button>
+                                            </Box>
+                                        </Box>
                                     </Paper>
                                 </Grow>
                             )}

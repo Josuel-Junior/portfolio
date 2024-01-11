@@ -7,6 +7,8 @@ import DataObjectIcon from '@mui/icons-material/DataObject';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
+import SchoolIcon from '@mui/icons-material/School';
+
 import { useState } from "react";
 import { useAppThemeContext } from "../../contexts";
 
@@ -18,9 +20,13 @@ export const DrawerComponent: React.FC = () => {
     const [openDrawer, setOpenDrawer] = useState(false)
 
     const [OpenSubButtonMenu, setOpenSubButtonMenu] = useState(false);
+    const [OpenSubButtonMenuStructure, setOpenSubButtonMenuStructure] = useState(false);
 
     const handleClick = () => {
         setOpenSubButtonMenu(!OpenSubButtonMenu);
+    };
+    const handleClickStructure = () => {
+        setOpenSubButtonMenuStructure(!OpenSubButtonMenuStructure);
     };
 
     const { toggleTheme } = useAppThemeContext();
@@ -59,28 +65,40 @@ export const DrawerComponent: React.FC = () => {
                 <List>
                     <ListItemButton onClick={handleClick}>
                         <ListItemIcon>
-                            <StorageIcon />
+                            <SchoolIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            Estrutura de dados
+                            Aprenda programação
                         </ListItemText>
                         {OpenSubButtonMenu ? <ExpandLess /> : <ExpandMore />}
                     </ListItemButton>
-                    <Collapse in={OpenSubButtonMenu} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding>
-                            <ListItemButton sx={{ pl: 4 }}>
-                                <ListItemIcon>
-                                    <DataObjectIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Estrutura de Pilha" />
-                            </ListItemButton>
-                            <ListItemButton sx={{ pl: 4 }}>
-                                <ListItemIcon>
-                                    <DataObjectIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Estrutura de Fila" />
-                            </ListItemButton>
-                        </List>
+
+                    <Collapse in={OpenSubButtonMenu} timeout="auto" unmountOnExit sx={{ ml: "7px" }}>
+                        <ListItemButton onClick={handleClickStructure}>
+                            <ListItemIcon>
+                                <StorageIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                Estrutura de dados
+                            </ListItemText>
+                            {OpenSubButtonMenuStructure ? <ExpandLess /> : <ExpandMore />}
+                        </ListItemButton>
+                        <Collapse in={OpenSubButtonMenuStructure} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                                <ListItemButton sx={{ pl: 4 }}>
+                                    <ListItemIcon>
+                                        <DataObjectIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Estrutura de Pilha" />
+                                </ListItemButton>
+                                <ListItemButton sx={{ pl: 4 }}>
+                                    <ListItemIcon>
+                                        <DataObjectIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Estrutura de Fila" />
+                                </ListItemButton>
+                            </List>
+                        </Collapse>
                     </Collapse>
                 </List>
                 <Divider />
