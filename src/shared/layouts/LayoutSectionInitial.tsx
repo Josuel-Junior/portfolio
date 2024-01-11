@@ -35,8 +35,6 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, b
                 <Grid container sx={{ display: "flex", alignItems: "center", height: "80vh", justifyContent: "center", background: "" }} >
                     <Grid xs={12} sx={{ textAlign: "center", width: "100vw", background: "" }}>
                         <Container>
-
-
                             <Typography component="h1" variant="h1" sx={{
                                 fontSize: {
                                     xl: 31,
@@ -63,7 +61,7 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, b
                                         xs: 25
                                     },
                                     fontWeight: 'bold',
-                                    marginY: "20px"
+                                    my: "20px"
 
                                 }}>
 

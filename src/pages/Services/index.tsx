@@ -1,19 +1,17 @@
 import React, { Key, useEffect } from 'react'
 import { UseIndicatorNavBar } from '../../shared/contexts'
-import { Box, Button, Card, CardContent, CardMedia, Container, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Button, Container, Typography, useTheme } from '@mui/material'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
 import { Link } from 'react-scroll'
 
-
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
-
 import { serviceInformationPageService } from '../../shared/constants/serviceInformation'
 import { DisplayService } from '../../shared/components/displayService/displayService'
-import Grid2 from '@mui/material/Unstable_Grid2/Grid2'
+
 
 
 import { moreInformationAboutPage } from '../../shared/constants/serviceInformation'
 import { DisplayDetailsCard } from '../../shared/components/displayDetailsCard/DisplayDetailsCard'
+import { DisplayContact } from '../../shared/components/displayContact/DisplayContact'
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 const backgroundHome2 = require("../../shared/assets/images/imageSectionService.png") as string;
 
@@ -73,6 +71,7 @@ export const Services: React.FC = () => {
       <Box sx={{ background: theme.palette.mode === "dark" ? "#161724" : "", py: "20px" }}>
         <DisplayDetailsCard details={moreInformationAboutPage} />
       </Box>
+      <DisplayContact />
     </Box>
   )
 }
