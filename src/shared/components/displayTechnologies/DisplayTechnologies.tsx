@@ -85,6 +85,7 @@ export const DisplayTechnologies: React.FC<pagination> = ({ showPagination,backg
                                             image={`${serviceIcon.logo.url}`}
                                             src={`${serviceIcon.logo.url}`}
                                             alt={`Logo da tecnologia ${serviceIcon.name}`}
+                                            loading="lazy"
                                         />
                                     </Box>
                                 </Card>

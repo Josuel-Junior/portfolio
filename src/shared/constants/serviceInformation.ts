@@ -78,4 +78,4 @@ export const moreInformationAboutPageTecnologies = [
   }
 ];
 
-export const textWritePageHome = ['Desenvolvimento Web', 'Otimização de SEO', 'UX / UI']
+export const textWritePageHome = ['Desenvolvimento Web', 'Otimização de SEO', 'UX / UI', "Aplicativos Android"]

@@ -13,8 +13,7 @@ import { moreInformationAboutPage } from '../../shared/constants/serviceInformat
 import { DisplayDetailsCard } from '../../shared/components/displayDetailsCard/DisplayDetailsCard'
 import { DisplayContact } from '../../shared/components/displayContact/DisplayContact'
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
-const backgroundHome2 = require("../../shared/assets/images/imageSectionService.png") as string;
-
+const imageSectionService = require("../../shared/assets/images/imageSectionService.png") as string;
 
 
 export const Services: React.FC = () => {
@@ -35,7 +34,7 @@ export const Services: React.FC = () => {
         subTitle='Explore nossos serviços e solicite um orçamento. Estamos prontos para atendê-lo.'
         button={
           <Link to="projectsPage" smooth={true} duration={500}>
-            <Button variant="contained" size="large">Serviços</Button>
+            <Button variant="contained" size="large" href="">Serviços</Button>
           </Link>
         } />
 
@@ -59,7 +58,7 @@ export const Services: React.FC = () => {
       <Box sx={{
         width: '100vw',
         minHeight: '100vh',
-        backgroundImage: theme.palette.mode === "light" ? `url(${backgroundHome2})` : "",
+        backgroundImage: theme.palette.mode === "light" ? `url(${imageSectionService})` : "",
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat'

@@ -3,7 +3,7 @@ import { ServiceInfo } from "../../../shared/interfaces/index"
 import { DisplayService } from '../../../shared/components/displayService/displayService';
 
 
-const backgroundHome2 = require("../../../shared/assets/images/back3.png") as string;
+const backgroundBottomTecnologies = require("../../../shared/assets/images/backgroundBottomTecnologies.webp") as string;
 
 interface ISectionServicesProps {
     textServices: ServiceInfo[];
@@ -39,11 +39,12 @@ export const SectionServices: React.FC<ISectionServicesProps> = ({ textServices 
             <Box sx={{
                 width: "100%",
                 height: "15vh",
-                backgroundImage: theme.palette.mode === "light" ? `url(${backgroundHome2})` : "",
+                backgroundImage: theme.palette.mode === "light" ? `url(${backgroundBottomTecnologies})` : "",
                 backgroundPosition: 'bottom',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 mb: "-10px"
+                
             }} component="div" />
 
         </Box>

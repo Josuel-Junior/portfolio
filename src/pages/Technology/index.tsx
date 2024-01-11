@@ -26,7 +26,7 @@ export const Technology: React.FC = () => {
         subTitle='Descubra as tecnologias que utilizamos para criar soluções inovadoras!'
         button={
           <Link to="technologiesPage" smooth={true} duration={500}>
-            <Button variant="contained" size="large">Tecnologias</Button>
+            <Button variant="contained" size="large" href="">Tecnologias</Button>
           </Link>
         }
       />

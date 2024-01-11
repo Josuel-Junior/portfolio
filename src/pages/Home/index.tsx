@@ -32,7 +32,7 @@ export const Home: React.FC = () => {
           subTitle="Aqui, a inovação e a excelência técnica se encontram para criar soluções por meio da programação."
           background={backgroundHome}
           button={
-            <Link to="projectsPageHome" smooth={true} duration={500} href=''>
+            <Link to="projectsPageHome" smooth={true} duration={500} href="">
               <Button variant="contained" size="large" >
                 Projetos</Button>
             </Link>

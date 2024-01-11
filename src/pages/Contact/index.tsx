@@ -28,8 +28,8 @@ export const Contact: React.FC = () => {
         title='Entre em contato'
         subTitle='Estamos prontos para transformar suas ideias em realidade.'
         button={
-          <Link to="projectsPage" smooth={true} duration={500}>
-            <Button variant="contained" size="large">Contato</Button>
+          <Link to="contactPage" smooth={true} duration={500}>
+            <Button variant="contained" size="large" href="">Contato</Button>
           </Link>
         }
       />

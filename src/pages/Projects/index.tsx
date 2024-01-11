@@ -25,7 +25,7 @@ export const Projects: React.FC = () => {
         subTitle='Nesta seção, você pode conhecer algumas das nossas soluções.'
         button={
           <Link to="projectsPage" smooth={true} duration={500}>
-            <Button variant="contained" size="large">Projetos</Button>
+            <Button variant="contained" size="large" href="">Projetos</Button>
           </Link>
         } />
       <Container sx={{ textAlign: "center" }}>

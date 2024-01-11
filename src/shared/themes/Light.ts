@@ -39,6 +39,9 @@ export const LightTheme = createTheme({
         h3: {
             color: "#296fcd"
         },
+        h5: {
+            color: "#4f4f4f"
+        }
 
     }
 

@@ -28,6 +28,7 @@ export const DisplayService: React.FC<ISectionServicesProps> = ({ serviceInforma
                                                 src={`${element?.icon}`}
                                                 alt={`Icone de ${element?.title}`}
                                                 sx={{ width: "100%", height: "90px" }}
+                                                loading="lazy"
                                             />
                                         </CardMedia >
                                         <CardContent sx={{ textAlign: "center" }}>

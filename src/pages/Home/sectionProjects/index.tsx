@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const backgroundHome2 = require("../../../shared/assets/images/back4.png") as string;
+const backgroundHome2 = require("../../../shared/assets/images/backgroundTopTecnologies.webp") as string;
 export const SectionProjects: React.FC = () => {
 
     const theme = useTheme()

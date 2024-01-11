@@ -60,7 +60,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
     return (
 
         <AppBar sx={{ background: `${theme.palette.background.paper}`, display: "flex", justifyContent: "center" }}>
-            <Box component="img" src={ theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`} sx={{ width: "50px", position: "absolute", marginLeft: "20px" }} alt="Logo principal do site"/>
+            <Box component="img" src={ theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`} sx={{ width: "50px", position: "absolute", marginLeft: "20px" }} alt="Logo principal do site" loading="lazy"/>
             {
                 isMatch ? (
                     <Box sx={{ display: "flex", justifyContent: "end" }}>

@@ -7,6 +7,7 @@ import Typewriter from 'typewriter-effect';
 
 import { useTheme } from "@mui/material"
 import { ReactElement } from "react"
+import { UseIndicatorNavBar } from "../contexts";
 
 interface ILayoutBase {
     title: string;
@@ -17,9 +18,13 @@ interface ILayoutBase {
     textWriteDisplay?: string[];
 }
 
+
 export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, background, button, textWriteDisplay, presentationText }) => {
     const theme = useTheme()
     const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+
+    const { indicatorCurrent } = UseIndicatorNavBar()
+
 
     return (
         <Box sx={{
@@ -32,10 +37,10 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, b
             backgroundRepeat: 'no-repeat'
         }} component="div">
             {isMatch ? (
-                <Grid container sx={{ display: "flex", alignItems: "center", height: "80vh", justifyContent: "center", background: "" }} >
-                    <Grid xs={12} sx={{ textAlign: "center", width: "100vw", background: "" }}>
+                <Grid container sx={{ display: "flex", alignItems: "center", height: "80vh", justifyContent: "center" }} >
+                    <Grid xs={12} sx={{ textAlign: "center", width: "100vw", }}>
                         <Container>
-                            <Typography component="h1" variant="h1" sx={{
+                            <Typography component={indicatorCurrent === 0 ? "h1" : "h2"} variant="h2" sx={{
                                 fontSize: {
                                     xl: 31,
                                     md: 30,
@@ -50,29 +55,6 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, b
                                 </Reveal>
 
                             </Typography>
-
-
-                            {presentationText && (
-                                <Typography component="h2" variant="h2" sx={{
-                                    fontSize: {
-                                        xl: 31,
-                                        md: 30,
-                                        sm: 30,
-                                        xs: 25
-                                    },
-                                    fontWeight: 'bold',
-                                    my: "20px"
-
-                                }}>
-
-
-                                    {presentationText} <Typewriter options={{ autoStart: true, loop: true, strings: textWriteDisplay }} onInit={(typewriter) => {
-                                        typewriter
-                                            .pauseFor(2000).deleteAll().pauseFor(2000).deleteAll().start()
-
-                                    }} />
-                                </Typography>
-                            )}
                         </Container>
                         {button}
                     </Grid>
@@ -81,7 +63,7 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, b
                 <Grid container sx={{ display: "flex", justifyContent: "center" }} >
                     <Grid xs={4}>
                         <Box sx={{ height: "100vh", display: "flex", alignItems: "start", justifyContent: "center", flexDirection: "column" }}>
-                            <Typography component="h1" variant="h1" sx={{
+                            <Typography component={indicatorCurrent === 0 ? "h1" : "h2"} variant="h2" sx={{
                                 fontSize: {
                                     lg: 38,
                                     md: 32,
@@ -98,7 +80,7 @@ export const LayoutSectionInitial: React.FC<ILayoutBase> = ({ title, subTitle, b
                             </Typography>
 
                             {presentationText && (
-                                <Typography component="h2" variant="h2" sx={{
+                                <Typography component="h3" variant="h2" sx={{
                                     fontSize: {
                                         lg: 38,
                                         md: 32,

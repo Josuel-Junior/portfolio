@@ -93,6 +93,7 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ showPagination }) =
                                             component="img"
                                             image={project.project.url}
                                             title={project.title}
+                                            loading="lazy"
 
                                         />
                                     </Paper>
