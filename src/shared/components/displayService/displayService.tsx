@@ -5,6 +5,7 @@ import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import Reveal from 'react-awesome-reveal'
 
 import { ServiceInfo } from '../../interfaces';
+import { useNavigate } from 'react-router-dom';
 
 interface ISectionServicesProps {
     serviceInformation: ServiceInfo[];
@@ -13,6 +14,7 @@ interface ISectionServicesProps {
 
 export const DisplayService: React.FC<ISectionServicesProps> = ({ serviceInformation, showButton }) => {
 
+    const navigate = useNavigate()
 
     return (
         <Box>
@@ -39,7 +41,7 @@ export const DisplayService: React.FC<ISectionServicesProps> = ({ serviceInforma
                                                 {element?.subTitle}
                                             </Typography>
                                             {showButton && (
-                                                <Button variant='contained'>
+                                                <Button variant='contained' onClick={() => navigate("/services")}>
                                                     Leia mais
                                                 </Button>
                                             )

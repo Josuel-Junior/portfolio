@@ -89,13 +89,13 @@ export const DrawerComponent: React.FC = () => {
                                     <ListItemIcon>
                                         <DataObjectIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Estrutura de Pilha" />
+                                    <ListItemText primary="Pilha (LIFO)" />
                                 </ListItemButton>
                                 <ListItemButton sx={{ pl: 4 }}>
                                     <ListItemIcon>
                                         <DataObjectIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Estrutura de Fila" />
+                                    <ListItemText primary="Fila (FIFO)" />
                                 </ListItemButton>
                             </List>
                         </Collapse>

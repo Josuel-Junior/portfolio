@@ -37,3 +37,15 @@ export const queryProjects = `
   }
 }
 `
+export const queryTextStructurLifo = `
+{
+  allLearnDataStructures {
+    title
+    textstructureabout
+    teste {
+      blocks
+      value
+    }
+  }
+}
+`

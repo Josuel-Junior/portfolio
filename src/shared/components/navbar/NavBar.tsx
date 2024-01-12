@@ -45,17 +45,12 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
     };
-    const handleClose = (event: Event) => {
 
-        if (
-            anchorRef.current &&
-            anchorRef.current.contains(event.target as HTMLElement)
-        ) {
-            return;
-        }
-        setOpen(false);
-    };
+    const handleNavigate = () => {
 
+        navigate("/structurelifo")
+        handleToggle()
+    }
 
 
     return (
@@ -132,7 +127,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                                             </Typography>
                                             <Divider />
                                             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
-                                                <Button variant="text" size="large" sx={{
+                                                <Button onClick={() => handleNavigate()} variant="text" size="large" sx={{
                                                     color: theme.palette.mode == "light" ? "#4f4f4f" : "#fff", textTransform: "capitalize", "&:hover": {
                                                         color: "#2684dd"
                                                     }

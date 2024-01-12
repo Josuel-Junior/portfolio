@@ -1,6 +1,6 @@
 import {createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import { Home, Contact,Projects,Services,Structure,Technology } from '../pages';
+import { Home, Contact,Projects,Services,Technology,StructureLifo } from '../pages';
 
 
 export const router = createBrowserRouter([
@@ -26,8 +26,8 @@ export const router = createBrowserRouter([
           element: <Services />
         },
         {
-          path: '/structure',
-          element: <Structure />
+          path: '/structurelifo',
+          element: <StructureLifo />
         },
         {
           path: '/technology',
