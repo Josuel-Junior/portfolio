@@ -46,9 +46,12 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
         setOpen((prevOpen) => !prevOpen);
     };
 
-    const handleNavigate = () => {
-
+    const handleNavigateLifo = () => {
         navigate("/structurelifo")
+        handleToggle()
+    }
+    const handleNavigateFifo = () => {
+        navigate("/structurefifo")
         handleToggle()
     }
 
@@ -127,14 +130,14 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                                             </Typography>
                                             <Divider />
                                             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
-                                                <Button onClick={() => handleNavigate()} variant="text" size="large" sx={{
+                                                <Button onClick={() => handleNavigateLifo()} variant="text" size="large" sx={{
                                                     color: theme.palette.mode == "light" ? "#4f4f4f" : "#fff", textTransform: "capitalize", "&:hover": {
                                                         color: "#2684dd"
                                                     }
                                                 }}>
                                                     Pilha (LIFO)
                                                 </Button>
-                                                <Button variant="text" size="large" sx={{
+                                                <Button onClick={() => handleNavigateFifo()} variant="text" size="large" sx={{
                                                     color: theme.palette.mode == "light" ? "#4f4f4f" : "#fff", textTransform: "capitalize", "&:hover": {
                                                         color: "#2684dd"
                                                     }

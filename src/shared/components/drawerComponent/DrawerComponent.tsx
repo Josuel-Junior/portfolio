@@ -11,6 +11,7 @@ import SchoolIcon from '@mui/icons-material/School';
 
 import { useState } from "react";
 import { useAppThemeContext } from "../../contexts";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -31,12 +32,30 @@ export const DrawerComponent: React.FC = () => {
 
     const { toggleTheme } = useAppThemeContext();
 
+    const navigate = useNavigate()
+
+    const handleNavigateLifo = () => {
+        setOpenDrawer(false)
+        navigate("/structurelifo")
+    }
+    const handleNavigateFifo = () => {
+        setOpenDrawer(false)
+        navigate("/structurefifo")
+    }
+
     const pages = [
         "Home",
         "Serviços",
         "Tecnologias",
         "Projetos",
         "Contato"
+    ]
+    const route = [
+        "",
+        "services",
+        "technology",
+        "projects",
+        "contact"
     ]
     const icons = [
         "home",
@@ -56,7 +75,7 @@ export const DrawerComponent: React.FC = () => {
                             <ListItemIcon >
                                 <Icon>{icons[index]}</Icon>
                             </ListItemIcon>
-                            <ListItemText>
+                            <ListItemText onClick={() => navigate(`/${route[index]}`)}>
                                 {page}
                             </ListItemText>
                         </ListItemButton>
@@ -89,13 +108,13 @@ export const DrawerComponent: React.FC = () => {
                                     <ListItemIcon>
                                         <DataObjectIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Pilha (LIFO)" />
+                                    <ListItemText primary="Pilha (LIFO)" onClick={() => handleNavigateLifo()} />
                                 </ListItemButton>
                                 <ListItemButton sx={{ pl: 4 }}>
                                     <ListItemIcon>
                                         <DataObjectIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Fila (FIFO)" />
+                                    <ListItemText primary="Fila (FIFO)" onClick={() => handleNavigateFifo()} />
                                 </ListItemButton>
                             </List>
                         </Collapse>

@@ -15,7 +15,6 @@ export const StructureLifo: React.FC = () => {
   const handleAddArrayPilha = () => {
     if (arrayPilha.length <= 6) {
       setArrayPilha(prev => [...prev, prev.length + 1 - 1]);
-
     }
 
   }
@@ -26,19 +25,15 @@ export const StructureLifo: React.FC = () => {
     setArrayPilha(newArray)
   }
 
-
-  console.log(arrayPilha)
-
-
   return (
     <>
       <LayoutSectionInitial
         background={backgroundHome}
-        title="Aprenda estrutura de dados de Pilha"
+        title="Estrutura de dados de Pilha"
         subTitle='Entenda estrutura de dados de forma Visual '
         button={
           <Link to="structureLifo" smooth={true} duration={500}>
-            <Button variant="contained" size="large" href="">Ler mais</Button>
+            <Button variant="contained" size="large" href="">Leia mais</Button>
           </Link>
         } />
 
@@ -46,10 +41,10 @@ export const StructureLifo: React.FC = () => {
       <Box sx={{ my: "20px" }} id="structureLifo">
         <Container>
           <Typography component="h2" sx={{ textAlign: "center", fontWeight: "bold", my: "10px" }}>
-            Explore Estruturas de Dados de Pilha de Forma Visual
+            Estrutura de Dados de Pilha
           </Typography>
           <Typography paragraph>
-            "Durante meus estudos sobre estruturas de dados, surgiu a ideia de representar visualmente a estrutura de dados de uma pilha.
+            Durante meus estudos sobre estruturas de dados, surgiu a ideia de representar visualmente a estrutura de dados de uma pilha.
             Nesta seção, vou explicar o funcionamento dessa estrutura, e em seguida,
             você poderá visualizá-la de forma gráfica.
           </Typography>
@@ -82,13 +77,16 @@ export const StructureLifo: React.FC = () => {
             const pilha = [];
           </Typography>
           <Typography paragraph sx={{ fontWeight: "bold" }}>
-            pilha.push(“Valor inserido”)
+            pilha.push("Primeiro valor inserido")
+          </Typography>
+          <Typography paragraph sx={{ fontWeight: "bold" }}>
+            pilha.push("Segundo valor inserido")
           </Typography>
           <Typography paragraph sx={{ fontWeight: "bold" }}>
             console.log(pilha)
           </Typography>
           <Typography paragraph sx={{ fontWeight: "bold" }}>
-            saída: [0:”Valor inserido”];
+            //saída: [0:"Primeiro valor inserido",1:"Segundo valor inserido"];
           </Typography>
           <Divider />
           <Typography component="h3" sx={{ fontWeight: "bold" }}>
@@ -100,16 +98,16 @@ export const StructureLifo: React.FC = () => {
             que será removido. Por esse motivo, podemos usar o método pop da classe Array.
           </Typography>
           <Typography paragraph sx={{ fontWeight: "bold" }}>
-            const pilha = [0:”Valor inserido”];
+            const pilha = ["Primeiro valor inserido", "Segundo valor inserido"];
           </Typography>
           <Typography paragraph sx={{ fontWeight: "bold" }}>
-            pilha.push()
+            pilha.pop()
           </Typography>
           <Typography paragraph sx={{ fontWeight: "bold" }}>
             console.log(pilha)
           </Typography>
           <Typography paragraph sx={{ fontWeight: "bold" }}>
-            saída: [];
+            //saída: [0:primeiro valor inserido];
           </Typography>
         </Container>
       </Box>
