@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { UseIndicatorNavBar } from '../../shared/contexts'
-import { DisplayContact } from '../../shared/components/displayContact/DisplayContact'
+import { DisplayContact } from '../../shared/components/DisplayContact'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
 import { Link } from 'react-scroll';
 import { Button } from '@mui/material';

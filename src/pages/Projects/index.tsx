@@ -2,7 +2,7 @@ import { Box, Button, Typography, Container } from '@mui/material'
 import { UseIndicatorNavBar } from '../../shared/contexts'
 import { useEffect } from 'react'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
-import { DisplayProjects } from '../../shared/components/displayProjects/DisplayPorjects';
+import { DisplayProjects } from '../../shared/components/DisplayPorjects';
 
 import { Link } from 'react-scroll';
 

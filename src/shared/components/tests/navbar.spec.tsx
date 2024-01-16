@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react"
-import { NavBar } from "../navbar/NavBar"
+import { NavBar } from "../NavBar"
 import "@testing-library/jest-dom"
 
 describe("NavBar", () => {

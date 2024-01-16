@@ -1,12 +1,12 @@
-import { NavBar } from "./shared/components/navbar/NavBar";
+import { NavBar } from "./shared/components/NavBar";
 import { AppThemeProvider } from "./shared/contexts";
 import { Outlet } from "react-router-dom";
 import { IndicatorNavBarContext } from "./shared/contexts/IndicatorNavBarContext";
 import { ScopedCssBaseline } from "@mui/material";
 import { client } from "./shared/services/lib/dato-cms";
 import { ClientContext } from 'graphql-hooks'
-import { Footer } from "./shared/components/footer/Footer";
-import { ReturnToTop } from "./shared/components/returnToTop/ReturnToTop";
+import { Footer } from "./shared/components/Footer";
+import { ReturnToTop } from "./shared/components/ReturnToTop"
 
 
 function App() {

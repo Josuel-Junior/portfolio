@@ -1,7 +1,7 @@
 import { Container, Skeleton } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
-import { creatingArray } from "../../utils/fromArray";
+import { creatingArray } from "../utils/fromArray";
 
 interface ISkeletonOfDisplay {
     numberOfSkeleton: number

@@ -4,12 +4,12 @@ import { Box, Button, Container, Typography, useTheme } from '@mui/material'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
 import { Link } from 'react-scroll'
 
-import { serviceInformationPageService } from '../../shared/constants/serviceInformation'
-import { DisplayService } from '../../shared/components/displayService/displayService'
+import { serviceInformationPageService } from '../../shared/constants/pageText'
+import { DisplayService } from '../../shared/components/displayService'
 
-import { moreInformationAboutPageServices } from '../../shared/constants/serviceInformation'
-import { DisplayDetailsCard } from '../../shared/components/displayDetailsCard/DisplayDetailsCard'
-import { DisplayContact } from '../../shared/components/displayContact/DisplayContact'
+import { moreInformationAboutPageServices } from '../../shared/constants/pageText'
+import { DisplayDetailsCard } from '../../shared/components/DisplayDetailsCard'
+import { DisplayContact } from '../../shared/components/DisplayContact'
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 const imageSectionService = require("../../shared/assets/images/imageSectionService.png") as string;
 

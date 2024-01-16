@@ -1,5 +1,5 @@
 import { useQuery } from "graphql-hooks";
-import { queryProjects } from "../../services/lib/dato-cms";
+import { queryProjects } from "../services/lib/dato-cms";
 
 import { Box, IconButton, ListItemIcon, Pagination, Paper, Stack, Typography, useTheme } from "@mui/material"
 
@@ -14,9 +14,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import { useState } from "react";
 
-import { SkeletonCoponent } from "../skeleton/Skeleton";
+import { SkeletonCoponent } from "./Skeleton";
 
-import { FilterButton } from "../filterButton/FilterButton";
+import { FilterButton } from "./FilterButton";
 import Reveal from "react-awesome-reveal";
 
 interface IDataprojects {

@@ -4,7 +4,7 @@ import { LayoutSectionInitial } from "../../shared/layouts/LayoutSectionInitial"
 import { SectionServices } from './sectionServices'
 import { SectionTechnologies } from './sectionTechnologies'
 import { SectionProjects } from './sectionProjects'
-import { serviceInformationPageHome, textWritePageHome } from '../../shared/constants/serviceInformation'
+import { serviceInformationPageHome, textWritePageHome } from '../../shared/constants/pageText'
 import { useEffect } from 'react'
 import { UseIndicatorNavBar } from '../../shared/contexts'
 import { Link } from 'react-scroll'

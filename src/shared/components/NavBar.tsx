@@ -1,18 +1,18 @@
 import { AppBar, Toolbar, Tabs, Tab, IconButton, useMediaQuery, useTheme, ButtonGroup, Paper, Popper, Grow, MenuItem, MenuList, ClickAwayListener, Box, Typography, Divider } from "@mui/material"
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-import Logo from '../../assets/icons/jfc-logo.svg'
-import LogoDark from '../../assets/icons/jfc-logo-dark.svg'
+import Logo from '../assets/icons/jfc-logo.svg'
+import LogoDark from '../assets/icons/jfc-logo-dark.svg'
 import { useState, useRef } from "react"
 
 import { Link } from 'react-router-dom';
 
-import { DrawerComponent } from "../drawerComponent/DrawerComponent";
-import { UseIndicatorNavBar, useAppThemeContext } from "../../contexts";
+import { DrawerComponent } from "./DrawerComponent";
+import { UseIndicatorNavBar, useAppThemeContext } from "../contexts";
 import Button from '@mui/material/Button';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
-import { ProviderPropsChildren } from "../../interfaces";
+import { ProviderPropsChildren } from "../interfaces";
 import { useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 

@@ -2,9 +2,9 @@ import { Box, Button, Container, Divider, IconButton, ListItemIcon, Typography, 
 
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import { useNavigate } from "react-router-dom";
-import { UseIndicatorNavBar } from "../../contexts";
+import { UseIndicatorNavBar } from "../contexts";
 
-import LogoFooter from '../../assets/icons/jfc-logo-footer.svg'
+import LogoFooter from '../assets/icons/jfc-logo-footer.svg'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';

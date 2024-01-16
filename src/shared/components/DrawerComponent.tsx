@@ -10,9 +10,9 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import SchoolIcon from '@mui/icons-material/School';
 
 import { useState } from "react";
-import { useAppThemeContext } from "../../contexts";
+import { useAppThemeContext } from "../contexts";
 import { useNavigate } from "react-router-dom";
-import { navigateDrawer } from "../../constants/serviceInformation";
+import { navigateDrawer } from "../constants/pageText";
 
 
 

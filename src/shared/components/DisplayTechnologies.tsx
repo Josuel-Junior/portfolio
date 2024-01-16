@@ -1,16 +1,16 @@
 import { Box, Card, CardContent, CardMedia, Pagination, Stack, Typography } from "@mui/material"
 
-import { Button, useTheme } from "@mui/material"
+import { useTheme } from "@mui/material"
 
 
 import { Fade } from "react-awesome-reveal";
 
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import { queryTechnologies } from "../../services/lib/dato-cms";
+import { queryTechnologies } from "../services/lib/dato-cms";
 import { useQuery } from "graphql-hooks";
-import { SkeletonCoponent } from "../skeleton/Skeleton";
+import { SkeletonCoponent } from "./Skeleton";
 
-import { IDataTechnologies } from "../../../shared/interfaces/IDataTecnologies"
+import { IDataTechnologies } from "../interfaces/IDataTecnologies"
 import { useState } from "react";
 
 

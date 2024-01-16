@@ -8,7 +8,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import { Fade } from "react-awesome-reveal";
 
-const background = require("../../../shared/assets/images/contact.webp") as string;
+const background = require("../../shared/assets/images/contact.webp") as string;
 
 export const DisplayContact: React.FC = () => {
 

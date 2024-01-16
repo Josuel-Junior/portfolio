@@ -4,7 +4,7 @@ import Grid from '@mui/material/Unstable_Grid2/Grid2';
 
 import Reveal from 'react-awesome-reveal'
 
-import { ServiceInfo } from '../../interfaces';
+import { ServiceInfo } from '../interfaces';
 import { useNavigate } from 'react-router-dom';
 
 interface ISectionServicesProps {

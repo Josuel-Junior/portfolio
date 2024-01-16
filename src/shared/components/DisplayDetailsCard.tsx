@@ -7,7 +7,7 @@ import { Fade } from "react-awesome-reveal";
 
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
 
-import { IAdvertisingcomponent } from '../../interfaces/IAdvertisingComponent'
+import { IAdvertisingcomponent } from '../interfaces/IAdvertisingComponent'
 
 interface IDetailsCard {
     details: IAdvertisingcomponent[]

@@ -4,11 +4,11 @@ import { useQuery } from "graphql-hooks";
 import { Button, useTheme } from "@mui/material"
 import { queryTechnologies } from '../../../shared/services/lib/dato-cms';
 import { Typography, Box, Container } from '@mui/material';
-import { SkeletonCoponent } from "../../../shared/components/skeleton/Skeleton";
+import { SkeletonCoponent } from "../../../shared/components/Skeleton";
 
 import { useNavigate } from "react-router-dom";
 
-import { DisplayTechnologies } from "../../../shared/components/displayTechnologies/DisplayTechnologies";
+import { DisplayTechnologies } from "../../../shared/components/DisplayTechnologies";
 
 
 export const SectionTechnologies: React.FC = () => {

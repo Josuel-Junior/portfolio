@@ -1,6 +1,6 @@
 import { Box, Button, Container, Typography, useTheme } from "@mui/material"
 
-import { DisplayProjects } from "../../../shared/components/displayProjects/DisplayPorjects";
+import { DisplayProjects } from "../../../shared/components/DisplayPorjects";
 import { useNavigate } from "react-router-dom";
 
 

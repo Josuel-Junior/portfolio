@@ -3,9 +3,9 @@ import { UseIndicatorNavBar } from '../../shared/contexts'
 import { Box, Button, Container, Typography, useTheme } from '@mui/material'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
 import { Link } from 'react-scroll';
-import { DisplayTechnologies } from '../../shared/components/displayTechnologies/DisplayTechnologies';
-import { DisplayDetailsCard } from '../../shared/components/displayDetailsCard/DisplayDetailsCard';
-import { moreInformationAboutPageTecnologies } from '../../shared/constants/serviceInformation';
+import { DisplayTechnologies } from '../../shared/components/DisplayTechnologies';
+import { DisplayDetailsCard } from '../../shared/components/DisplayDetailsCard';
+import { moreInformationAboutPageTecnologies } from '../../shared/constants/pageText';
 
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 

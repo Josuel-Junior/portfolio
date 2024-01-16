@@ -1,6 +1,6 @@
 import { Box, Container, Typography, Button, useTheme } from '@mui/material'
 import { ServiceInfo } from "../../../shared/interfaces/index"
-import { DisplayService } from '../../../shared/components/displayService/displayService';
+import { DisplayService } from '../../../shared/components/displayService';
 import { useNavigate } from 'react-router-dom';
 
 
