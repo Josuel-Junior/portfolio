@@ -9,7 +9,7 @@ import { moreInformationAboutPage, moreInformationAboutPageTecnologies } from '.
 
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 
-export const Technology: React.FC = () => {
+export const Technologies: React.FC = () => {
 
   const theme = useTheme()
 

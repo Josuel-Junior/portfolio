@@ -1,6 +1,6 @@
 import {createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import { Home, Contact,Projects,Services,Technology,StructureLifo,StructureFifo } from '../pages';
+import { Home, Contact,Projects,Services,Technologies,StructureLifo,StructureFifo } from '../pages';
 
 
 export const router = createBrowserRouter([
@@ -34,8 +34,8 @@ export const router = createBrowserRouter([
           element: <StructureFifo />
         },
         {
-          path: '/technology',
-          element: <Technology />
+          path: '/technologies',
+          element: <Technologies />
         },
         {
           path: '*',

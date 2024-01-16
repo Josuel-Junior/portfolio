@@ -3,7 +3,7 @@ import iconSeo from "../../shared/assets/icons/iconSeo.svg"
 import iconWeb from "../../shared/assets/icons/iconWeb.svg"
 import responsive from "../../shared/assets/icons/responsive.svg"
 import iconApi from "../../shared/assets/icons/iconApi.svg"
-import iconTestCode from "../../shared/assets/icons/iconTestCode.svg"
+import iconAndroid from "../../shared/assets/icons/iconAndroid.svg"
 
 
 const serviceImageMobile = require("../../shared/assets/images/serviceImageMobile.webp") as string;
@@ -21,9 +21,9 @@ export const serviceInformationPageService = [
   { title: "Design", subTitle: "Transmita a essência da sua marca através de designs visuais envolventes e memoráveis.", icon: iconDesign },
   { title: "Desenvolvimento Web", subTitle: "Do conceito à implementação, criamos experiências online impactantes e funcionais.", icon: iconWeb },
   { title: "Otimização de SEO", subTitle: "Aumente sua presença online e atraia tráfego qualificado através de técnicas avançadas de SEO.", icon: iconSeo },
-  { title: "Responsividade", subTitle: "Transmita a essência da sua marca através de designs visuais envolventes e memoráveis.", icon: responsive },
-  { title: "Integração com APIs", subTitle: "Do conceito à implementação, criamos experiências online impactantes e funcionais.", icon: iconApi },
-  { title: "Testes e Depuração", subTitle: "Aumente sua presença online e atraia tráfego qualificado através de técnicas avançadas de SEO.", icon: iconTestCode },
+  { title: "Responsividade", subTitle: "Desenvolvemos soluções que se adaptam perfeitamente a qualquer dispositivo.", icon: responsive },
+  { title: "Integração com APIs", subTitle: "Conectamos seu sistema a serviços externos, ampliando suas possibilidades.", icon: iconApi },
+  { title: "Aplicativos Android", subTitle: "Criamos apps nativos para Android, unindo eficiência e qualidade.", icon: iconAndroid },
 ]
 
 
@@ -79,3 +79,12 @@ export const moreInformationAboutPageTecnologies = [
 ];
 
 export const textWritePageHome = ['Desenvolvimento Web', 'Otimização de SEO', 'UX / UI', "Aplicativos Android"]
+
+
+export const navigateDrawer = [
+  { page: "Home", iconPage: "home", navigate: "" },
+  { page: "Serviços", iconPage: "webIcon", navigate: "services" },
+  { page: "Tecnologias", iconPage: "codeIcon", navigate: "technologies" },
+  { page: "Projetos", iconPage: "phonelink", navigate: "projects" },
+  { page: "Contatos", iconPage: "contacts", navigate: "contact" },
+]

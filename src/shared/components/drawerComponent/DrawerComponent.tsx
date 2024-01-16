@@ -12,8 +12,15 @@ import SchoolIcon from '@mui/icons-material/School';
 import { useState } from "react";
 import { useAppThemeContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
+import { navigateDrawer } from "../../constants/serviceInformation";
 
 
+
+interface navigateDrawer {
+    page: string
+    iconPage: string
+    navigate: string
+}
 
 
 export const DrawerComponent: React.FC = () => {
@@ -43,40 +50,19 @@ export const DrawerComponent: React.FC = () => {
         navigate("/structurefifo")
     }
 
-    const pages = [
-        "Home",
-        "Serviços",
-        "Tecnologias",
-        "Projetos",
-        "Contato"
-    ]
-    const route = [
-        "",
-        "services",
-        "technology",
-        "projects",
-        "contact"
-    ]
-    const icons = [
-        "home",
-        "webIcon",
-        "codeIcon",
-        "phonelink",
-        "contacts"
-    ]
     return (
         <>
             <Drawer open={openDrawer}
                 onClose={() => setOpenDrawer(false)}
             >
                 <List>
-                    {pages.map((page, index) => (
+                    {navigateDrawer.map((itensPage: navigateDrawer, index: number) => (
                         <ListItemButton key={index} onClick={() => setOpenDrawer(false)}>
                             <ListItemIcon >
-                                <Icon>{icons[index]}</Icon>
+                                <Icon>{itensPage.iconPage}</Icon>
                             </ListItemIcon>
-                            <ListItemText onClick={() => navigate(`/${route[index]}`)}>
-                                {page}
+                            <ListItemText onClick={() => navigate(`/${itensPage.navigate}`)}>
+                                {itensPage.page}
                             </ListItemText>
                         </ListItemButton>
                     ))}
