@@ -12,8 +12,6 @@ import { Link } from 'react-scroll'
 
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 
-
-
 export const Home: React.FC = () => {
 
   const { setIndicatorCurrent, indicatorCurrent } = UseIndicatorNavBar()
