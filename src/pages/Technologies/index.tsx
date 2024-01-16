@@ -5,7 +5,7 @@ import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
 import { Link } from 'react-scroll';
 import { DisplayTechnologies } from '../../shared/components/displayTechnologies/DisplayTechnologies';
 import { DisplayDetailsCard } from '../../shared/components/displayDetailsCard/DisplayDetailsCard';
-import { moreInformationAboutPage, moreInformationAboutPageTecnologies } from '../../shared/constants/serviceInformation';
+import { moreInformationAboutPageTecnologies } from '../../shared/constants/serviceInformation';
 
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
 
@@ -41,7 +41,7 @@ export const Technologies: React.FC = () => {
             xs: 25
           }, mt: "20px"
         }} component="h2" variant='h3'  >
-          Tecnologias que utilizamos.
+          Tecnologias que utilizamos
         </Typography>
         <Typography paragraph sx={{ marginTop: "15px", textAlign: "left" }}>
           A JFC Tecnologia incorpora tecnologias de ponta para desenvolver soluções inovadoras, proporcionando excelência em cada projeto.
@@ -51,7 +51,7 @@ export const Technologies: React.FC = () => {
       <Container>
         <DisplayDetailsCard details={moreInformationAboutPageTecnologies} />
       </Container>
-      <Box sx={{ width: "100vw", background: theme.palette.mode === "dark" ? "#161724" : "" }}>
+      <Box sx={{ width: "100vw"}}>
         <Container id="technologiesPage" sx={{ alignItems: "center", marginTop: "20px" }} >
           <DisplayTechnologies showPagination={true} backgroundColorSkeleton='' />
         </Container>

@@ -1,6 +1,7 @@
 import { Box, Container, Typography, Button, useTheme } from '@mui/material'
 import { ServiceInfo } from "../../../shared/interfaces/index"
 import { DisplayService } from '../../../shared/components/displayService/displayService';
+import { useNavigate } from 'react-router-dom';
 
 
 const backgroundBottomTecnologies = require("../../../shared/assets/images/backgroundBottomTecnologies.webp") as string;
@@ -11,6 +12,7 @@ interface ISectionServicesProps {
 
 export const SectionServices: React.FC<ISectionServicesProps> = ({ textServices }) => {
 
+    const navigate = useNavigate()
 
     const theme = useTheme();
     return (
@@ -29,7 +31,7 @@ export const SectionServices: React.FC<ISectionServicesProps> = ({ textServices 
                         Nossos Serviços
                     </Typography>
                     <Typography sx={{ mt: "15px", textAlign: "left" }} paragraph>
-                        Com a era digital em constante evolução, oferecemos soluções sob medida para atender às suas necessidades. Descubra como nossos serviços podem impulsionar sua empresa ou seu negócio online. <Button>Ver mais</Button>
+                        Com a era digital em constante evolução, oferecemos soluções sob medida para atender às suas necessidades. Descubra como nossos serviços podem impulsionar sua empresa ou seu negócio online. <Button onClick={()=>navigate("/services")}>Ver mais</Button>
                     </Typography>
 
                 </Box>

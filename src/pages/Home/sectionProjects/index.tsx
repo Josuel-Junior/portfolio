@@ -1,6 +1,5 @@
-import { Box, Button, Card, CardContent, CardMedia, Container, Typography, useTheme } from "@mui/material"
+import { Box, Button, Container, Typography, useTheme } from "@mui/material"
 
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import { DisplayProjects } from "../../../shared/components/displayProjects/DisplayPorjects";
 import { useNavigate } from "react-router-dom";
 
@@ -42,7 +41,7 @@ export const SectionProjects: React.FC = () => {
                     </Box>
                     <Box>
                         <Typography sx={{ marginTop: "15px", textAlign: "left" }} paragraph>
-                            Explore nosso portfólio de projetos e conheça algumas de nossas soluções. <Button variant="text" onClick={() => navigate("./projects")}>Ver todos</Button>
+                            Explore nosso portfólio de projetos e conheça algumas de nossas soluções. <Button variant="text" onClick={() => navigate("/projects")}>Ver todos</Button>
                         </Typography>
                     </Box>
 

@@ -27,7 +27,7 @@ export const serviceInformationPageService = [
 ]
 
 
-export const moreInformationAboutPage = [
+export const moreInformationAboutPageServices = [
   {
     card1: {
       title: "Manutenção e Atualizações Contínuas",
@@ -68,7 +68,7 @@ export const moreInformationAboutPageTecnologies = [
   {
     card1: {
       title: "Material-UI",
-      description: "Material-UI não é apenas uma biblioteca; é uma ferramenta que coloca estilo e consistência na ponta dos dedos dos desenvolvedores front-end. Cada botão, cada barra de progresso, é uma experiência de design coesa. Explore conosco como Material-UI simplifica o processo, permitindo que cada elemento da sua aplicação brilhe com uma estética moderna"
+      description: "Material-UI não é apenas uma biblioteca, é uma ferramenta que coloca estilo e consistência na ponta dos dedos dos desenvolvedores front-end. Cada botão, cada barra de progresso, é uma experiência de design. Explore conosco como Material-UI simplifica o processo, permitindo que cada elemento da sua aplicação brilhe com uma estética moderna"
     },
     card2: {
       publicityImage: technologiesImagedesign,

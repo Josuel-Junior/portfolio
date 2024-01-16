@@ -54,12 +54,16 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
         navigate("/structurefifo")
         handleToggle()
     }
+    const handeleNavigateHome = () => {
+        navigate("/")
+    }
 
 
     return (
 
         <AppBar sx={{ background: `${theme.palette.background.paper}`, display: "flex", justifyContent: "center" }}>
-            <Box component="img" src={theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`} sx={{ width: "50px", position: "absolute", marginLeft: "20px" }} alt="Logo principal do site" loading="lazy" />
+
+            <Box component="img" onClick={() => handeleNavigateHome()} src={theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`} sx={{ width: "50px", position: "absolute", marginLeft: "20px" }} alt="Logo principal do site" loading="lazy" />
             {
                 isMatch ? (
                     <Box sx={{ display: "flex", justifyContent: "end" }}>
@@ -82,7 +86,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                         >
                             <Tab label="Home" sx={hoverTextNavBar} component={Link} to="/" />
                             <Tab label="Serviços" sx={hoverTextNavBar} onClick={() => navigate("/services")} />
-                            <Tab label="Tecnologias" sx={hoverTextNavBar} onClick={() => navigate("/technology")} />
+                            <Tab label="Tecnologias" sx={hoverTextNavBar} onClick={() => navigate("/technologies")} />
                             <Tab label="Projetos" sx={hoverTextNavBar} component={Link} to="/projects" />
                             <Tab label="Contato" sx={hoverTextNavBar} onClick={() => navigate("/contact")} />
                         </Tabs>

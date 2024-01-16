@@ -7,9 +7,7 @@ import { Link } from 'react-scroll'
 import { serviceInformationPageService } from '../../shared/constants/serviceInformation'
 import { DisplayService } from '../../shared/components/displayService/displayService'
 
-
-
-import { moreInformationAboutPage } from '../../shared/constants/serviceInformation'
+import { moreInformationAboutPageServices } from '../../shared/constants/serviceInformation'
 import { DisplayDetailsCard } from '../../shared/components/displayDetailsCard/DisplayDetailsCard'
 import { DisplayContact } from '../../shared/components/displayContact/DisplayContact'
 const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
@@ -68,7 +66,7 @@ export const Services: React.FC = () => {
         </Container>
       </Box>
       <Box sx={{ background: theme.palette.mode === "dark" ? "#161724" : "", py: "20px" }}>
-        <DisplayDetailsCard details={moreInformationAboutPage} />
+        <DisplayDetailsCard details={moreInformationAboutPageServices} />
       </Box>
       <DisplayContact />
     </Box>
