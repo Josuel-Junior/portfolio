@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
         <Box sx={{ width: '100vw', background: theme.palette.mode === "dark" ? "#161724" : "#296fcd" }}>
 
             <Container sx={{ textAlign: isMatch ? "center" : "left" }}>
-                <Box component="img" src={`${LogoFooter}`} sx={{ width: "70px" }} alt="Icone do rodapé do site" />
+                <Box component="img" src={`${LogoFooter}`} sx={{ width: "70px" }} alt="Icone do rodapé do site" loading="lazy"/>
             </Container>
 
             <Divider sx={{ borderBottomWidth: '2px', background: "#fff" }} />
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
                         <Button variant="text" color={"secondary"} onClick={() => navigate("/services")}>
                             Serviços
                         </Button>
-                        <Button variant="text" color={"secondary"} onClick={() => navigate("/technology")}>
+                        <Button variant="text" color={"secondary"} onClick={() => navigate("/technologies")}>
                             Tecnologias
                         </Button>
                         <Button variant="text" color={"secondary"} onClick={() => navigate("/projects")}>

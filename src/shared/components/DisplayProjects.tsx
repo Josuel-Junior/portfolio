@@ -86,8 +86,8 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ showPagination }) =
                     return (
 
                         <Grid xs={4} key={id}>
-                            <Reveal triggerOnce={true}>
-                                <Card sx={{ margin: "auto", padding: "10px" }} elevation={12}>
+                            <Reveal triggerOnce={true} style={{ height: '100%' }}>
+                                <Card sx={{ margin: "auto", padding: "10px", height:"100%"}} elevation={12}>
                                     <Paper sx={{ width: "100%" }} elevation={2}>
                                         <CardMedia
                                             component="img"
@@ -115,7 +115,7 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({ showPagination }) =
                                             },
                                             marginY: "5px"
                                         }}>
-                                            Tecnologias usadas: {project.technologies}
+                                            Tecnologias : {project.technologies}
                                         </Typography>
                                     </CardContent>
                                     <ListItemIcon sx={{ display: "flex", justifyContent: "end" }}>

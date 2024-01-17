@@ -55,7 +55,7 @@ export const SectionTechnologies: React.FC = () => {
                         Conheça as tecnologias que usamos para criar experiências digitais inovadoras
                     </Typography>
                     <Typography paragraph sx={{ mt: "15px", textAlign: "left" }} color={"secondary"}>
-                        Das bases sólidas de HTML, CSS e JavaScript aos frameworks dinâmicos como React, nosso arsenal tecnológico foca na construção de interfaces envolventes. O TypeScript assegura a robustez do código, enquanto o SASS/SCSS organiza a estilização com elegância. <Button color="secondary" size="large" onClick={() => navigate("/technologies")}>Ver todas</Button>
+                        Das bases sólidas de HTML, CSS e JavaScript aos frameworks dinâmicos como React, nosso arsenal tecnológico foca na construção de interfaces envolventes. O TypeScript assegura a robustez do código, enquanto o SASS/SCSS organiza a estilização com elegância. <Button color="secondary" size="large" onClick={() => navigate("/technologies")}>Mais sobre</Button>
                     </Typography>
 
                 </Box>

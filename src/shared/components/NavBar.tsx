@@ -63,7 +63,7 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
 
         <AppBar sx={{ background: `${theme.palette.background.paper}`, display: "flex", justifyContent: "center" }}>
 
-            <Box component="img" onClick={() => handeleNavigateHome()} src={theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`} sx={{ width: "50px", position: "absolute", marginLeft: "20px" }} alt="Logo principal do site" loading="lazy" />
+            <Box component="img" onClick={() => handeleNavigateHome()} src={theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`} sx={{ width: "50px", position: "absolute", marginLeft: "20px" }} alt="Ícone JFC Tecnologia" loading="lazy" />
             {
                 isMatch ? (
                     <Box sx={{ display: "flex", justifyContent: "end" }}>
@@ -154,8 +154,8 @@ export const NavBar: React.FC<ProviderPropsChildren> = ({ children }) => {
                                 </Grow>
                             )}
                         </Popper>
-                        <IconButton onClick={toggleTheme}>
-                            <DarkModeIcon />
+                        <IconButton onClick={toggleTheme} aria-label="Botão para alterar o tema">
+                            <DarkModeIcon/>
                         </IconButton>
                     </Toolbar>
             }

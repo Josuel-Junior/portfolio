@@ -1,5 +1,4 @@
 import { Box, Button } from '@mui/material'
-
 import { LayoutSectionInitial } from "../../shared/layouts/LayoutSectionInitial"
 import { SectionServices } from './sectionServices'
 import { SectionTechnologies } from './sectionTechnologies'
@@ -21,17 +20,16 @@ export const Home: React.FC = () => {
   }, [])
 
   return (
-    <>
 
-
-      <Box component="main">
+    <Box sx={{ width: "100vw" }}>
+      <Box component="main" sx={{ width: "100vw" }}>
         <LayoutSectionInitial
           title="Bem-vindo à JFC Tecnologia"
           subTitle="Aqui, a inovação e a excelência técnica se encontram para criar soluções por meio da programação."
           background={backgroundHome}
           button={
             <Link to="projectsPageHome" smooth={true} duration={500} href="">
-              <Button variant="contained" size="large" >
+              <Button variant="contained" size="medium">
                 Projetos</Button>
             </Link>
           }
@@ -47,8 +45,7 @@ export const Home: React.FC = () => {
         <SectionProjects />
       </Box>
 
-    </>
-
+    </Box>
   )
 }
 

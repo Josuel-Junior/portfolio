@@ -17,7 +17,7 @@ export const SectionServices: React.FC<ISectionServicesProps> = ({ textServices 
     const theme = useTheme();
     return (
 
-        <Box>
+        <Box sx={{width:"100vw"}}>
             <Container maxWidth="lg" component={"div"} sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                 <Box sx={{ textAlign: "center" }}>
                     <Typography sx={{
@@ -31,7 +31,7 @@ export const SectionServices: React.FC<ISectionServicesProps> = ({ textServices 
                         Nossos Serviços
                     </Typography>
                     <Typography sx={{ mt: "15px", textAlign: "left" }} paragraph>
-                        Com a era digital em constante evolução, oferecemos soluções sob medida para atender às suas necessidades. Descubra como nossos serviços podem impulsionar sua empresa ou seu negócio online. <Button onClick={()=>navigate("/services")}>Ver mais</Button>
+                        Com a era digital em constante evolução, oferecemos soluções sob medida para atender às suas necessidades. Descubra como nossos serviços podem impulsionar sua empresa ou seu negócio online. <Button onClick={()=>navigate("/services")}>Mais sobre</Button>
                     </Typography>
 
                 </Box>

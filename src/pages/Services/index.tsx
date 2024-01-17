@@ -32,7 +32,7 @@ export const Services: React.FC = () => {
         subTitle='Explore nossos serviços e solicite um orçamento. Estamos prontos para atendê-lo.'
         button={
           <Link to="projectsPage" smooth={true} duration={500}>
-            <Button variant="contained" size="large" href="">Serviços</Button>
+            <Button variant="contained" size="medium" href="">Serviços</Button>
           </Link>
         } />
 

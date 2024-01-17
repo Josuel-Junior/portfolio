@@ -119,8 +119,8 @@ export const DrawerComponent: React.FC = () => {
                 </List>
             </Drawer>
 
-            <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-                <MenuIcon sx={{ color: "secondary" }} />
+            <IconButton onClick={() => setOpenDrawer(!openDrawer)} aria-labelledby="Abrir menu de opções">
+                <MenuIcon sx={{ color: "secondary" }} id="Abrir menu de opções" />
             </IconButton>
 
         </>

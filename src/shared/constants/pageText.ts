@@ -86,5 +86,5 @@ export const navigateDrawer = [
   { page: "Serviços", iconPage: "webIcon", navigate: "services" },
   { page: "Tecnologias", iconPage: "codeIcon", navigate: "technologies" },
   { page: "Projetos", iconPage: "phonelink", navigate: "projects" },
-  { page: "Contatos", iconPage: "contacts", navigate: "contact" },
+  { page: "Contato", iconPage: "contacts", navigate: "contact" },
 ]

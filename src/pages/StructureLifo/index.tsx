@@ -33,7 +33,7 @@ export const StructureLifo: React.FC = () => {
         subTitle='Entenda estrutura de dados de forma Visual '
         button={
           <Link to="structureLifo" smooth={true} duration={500}>
-            <Button variant="contained" size="large" href="">Leia mais</Button>
+            <Button variant="contained" size="medium" href="">Leia mais</Button>
           </Link>
         } />
 

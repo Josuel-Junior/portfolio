@@ -2,7 +2,7 @@ import { Box, Button, Typography, Container } from '@mui/material'
 import { UseIndicatorNavBar } from '../../shared/contexts'
 import { useEffect } from 'react'
 import { LayoutSectionInitial } from '../../shared/layouts/LayoutSectionInitial'
-import { DisplayProjects } from '../../shared/components/DisplayPorjects';
+import { DisplayProjects } from '../../shared/components/DisplayProjects';
 
 import { Link } from 'react-scroll';
 
@@ -25,7 +25,7 @@ export const Projects: React.FC = () => {
         subTitle='Nesta seção, você pode conhecer algumas das nossas soluções.'
         button={
           <Link to="projectsPage" smooth={true} duration={500}>
-            <Button variant="contained" size="large" href="">Projetos</Button>
+            <Button variant="contained" size="medium" href="">Projetos</Button>
           </Link>
         } />
       <Container sx={{ textAlign: "center" }}>
