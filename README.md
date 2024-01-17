@@ -10,7 +10,7 @@ Material-UI, e integrado ao Dato CMS, atingiu 100% de SEO. Essa combinação de
 tecnologias resultou em um projeto eficiente, elegante e otimizado para motores de busca.
 
 ## Layout web
-![Web](https://www.datocms-assets.com/115877/1705509234-100-1-1.png)
+![Web](https://www.datocms-assets.com/115877/1705517291-100.png)
 
 
 
