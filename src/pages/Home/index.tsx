@@ -1,27 +1,30 @@
-import { Box, Button } from '@mui/material'
-import { LayoutSectionInitial } from "../../shared/layouts/LayoutSectionInitial"
-import { SectionServices } from './sectionServices'
-import { SectionTechnologies } from './sectionTechnologies'
-import { SectionProjects } from './sectionProjects'
-import { serviceInformationPageHome, textWritePageHome } from '../../shared/constants/pageText'
-import { useEffect } from 'react'
-import { UseIndicatorNavBar } from '../../shared/contexts'
-import { Link } from 'react-scroll'
+import { Box, Button } from "@mui/material";
+import { LayoutSectionInitial } from "../../shared/layouts/LayoutSectionInitial";
+import { SectionServices } from "./sectionServices";
+import { SectionTechnologies } from "./sectionTechnologies";
+import { SectionProjects } from "./sectionProjects";
+import {
+  serviceInformationPageHome,
+  textWritePageHome,
+} from "../../shared/constants/pageText";
+import { useEffect } from "react";
+import { UseIndicatorNavBar } from "../../shared/contexts";
+import { Link } from "react-scroll";
+import { ScrollRestoration } from "react-router-dom";
 
-
-const backgroundHome = require("../../shared/assets/images/backgroundPageHome.webp") as string;
+const backgroundHome =
+  require("../../shared/assets/images/backgroundPageHome.webp") as string;
 
 export const Home: React.FC = () => {
-
-  const { setIndicatorCurrent, indicatorCurrent } = UseIndicatorNavBar()
+  const { setIndicatorCurrent } = UseIndicatorNavBar();
 
   useEffect(() => {
-    setIndicatorCurrent(0)
-  }, [])
+    setIndicatorCurrent(0);
+  }, []);
 
   return (
-
     <Box sx={{ width: "100vw" }}>
+      <ScrollRestoration />
       <Box component="main" sx={{ width: "100vw" }}>
         <LayoutSectionInitial
           title="Bem-vindo à JFC Tecnologia"
@@ -30,7 +33,8 @@ export const Home: React.FC = () => {
           button={
             <Link to="projectsPageHome" smooth={true} duration={500} href="">
               <Button variant="contained" size="medium">
-                Projetos</Button>
+                Projetos
+              </Button>
             </Link>
           }
           presentationText="Somos especialistas em:"
@@ -44,10 +48,6 @@ export const Home: React.FC = () => {
       <Box id="projectsPageHome">
         <SectionProjects />
       </Box>
-
     </Box>
-  )
-}
-
-
-
+  );
+};

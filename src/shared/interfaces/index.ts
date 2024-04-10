@@ -1,3 +1,3 @@
-export * from "./ProviderProps"
-export * from "./ServiceInfo"
-export * from "./IDataTecnologies"
+export * from "./IProviderProps";
+export * from "./IServiceInfo";
+export * from "./IDataTecnologies";
