@@ -19,7 +19,7 @@ export const Contact: React.FC = () => {
   return (
     <>
       <ScrollRestoration />
-      <LayoutSectionInitial
+      {/* <LayoutSectionInitial
         background={backgroundHome}
         title="Entre em contato"
         subTitle="Estamos prontos para transformar suas ideias em realidade."
@@ -30,7 +30,7 @@ export const Contact: React.FC = () => {
             </Button>
           </Link>
         }
-      />
+      /> */}
       <DisplayContact />
     </>
   );

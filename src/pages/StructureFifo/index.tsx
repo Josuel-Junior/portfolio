@@ -34,6 +34,7 @@ export const StructureFifo: React.FC = () => {
   return (
     <>
       <ScrollRestoration />
+
       <LayoutSectionInitial
         background={backgroundHome}
         title="Estrutura de dados de Fila"

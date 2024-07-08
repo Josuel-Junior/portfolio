@@ -17,6 +17,7 @@ export const DisplayContact: React.FC = () => {
     <Box
       sx={{
         width: "100vw",
+        minHeight: "100vh",
         backgroundImage:
           theme.palette.mode === "light" ? `url(${background})` : "",
         backgroundPosition: "center",

@@ -1,12 +1,9 @@
-import { Box, Button, Container, Typography, useTheme } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 
 import { DisplayProjects } from "../../../shared/components/displayProjects/DisplayProjects";
 import { useNavigate } from "react-router-dom";
 
-const backgroundHome2 =
-  require("../../../shared/assets/images/backgroundTopTecnologies.webp") as string;
 export const SectionProjects: React.FC = () => {
-  const theme = useTheme();
   const navigate = useNavigate();
   return (
     <Box
@@ -15,20 +12,6 @@ export const SectionProjects: React.FC = () => {
       }}
       component="section"
     >
-      <Box
-        sx={{
-          width: "100vw",
-          minHeight: "15vh",
-          backgroundImage:
-            theme.palette.mode === "light" ? `url(${backgroundHome2})` : "",
-          backgroundPosition: "top",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          mt: "-5px",
-        }}
-        component="div"
-      />
-
       <Box>
         <Container
           maxWidth="lg"

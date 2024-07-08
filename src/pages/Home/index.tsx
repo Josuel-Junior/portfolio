@@ -1,19 +1,17 @@
-import { Box, Button } from "@mui/material";
-import { LayoutSectionInitial } from "../../shared/layouts/LayoutSectionInitial";
+import { Box } from "@mui/material";
 import { SectionServices } from "./sectionServices";
 import { SectionTechnologies } from "./sectionTechnologies";
 import { SectionProjects } from "./sectionProjects";
-import {
-  serviceInformationPageHome,
-  textWritePageHome,
-} from "../../shared/constants/pageText";
+import { serviceInformationPageHome } from "../../shared/constants/pageText";
 import { useEffect } from "react";
 import { UseIndicatorNavBar } from "../../shared/contexts";
-import { Link } from "react-scroll";
+
 import { ScrollRestoration } from "react-router-dom";
 
-const backgroundHome =
-  require("../../shared/assets/images/backgroundPageHome.webp") as string;
+import { SectionHome } from "../../shared/layouts/sectionHome/index";
+
+const backgroundSectionHome =
+  require("../../shared/assets/images/backgroundSectionHome.png") as string;
 
 export const Home: React.FC = () => {
   const { setIndicatorCurrent } = UseIndicatorNavBar();
@@ -26,19 +24,11 @@ export const Home: React.FC = () => {
     <Box sx={{ width: "100vw" }}>
       <ScrollRestoration />
       <Box component="main" sx={{ width: "100vw" }}>
-        <LayoutSectionInitial
+        <SectionHome
+          background={backgroundSectionHome}
           title="Bem-vindo à JFC Tecnologia"
-          subTitle="Aqui, a inovação e a excelência técnica se encontram para criar soluções por meio da programação."
-          background={backgroundHome}
-          button={
-            <Link to="projectsPageHome" smooth={true} duration={500} href="">
-              <Button variant="contained" size="medium">
-                Projetos
-              </Button>
-            </Link>
-          }
-          presentationText="Somos especialistas em:"
-          textWriteDisplay={textWritePageHome}
+          subTitle="Aqui, a inovação e a excelência técnica se encontram para criar
+            soluções por meio da programação."
         />
       </Box>
       <SectionServices textServices={serviceInformationPageHome} />

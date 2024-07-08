@@ -91,10 +91,9 @@ export const SectionTechnologies: React.FC = () => {
             sx={{ mt: "15px", textAlign: "left" }}
             color={"secondary"}
           >
-            Das bases sólidas de HTML, CSS e JavaScript aos frameworks dinâmicos
-            como React, nosso arsenal tecnológico foca na construção de
-            interfaces envolventes. O TypeScript assegura a robustez do código,
-            enquanto o SASS/SCSS organiza a estilização com elegância.{" "}
+            Na JFC Tecnologia, utilizamos tecnologias de ponta como Spring Boot,
+            React e React Native para desenvolver experiências digitais
+            inovadoras e de alto impacto.
             <Button
               color="secondary"
               size="large"

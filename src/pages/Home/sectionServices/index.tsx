@@ -55,7 +55,7 @@ export const SectionServices: React.FC<ISectionServicesProps> = ({
         </Box>
         <DisplayService serviceInformation={textServices} showButton={true} />
       </Container>
-      <Box
+      {/* <Box
         sx={{
           width: "100%",
           height: "15vh",
@@ -69,7 +69,7 @@ export const SectionServices: React.FC<ISectionServicesProps> = ({
           mb: "-10px",
         }}
         component="div"
-      />
+      /> */}
     </Box>
   );
 };

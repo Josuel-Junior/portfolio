@@ -11,8 +11,9 @@ import { moreInformationAboutPageServices } from "../../shared/constants/pageTex
 import { DisplayDetailsCard } from "../../shared/components/displayDetailsCard/DisplayDetailsCard";
 import { DisplayContact } from "../../shared/components/displayContact/DisplayContact";
 import { ScrollRestoration } from "react-router-dom";
+import { SectionHome } from "../../shared/layouts/sectionHome";
 const backgroundHome =
-  require("../../shared/assets/images/backgroundPageHome.webp") as string;
+  require("../../shared/assets/images/backgroundService.png") as string;
 const imageSectionService =
   require("../../shared/assets/images/imageSectionService.png") as string;
 
@@ -27,17 +28,10 @@ export const Services: React.FC = () => {
   return (
     <Box sx={{ width: "100vw" }}>
       <ScrollRestoration />
-      <LayoutSectionInitial
+      <SectionHome
         background={backgroundHome}
         title="Transformamos ideias em realidade"
         subTitle="Explore nossos serviços e solicite um orçamento. Estamos prontos para atendê-lo."
-        button={
-          <Link to="projectsPage" smooth={true} duration={500}>
-            <Button variant="contained" size="medium" href="">
-              Serviços
-            </Button>
-          </Link>
-        }
       />
 
       <Container
@@ -68,18 +62,7 @@ export const Services: React.FC = () => {
           </Typography>
         </Box>
       </Container>
-      <Box
-        sx={{
-          width: "100vw",
-          minHeight: "100vh",
-          backgroundImage:
-            theme.palette.mode === "light" ? `url(${imageSectionService})` : "",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-        component="div"
-      >
+      <Box>
         <Container>
           <DisplayService
             serviceInformation={serviceInformationPageService}

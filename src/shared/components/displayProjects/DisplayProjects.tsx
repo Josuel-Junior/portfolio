@@ -126,7 +126,7 @@ export const DisplayProjects: React.FC<numberOfDisplay> = ({
         {currentData?.map((project: IDataprojects, id: number) => {
           return (
             <Grid xs={4} key={id}>
-              <Reveal triggerOnce={true} style={{ height: "100%" }}>
+              <Reveal triggerOnce={false} style={{ height: "100%" }}>
                 <Card
                   sx={{
                     margin: "auto",

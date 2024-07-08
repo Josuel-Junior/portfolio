@@ -34,7 +34,7 @@ export const DisplayService: React.FC<ISectionServicesProps> = ({
       {serviceInformation.map((element, id) => {
         return (
           <Grid xs={4} key={id}>
-            <Reveal triggerOnce={true}>
+            <Reveal triggerOnce={false} delay={100 * id}>
               <Card elevation={8}>
                 <Box
                   sx={{

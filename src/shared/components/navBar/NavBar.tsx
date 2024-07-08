@@ -16,6 +16,8 @@ import {
 } from "@mui/material";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 
+import { useLocation } from "react-router-dom";
+
 import Logo from "../../assets/icons/jfc-logo.svg";
 import LogoDark from "../../assets/icons/jfc-logo-dark.svg";
 import { useState, useRef } from "react";
@@ -28,16 +30,12 @@ import Button from "@mui/material/Button";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 import { useNavigate } from "react-router-dom";
-
-const hoverTextNavBar = {
-  transition: "all .3s",
-  "&:hover": {
-    color: "#2684dd",
-  },
-};
+import Position from "../../utils/positionY";
 
 export const NavBar: React.FC = () => {
   const navigate = useNavigate();
+
+  const location = useLocation();
 
   const { indicatorCurrent, setIndicatorCurrent } = UseIndicatorNavBar();
   const theme = useTheme();
@@ -47,6 +45,8 @@ export const NavBar: React.FC = () => {
 
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLDivElement>(null);
+
+  const isVisible = Position();
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -64,18 +64,33 @@ export const NavBar: React.FC = () => {
     navigate("/");
   };
 
+  const hoverTextNavBar = {
+    transition: "all .3s",
+    color: isVisible ? "#fff" : "",
+    "&:hover": {
+      color: "#2684dd",
+    },
+  };
+
   return (
     <AppBar
+      elevation={isVisible ? 0 : 4}
       sx={{
-        background: `${theme.palette.background.paper}`,
+        background:
+          isVisible == true
+            ? `transparent`
+            : `${theme.palette.background.paper}`,
         display: "flex",
         justifyContent: "center",
+        transition: "background 0.2s ease-in-out",
       }}
     >
       <Box
         component="img"
         onClick={() => handeleNavigateHome()}
-        src={theme.palette.mode === "light" ? `${Logo}` : `${LogoDark}`}
+        src={
+          theme.palette.mode === "dark" || isVisible ? `${LogoDark}` : `${Logo}`
+        }
         sx={{ width: "50px", position: "absolute", marginLeft: "20px" }}
         alt="Ícone JFC Tecnologia"
         loading="lazy"
@@ -250,7 +265,7 @@ export const NavBar: React.FC = () => {
             onClick={toggleTheme}
             aria-label="Botão para alterar o tema"
           >
-            <DarkModeIcon />
+            <DarkModeIcon sx={{ color: isVisible ? "#fff" : "inherit" }} />
           </IconButton>
         </Toolbar>
       )}

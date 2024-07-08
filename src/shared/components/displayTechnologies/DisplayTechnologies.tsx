@@ -105,7 +105,7 @@ export const DisplayTechnologies: React.FC<pagination> = ({
 
           return (
             <Grid xs={4} key={id}>
-              <Fade direction={"left"} triggerOnce={true}>
+              <Fade direction={"left"} triggerOnce={false}>
                 {/* <Fade direction={idNumber % 2 === 0 ? "left" : "right"} triggerOnce={true}> */}
                 <Card sx={{ display: "flex" }} elevation={8}>
                   <Box sx={{ margin: "auto" }}>

@@ -1,14 +1,12 @@
-import { Box, Button, Typography, Container } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import { UseIndicatorNavBar } from "../../shared/contexts";
 import { useEffect } from "react";
-import { LayoutSectionInitial } from "../../shared/layouts/LayoutSectionInitial";
 import { DisplayProjects } from "../../shared/components/displayProjects/DisplayProjects";
-
-import { Link } from "react-scroll";
 import { ScrollRestoration } from "react-router-dom";
+import { SectionHome } from "../../shared/layouts/sectionHome";
 
-const backgroundHome =
-  require("../../shared/assets/images/backgroundPageHome.webp") as string;
+const backgroundProject =
+  require("../../shared/assets/images/backgroundProject.png") as string;
 
 export const Projects: React.FC = () => {
   const { setIndicatorCurrent } = UseIndicatorNavBar();
@@ -20,18 +18,12 @@ export const Projects: React.FC = () => {
   return (
     <Box sx={{ width: "100vw" }}>
       <ScrollRestoration />
-      <LayoutSectionInitial
-        background={backgroundHome}
-        title="Conheça nossos projetos"
-        subTitle="Nesta seção, você pode conhecer algumas das nossas soluções."
-        button={
-          <Link to="projectsPage" smooth={true} duration={500}>
-            <Button variant="contained" size="medium" href="">
-              Projetos
-            </Button>
-          </Link>
-        }
+      <SectionHome
+        background={backgroundProject}
+        title="Nossos projetos"
+        subTitle="Conheça algumas das nossas soluções."
       />
+
       <Container sx={{ textAlign: "center" }}>
         <Typography
           sx={{
@@ -50,9 +42,9 @@ export const Projects: React.FC = () => {
           Explore nosso Portfólio.
         </Typography>
         <Typography paragraph sx={{ marginTop: "15px" }}>
-          Bem-vindo a JFC Tecnologia! Sou Josuel, um desenvolvedor front-end
-          apaixonado por transformar ideias em experiências visuais envolventes
-          e funcionais.
+          Bem-vindo à JFC Tecnologia! Sou Josuel, um desenvolvedor Full Stack
+          comprometido em transformar suas ideias em soluções digitais
+          inovadoras e funcionais.
         </Typography>
       </Container>
 

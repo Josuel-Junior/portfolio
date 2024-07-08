@@ -10,6 +10,7 @@ import {
   StructureFifo,
   FlexBox,
 } from "../pages";
+import { Privacypolicy } from "../pages/Privacy policy/PrivacyPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: "/flexbox",
         element: <FlexBox />,
+      },
+      {
+        path: "/privacypolicy",
+        element: <Privacypolicy />,
       },
       {
         path: "*",

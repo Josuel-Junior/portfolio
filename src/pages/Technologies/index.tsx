@@ -1,19 +1,16 @@
 import { useEffect } from "react";
 import { UseIndicatorNavBar } from "../../shared/contexts";
-import { Box, Button, Container, Typography, useTheme } from "@mui/material";
-import { LayoutSectionInitial } from "../../shared/layouts/LayoutSectionInitial";
-import { Link } from "react-scroll";
+import { Box, Container, Typography } from "@mui/material";
 import { DisplayTechnologies } from "../../shared/components/displayTechnologies/DisplayTechnologies";
 import { DisplayDetailsCard } from "../../shared/components/displayDetailsCard/DisplayDetailsCard";
 import { moreInformationAboutPageTecnologies } from "../../shared/constants/pageText";
 import { ScrollRestoration } from "react-router-dom";
+import { SectionHome } from "../../shared/layouts/sectionHome";
 
-const backgroundHome =
-  require("../../shared/assets/images/backgroundPageHome.webp") as string;
+const backgroundTechnologies =
+  require("../../shared/assets/images/backgroundTechnologies.png") as string;
 
 export const Technologies: React.FC = () => {
-  const theme = useTheme();
-
   const { setIndicatorCurrent, indicatorCurrent } = UseIndicatorNavBar();
   useEffect(() => {
     setIndicatorCurrent(2);
@@ -21,17 +18,10 @@ export const Technologies: React.FC = () => {
   return (
     <Box sx={{ width: "100vw" }} component="section">
       <ScrollRestoration />
-      <LayoutSectionInitial
-        background={backgroundHome}
-        title="Confira todas as tecnologias"
+      <SectionHome
+        background={backgroundTechnologies}
+        title="Tecnologias"
         subTitle="Descubra as tecnologias que utilizamos para criar soluções inovadoras!"
-        button={
-          <Link to="technologiesPage" smooth={true} duration={500}>
-            <Button variant="contained" size="medium" href="">
-              Tecnologias
-            </Button>
-          </Link>
-        }
       />
 
       <Container sx={{ textAlign: "center" }}>

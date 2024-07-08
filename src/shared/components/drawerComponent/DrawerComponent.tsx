@@ -23,7 +23,7 @@ import { useState } from "react";
 import { useAppThemeContext } from "../../contexts";
 import { useNavigate } from "react-router-dom";
 import { navigateDrawer } from "../../constants/pageText";
-
+import usePosition from "../../utils/positionY";
 interface navigateDrawer {
   page: string;
   iconPage: string;
@@ -31,6 +31,8 @@ interface navigateDrawer {
 }
 
 export const DrawerComponent: React.FC = () => {
+  const position = usePosition();
+
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const [OpenSubButtonMenu, setOpenSubButtonMenu] = useState(false);
@@ -177,7 +179,10 @@ export const DrawerComponent: React.FC = () => {
         onClick={() => setOpenDrawer(!openDrawer)}
         aria-labelledby="Abrir menu de opções"
       >
-        <MenuIcon sx={{ color: "secondary" }} id="Abrir menu de opções" />
+        <MenuIcon
+          sx={{ color: position ? "#fff" : "secondary" }}
+          id="Abrir menu de opções"
+        />
       </IconButton>
     </>
   );
