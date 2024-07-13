@@ -37,7 +37,7 @@ export const StructureFifo: React.FC = () => {
 
       <LayoutSectionInitial
         background={backgroundHome}
-        title="Estrutura de dados de Fila"
+        title="Estrutura de Fila"
         subTitle="Entenda estrutura de dados de forma Visual "
         button={
           <Link to="structureFila" smooth={true} duration={500}>

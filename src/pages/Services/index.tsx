@@ -13,9 +13,7 @@ import { DisplayContact } from "../../shared/components/displayContact/DisplayCo
 import { ScrollRestoration } from "react-router-dom";
 import { SectionHome } from "../../shared/layouts/sectionHome";
 const backgroundHome =
-  require("../../shared/assets/images/backgroundService.png") as string;
-const imageSectionService =
-  require("../../shared/assets/images/imageSectionService.png") as string;
+  require("../../shared/assets/images/backgroundService.webp") as string;
 
 export const Services: React.FC = () => {
   const { setIndicatorCurrent } = UseIndicatorNavBar();

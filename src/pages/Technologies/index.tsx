@@ -8,7 +8,7 @@ import { ScrollRestoration } from "react-router-dom";
 import { SectionHome } from "../../shared/layouts/sectionHome";
 
 const backgroundTechnologies =
-  require("../../shared/assets/images/backgroundTechnologies.png") as string;
+  require("../../shared/assets/images/backgroundTechnologies.webp") as string;
 
 export const Technologies: React.FC = () => {
   const { setIndicatorCurrent, indicatorCurrent } = UseIndicatorNavBar();

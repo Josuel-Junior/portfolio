@@ -28,7 +28,7 @@ export const StructureLifo: React.FC = () => {
       <ScrollRestoration />
       <LayoutSectionInitial
         background={backgroundHome}
-        title="Estrutura de dados de Pilha"
+        title="Estrutura de Pilha"
         subTitle="Entenda estrutura de dados de forma Visual "
         button={
           <Link to="structureLifo" smooth={true} duration={500}>

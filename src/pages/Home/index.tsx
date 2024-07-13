@@ -11,7 +11,7 @@ import { ScrollRestoration } from "react-router-dom";
 import { SectionHome } from "../../shared/layouts/sectionHome/index";
 
 const backgroundSectionHome =
-  require("../../shared/assets/images/backgroundSectionHome.png") as string;
+  require("../../shared/assets/images/backgroundSectionHome.webp") as string;
 
 export const Home: React.FC = () => {
   const { setIndicatorCurrent } = UseIndicatorNavBar();
