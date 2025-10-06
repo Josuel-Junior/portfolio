@@ -26,7 +26,7 @@ export const Home: React.FC = () => {
       <Box component="main" sx={{ width: "100vw" }}>
         <SectionHome
           background={backgroundSectionHome}
-          title="Bem-vindo à JFC Tecnologia"
+          title="Bem-vindo ao meu Portfólio"
           subTitle="Aqui, a inovação e a excelência técnica se encontram para criar
             soluções por meio da programação."
         />

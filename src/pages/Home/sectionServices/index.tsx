@@ -44,12 +44,10 @@ export const SectionServices: React.FC<ISectionServicesProps> = ({
             variant="h3"
             component="h2"
           >
-            Nossos Serviços
+            Como posso contribuir
           </Typography>
           <Typography sx={{ mt: "15px", textAlign: "left" }} paragraph>
-            Com a era digital em constante evolução, oferecemos soluções sob
-            medida para atender às suas necessidades. Descubra como nossos
-            serviços podem impulsionar sua empresa ou seu negócio online.{" "}
+            Com experiência no desenvolvimento full stack, posso atuar tanto no front-end quanto no back-end, possuindo também conhecimento em Cloud.{""}
             <Button onClick={() => navigate("/services")}>Mais sobre</Button>
           </Typography>
         </Box>

@@ -17,42 +17,42 @@ const technologiesImagedesign =
 
 export const serviceInformationPageHome = [
   {
-    title: "Design",
+    title: "Cloud",
     subTitle:
-      "Transmita a essência da sua marca através de designs visuais envolventes e memoráveis.",
+      "Transforme seus projetos com soluções em Cloud modernas e escaláveis.",
     icon: iconDesign,
   },
   {
     title: "Desenvolvimento Front End",
     subTitle:
-      "Do conceito à implementação, criamos experiências online impactantes e funcionais.",
+      "Do conceito à implementação, crio experiências digitais impactantes.",
     icon: iconWeb,
   },
   {
     title: "Desenvolvimento Back-End",
     subTitle:
-      "Gerenciamos servidores e bancos de dados com Java e Spring Boot, criando APIs seguras e eficientes.",
+      "Desenvolvo aplicações com Java e Spring Boot, criando APIs seguras e eficientes.",
     icon: iconBackEnd,
   },
 ];
 
 export const serviceInformationPageService = [
   {
-    title: "Design",
+    title: "Cloud",
     subTitle:
-      "Transmita a essência da sua marca através de designs visuais envolventes e memoráveis.",
+      "Transforme seus projetos com soluções em Cloud modernas e escaláveis.",
     icon: iconDesign,
   },
   {
-    title: "Desenvolvimento Web",
+    title: "Desenvolvimento Front End",
     subTitle:
-      "Do conceito à implementação, criamos experiências online impactantes e funcionais.",
+      "Do conceito à implementação, crio experiências digitais impactantes.",
     icon: iconWeb,
   },
   {
     title: "Desenvolvimento Back-End",
     subTitle:
-      "Gerenciamos servidores e bancos de dados com Java e Spring Boot, criando APIs seguras e eficientes.",
+      "Desenvolvo aplicações com Java e Spring Boot, criando APIs seguras e eficientes.",
     icon: iconBackEnd,
   },
   {

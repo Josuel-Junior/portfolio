@@ -83,17 +83,16 @@ export const SectionTechnologies: React.FC = () => {
             color={"secondary"}
             component="h2"
           >
-            Conheça as tecnologias que usamos para criar experiências digitais
-            inovadoras
+            Confira algumas das tecnologias que utilizo e descubra como posso
+            agregar valor à sua equipe.
           </Typography>
           <Typography
             paragraph
             sx={{ mt: "15px", textAlign: "left" }}
             color={"secondary"}
           >
-            Na JFC Tecnologia, utilizamos tecnologias de ponta como Spring Boot,
-            React e React Native para desenvolver experiências digitais
-            inovadoras e de alto impacto.
+            Uso tecnologias de ponta como Spring Boot, React e React Native
+            para desenvolver experiências digitais inovadoras e de alto impacto.
             <Button
               color="secondary"
               size="large"
