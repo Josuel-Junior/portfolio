@@ -44,8 +44,8 @@ export const SectionProjects: React.FC = () => {
           </Box>
           <Box>
             <Typography sx={{ marginTop: "15px", textAlign: "left" }} paragraph>
-              Explore nosso portfólio de projetos e conheça algumas de nossas
-              soluções.{" "}
+              Explore meu portfólio e descubra algumas das soluções que
+              desenvolvi.{" "}
               <Button variant="text" onClick={() => navigate("/projects")}>
                 Mais sobre
               </Button>
