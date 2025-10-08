@@ -46,8 +46,12 @@ export const SectionProjects: React.FC = () => {
             <Typography sx={{ marginTop: "15px", textAlign: "left" }} paragraph>
               Explore meu portfólio e descubra algumas das soluções que
               desenvolvi.{" "}
-              <Button variant="text" onClick={() => navigate("/projects")}>
-                Mais sobre
+              <Button
+                variant="text"
+                onClick={() => navigate("/projects")}
+                sx={{ fontWeight: "bold" }}
+              >
+                VER MAIS
               </Button>
             </Typography>
           </Box>

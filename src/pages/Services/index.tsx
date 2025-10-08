@@ -28,8 +28,8 @@ export const Services: React.FC = () => {
       <ScrollRestoration />
       <SectionHome
         background={backgroundHome}
-        title="Transformamos ideias em realidade"
-        subTitle="Explore nossos serviços e solicite um orçamento. Estamos prontos para atendê-lo."
+        title="Transformo ideias em realidade"
+        subTitle="Conheça algumas das minhas habilidades e descubra como posso contribuir com sua equipe."
       />
 
       <Container
@@ -52,11 +52,12 @@ export const Services: React.FC = () => {
             variant="h3"
             component="h2"
           >
-            Nossos Serviços
+            Como posso contribuir
           </Typography>
           <Typography sx={{ marginTop: "15px" }} paragraph>
-            Nossa equipe especializada oferece soluções sob medida para
-            impulsionar sua presença online.
+            Ofereço minhas habilidades em desenvolvimento de software para
+            impulsionar projetos, melhorar processos e entregar resultados
+            consistentes.
           </Typography>
         </Box>
       </Container>

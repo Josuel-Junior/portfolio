@@ -91,14 +91,15 @@ export const SectionTechnologies: React.FC = () => {
             sx={{ mt: "15px", textAlign: "left" }}
             color={"secondary"}
           >
-            Uso tecnologias de ponta como Spring Boot, React e React Native
-            para desenvolver experiências digitais inovadoras e de alto impacto.
+            Uso tecnologias de ponta como Spring Boot, React e React Native para
+            desenvolver experiências digitais inovadoras e de alto impacto.
             <Button
               color="secondary"
               size="large"
               onClick={() => navigate("/technologies")}
+              sx={{ fontWeight: "bold" }}
             >
-              Mais sobre
+              VER MAIS
             </Button>
           </Typography>
         </Box>

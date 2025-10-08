@@ -47,8 +47,10 @@ export const SectionServices: React.FC<ISectionServicesProps> = ({
             Como posso contribuir
           </Typography>
           <Typography sx={{ mt: "15px", textAlign: "left" }} paragraph>
-            Com experiência no desenvolvimento full stack, posso atuar tanto no front-end quanto no back-end, possuindo também conhecimento em Cloud.{""}
-            <Button onClick={() => navigate("/services")}>Mais sobre</Button>
+            Com experiência em desenvolvimento de software, atuo com tecnologias
+            como Java, Spring Boot, ReactJS, React Native e soluções em Cloud.
+            {""}
+            <Button onClick={() => navigate("/services")} sx={{fontWeight:"bold"}}>VER MAIS</Button>
           </Typography>
         </Box>
         <DisplayService serviceInformation={textServices} showButton={true} />
