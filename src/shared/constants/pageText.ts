@@ -58,19 +58,19 @@ export const serviceInformationPageService = [
   {
     title: "Responsividade",
     subTitle:
-      "Desenvolvemos soluções que se adaptam perfeitamente a qualquer dispositivo.",
+      "Desenvolvo soluções que se adaptam perfeitamente a qualquer dispositivo.",
     icon: responsive,
   },
   {
     title: "Integração com APIs",
     subTitle:
-      "Conectamos seu sistema a serviços externos, ampliando suas possibilidades.",
+      "Conecto seu sistema a serviços externos, ampliando suas possibilidades.",
     icon: iconApi,
   },
   {
     title: "Aplicativos Android",
     subTitle:
-      "Criamos apps nativos para Android, unindo eficiência e qualidade.",
+      "Crio apps nativos para Android, unindo eficiência e qualidade.",
     icon: iconAndroid,
   },
 ];
@@ -80,20 +80,20 @@ export const moreInformationAboutPageServices = [
     card1: {
       title: "Desenvolvimento Back-End",
       description:
-        "Desenvolvemos back-end com Spring Boot, que garante um código seguro e robusto.",
+        "Desenvolvo back-end com java e Spring Boot, o que garante um código seguro e robusto.",
     },
     card2: {
       publicityImage: serviceImageSecurity,
-      title: "Consultoria Especializada",
+      title: "Soluções Cloud",
       description:
-        "Nossa equipe de desenvolvedores está pronta para transformar suas ideias em experiências digitais incríveis.",
+        "Trabalho com soluções em nuvem modernas e escaláveis, ajudando empresas a otimizar recursos, aumentar a segurança e impulsionar a performance dos sistemas.",
     },
   },
   {
     card1: {
       title: "Desenvolvimento de Aplicativos com React Native e TypeScript",
       description:
-        "Unimos eficiência e inovação em cada linha de código para criar soluções excepcionais. Seja qual for a sua visão, estamos prontos para transformá-la em realidade digital.",
+        "Combino eficiência e inovação em cada linha de código para desenvolver soluções excepcionais. Qualquer que seja a sua visão, estou pronto para torná-la realidade digital.",
     },
     card2: {
       publicityImage: serviceImageMobile,
