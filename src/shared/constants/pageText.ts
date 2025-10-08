@@ -93,13 +93,13 @@ export const moreInformationAboutPageServices = [
     card1: {
       title: "Desenvolvimento de Aplicativos com React Native e TypeScript",
       description:
-        "Combino eficiência e inovação em cada linha de código para desenvolver soluções excepcionais. Qualquer que seja a sua visão, estou pronto para torná-la realidade digital.",
+        "Transformo ideias em aplicativos modernos com React Native e TypeScript, oferecendo soluções seguras, escaláveis e de alto desempenho.",
     },
     card2: {
       publicityImage: serviceImageMobile,
       title: "Desenvolvimento Front-End Personalizado",
       description:
-        "Crie experiências digitais incríveis com nossa equipe especializada em desenvolvimento front-end. Do design à implementação, personalizamos soluções para atender às suas necessidades únicas.",
+        "Desenvolvo experiências digitais únicas, do design à implementação, com foco em eficiência e personalização.",
     },
   },
 ];

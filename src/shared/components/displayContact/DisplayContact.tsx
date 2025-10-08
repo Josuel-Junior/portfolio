@@ -53,9 +53,7 @@ export const DisplayContact: React.FC = () => {
             Contato
           </Typography>
           <Typography paragraph sx={{ textAlign: "left" }} color="secondary">
-            Estamos prontos para ouvir suas ideias e transformá-las em
-            realidade. Envie-nos uma mensagem e dê o primeiro passo em direção
-            ao sucesso do seu projeto.
+            Entre em contato para conversarmos sobre como posso contribuir com minhas habilidades e experiência em desenvolvimento de software. Estou pronto para agregar valor à sua equipe ou projeto com dedicação e foco em resultados.
           </Typography>
         </Container>
         <Container id="projectsPage" sx={{ background: "" }}>
