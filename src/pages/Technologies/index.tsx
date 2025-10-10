@@ -42,7 +42,7 @@ export const Technologies: React.FC = () => {
         >
           Tecnologias que utilizo
         </Typography>
-        <Typography paragraph sx={{ marginTop: "15px", textAlign: "left" }}>
+        <Typography paragraph sx={{ marginTop: "15px", textAlign: "center" }}>
           Incorporo tecnologias de ponta para desenvolver soluções inovadoras, garantindo excelência em cada projeto.
         </Typography>
       </Container>

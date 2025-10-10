@@ -109,26 +109,26 @@ export const moreInformationAboutPageTecnologies = [
     card1: {
       title: "TypeScript",
       description:
-        "Abra caminho para o futuro do desenvolvimento front-end com TypeScript. Além da flexibilidade do JavaScript, oferece a robustez da tipagem estática, proporcionando um código mais seguro e legível.",
+        "Abra caminho para o futuro do desenvolvimento front-end com TypeScript. Além da flexibilidade do JavaScript, ele oferece a robustez da tipagem estática, proporcionando um código mais seguro e legível.",
     },
     card2: {
       publicityImage: technologiesImage,
       title: "Spring Boot",
       description:
-        "Exploramos o poder do Spring Boot para desenvolver um back-end robusto e escalável, garantindo eficiência e qualidade na construção de nossas APIs.",
+        "Exploro o poder do Spring Boot para desenvolver um back-end robusto e escalável, garantindo eficiência e qualidade na construção de minhas APIs.",
     },
   },
   {
     card1: {
       title: "Material-UI",
       description:
-        "Material-UI não é apenas uma biblioteca, é uma ferramenta que coloca estilo e consistência na ponta dos dedos dos desenvolvedores front-end. Cada botão, cada barra de progresso, é uma experiência de design. Explore conosco como Material-UI simplifica o processo, permitindo que cada elemento da sua aplicação brilhe com uma estética moderna",
+        "Material-UI não é apenas uma biblioteca, é uma ferramenta que coloca estilo e consistência na ponta dos meus dedos. Cada botão, cada barra de progresso, representa uma experiência de design. Explore comigo como o Material-UI simplifica o processo, permitindo que cada elemento da aplicação brilhe com uma estética moderna.",
     },
     card2: {
       publicityImage: technologiesImagedesign,
       title: "Conectando Experiências Digitais de Forma Eficiente",
       description:
-        "Desvende o poder das API REST na criação de experiências digitais dinâmicas e eficientes. Com a capacidade de integrar dados de forma coesa, construímos pontes digitais que conectam aplicativos, websites e serviços.",
+        "Exploro o potencial das APIs REST para criar experiências digitais ágeis e integradas, conectando aplicativos, websites e serviços de forma eficiente.",
     },
   },
 ];
