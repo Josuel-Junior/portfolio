@@ -21,7 +21,7 @@ export const Technologies: React.FC = () => {
       <SectionHome
         background={backgroundTechnologies}
         title="Tecnologias"
-        subTitle="Descubra as tecnologias que utilizamos para criar soluções inovadoras!"
+        subTitle="Descubra as tecnologias que utilizo para transformar ideias em soluções inovadoras e eficientes!"
       />
 
       <Container sx={{ textAlign: "center" }}>
@@ -40,11 +40,10 @@ export const Technologies: React.FC = () => {
           component="h2"
           variant="h3"
         >
-          Tecnologias que utilizamos
+          Tecnologias que utilizo
         </Typography>
         <Typography paragraph sx={{ marginTop: "15px", textAlign: "left" }}>
-          A JFC Tecnologia incorpora tecnologias de ponta para desenvolver
-          soluções inovadoras, proporcionando excelência em cada projeto.
+          Incorporo tecnologias de ponta para desenvolver soluções inovadoras, garantindo excelência em cada projeto.
         </Typography>
       </Container>
       <Container>
