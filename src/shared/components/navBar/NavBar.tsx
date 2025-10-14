@@ -114,7 +114,7 @@ export const NavBar: React.FC = () => {
           >
             <Tab label="Home" sx={hoverTextNavBar} component={Link} to="/" />
             <Tab
-              label="Serviços"
+              label="Sobre Mim"
               sx={hoverTextNavBar}
               onClick={() => navigate("/services")}
             />

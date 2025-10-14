@@ -142,7 +142,7 @@ export const textWritePageHome = [
 
 export const navigateDrawer = [
   { page: "Home", iconPage: "home", navigate: "" },
-  { page: "Serviços", iconPage: "webIcon", navigate: "services" },
+  { page: "Sobre Mim", iconPage: "webIcon", navigate: "services" },
   { page: "Tecnologias", iconPage: "codeIcon", navigate: "technologies" },
   { page: "Projetos", iconPage: "phonelink", navigate: "projects" },
   { page: "Contato", iconPage: "contacts", navigate: "contact" },
