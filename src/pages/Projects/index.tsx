@@ -20,8 +20,8 @@ export const Projects: React.FC = () => {
       <ScrollRestoration />
       <SectionHome
         background={backgroundProject}
-        title="Nossos projetos"
-        subTitle="Conheça algumas das nossas soluções."
+        title="Meus projetos"
+        subTitle="Explore meu Portfólio."
       />
 
       <Container sx={{ textAlign: "center" }}>
@@ -39,10 +39,10 @@ export const Projects: React.FC = () => {
           color={"primary"}
           component="h2"
         >
-          Explore nosso Portfólio.
+          Projetos
         </Typography>
         <Typography paragraph sx={{ marginTop: "15px" }}>
-          Bem-vindo à JFC Tecnologia! Sou Josuel, um desenvolvedor Full Stack
+          Bem-vindo ao meu Portfólio! Sou Josuel, um desenvolvedor Full Stack
           comprometido em transformar suas ideias em soluções digitais
           inovadoras e funcionais.
         </Typography>
