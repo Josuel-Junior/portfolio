@@ -29,7 +29,7 @@ export const Services: React.FC = () => {
       <SectionHome
         background={backgroundHome}
         title="Transformo ideias em realidade"
-        subTitle="Conheça algumas das minhas habilidades e descubra como posso contribuir com sua equipe."
+        subTitle="Explore minhas habilidades e veja como posso agregar valor aos seus projetos com soluções modernas e bem estruturadas"
       />
 
       <Container

@@ -28,7 +28,7 @@ export const Home: React.FC = () => {
           background={backgroundSectionHome}
           title="Bem-vindo ao meu Portfólio"
           subTitle="Aqui, a inovação e a excelência técnica se encontram para criar
-            soluções por meio da programação."
+            soluções por meio da programação"
         />
       </Box>
       <SectionServices textServices={serviceInformationPageHome} />

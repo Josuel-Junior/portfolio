@@ -21,7 +21,7 @@ export const Projects: React.FC = () => {
       <SectionHome
         background={backgroundProject}
         title="Meus projetos"
-        subTitle="Explore meu Portfólio."
+        subTitle="Explore meu Portfólio"
       />
 
       <Container sx={{ textAlign: "center" }}>

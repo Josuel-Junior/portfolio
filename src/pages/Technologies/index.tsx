@@ -21,7 +21,7 @@ export const Technologies: React.FC = () => {
       <SectionHome
         background={backgroundTechnologies}
         title="Tecnologias"
-        subTitle="Descubra as tecnologias que utilizo para transformar ideias em soluções inovadoras e eficientes!"
+        subTitle="Veja as tecnologias que utilizo para transformar ideias em soluções inovadoras e eficientes"
       />
 
       <Container sx={{ textAlign: "center" }}>

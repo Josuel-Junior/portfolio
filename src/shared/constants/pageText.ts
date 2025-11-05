@@ -69,8 +69,7 @@ export const serviceInformationPageService = [
   },
   {
     title: "Aplicativos Android",
-    subTitle:
-      "Crio apps nativos para Android, unindo eficiência e qualidade.",
+    subTitle: "Crio apps nativos para Android, unindo eficiência e qualidade.",
     icon: iconAndroid,
   },
 ];
@@ -91,15 +90,16 @@ export const moreInformationAboutPageServices = [
   },
   {
     card1: {
+      title: "Desenvolvimento Front-End",
+      description:
+        "Desenvolvo experiências digitais únicas, do design à implementação, com foco em eficiência e personalização.",
+    },
+
+    card2: {
+      publicityImage: serviceImageMobile,
       title: "Desenvolvimento de Aplicativos com React Native e TypeScript",
       description:
         "Transformo ideias em aplicativos modernos com React Native e TypeScript, oferecendo soluções seguras, escaláveis e de alto desempenho.",
-    },
-    card2: {
-      publicityImage: serviceImageMobile,
-      title: "Desenvolvimento Front-End Personalizado",
-      description:
-        "Desenvolvo experiências digitais únicas, do design à implementação, com foco em eficiência e personalização.",
     },
   },
 ];
